@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags. -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 15:50:26 stardiviner>
+;;; Time-stamp: <2021-01-09 15:53:00 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -396,6 +396,7 @@
                   ("cpp" . ,(all-the-icons-alltheicon "cplusplus-line" :face '(:foreground "CornflowerBlue")))
                   ("C#" . ,(all-the-icons-alltheicon "csharp-line" :face '(:foreground "CornflowerBlue")))
                   ;; ("C#" . ,(all-the-icons-fileicon "cs-script" :face '(:foreground "CornflowerBlue")))
+                  ("F#" . ,(all-the-icons-fileicon "fsharp" :face '(:foreground "CornflowerBlue")))
                   ("nuget" . ,(all-the-icons-fileicon "nuget" :face '(:foreground "CornflowerBlue")))
                   ("Java" . ,(all-the-icons-alltheicon "java" :face '(:foreground "OrangeRed")))
                   ("Gradle" . ,(all-the-icons-fileicon "gradle" :face '(:foreground "orange")))
