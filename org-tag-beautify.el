@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags. -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 13:36:06 stardiviner>
+;;; Time-stamp: <2021-01-09 13:38:05 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -37,6 +37,34 @@
 
 (require 'org-pretty-tags)
 (require 'all-the-icons)
+
+(defgroup org-tag-beautify nil
+  "Customize group of `org-tag-beautify-mode'."
+  :prefix "org-tag-beautify-"
+  :group 'org)
+
+
+
+;;;###autoload
+(defun org-tag-beautify-enable ()
+  "Enable `org-tag-beautify'."
+  )
+
+;;;###autoload
+(defun org-tag-beautify-disable ()
+  "Disable `org-tag-beautify'."
+  )
+
+;;;###autoload
+(define-minor-mode org-tag-beautify-mode
+  "A minor mode that beautify Org tags with icons and images."
+  :init-value nil
+  :lighter nil
+  :group 'org-tag-beautify
+  :global t
+  (if org-tag-beautify-mode
+      (org-tag-beautify-enable)
+    (org-tag-beautify-disable)))
 
 
 
