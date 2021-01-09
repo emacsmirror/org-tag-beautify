@@ -1,14 +1,14 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags. -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 13:34:42 stardiviner>
+;;; Time-stamp: <2021-01-09 13:35:27 stardiviner>
 
 ;; Copyright (C) 2020-2021 Free Software Foundation, Inc.
 ;; The source code is licensed under GPLv3.
 ;; The image data is NOT licensed under GPLv3.
 
 ;; Authors: stardiviner <numbchild@gmail.com>
-;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2"))
+;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
 ;; Package-Version: 0.1.0
 ;; Keywords: org
 ;; homepage: https://github.com/stardiviner/org-tag-beautify
@@ -36,8 +36,7 @@
 ;;; Code:
 
 (require 'org-pretty-tags)
-
-
+(require 'all-the-icons)
 
 
 
