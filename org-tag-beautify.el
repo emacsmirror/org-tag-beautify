@@ -1,7 +1,7 @@
-;;; org-tag-beautify.el --- Beautify Org Mode tags. -*- lexical-binding: t; -*-
+;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 15:53:00 stardiviner>
+;;; Time-stamp: <2021-01-09 15:58:55 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
