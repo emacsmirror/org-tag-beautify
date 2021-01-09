@@ -1,0 +1,8 @@
+* Intro
+
+This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags]] to prettify Org tags with icons or images.
+
+* Installation
+
+This package will be available on MELPA soon!
+
