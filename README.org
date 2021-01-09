@@ -6,3 +6,10 @@ This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags
 
 This package will be available on MELPA soon!
 
+* Screenshot
+
+#+ATTR_ORG: :width 600
+#+ATTR_LATEX: :width 6.0in
+#+ATTR_HTML: :width 600px
+[[file:org-tag-beautify.png]]
+
