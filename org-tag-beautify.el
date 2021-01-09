@@ -799,7 +799,8 @@
   (org-tag-beautify-set-common-tag-icons)
   (org-tag-beautify-set-programming-tag-icons)
   (org-tag-beautify-set-internet-company-tag-icons)
-  (org-tag-beautify-set-countries-tag-icons))
+  (org-tag-beautify-set-countries-tag-icons)
+  (org-pretty-tags-global-mode 1))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
