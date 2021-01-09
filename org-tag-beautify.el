@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 15:58:55 stardiviner>
+;;; Time-stamp: <2021-01-09 16:01:44 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -270,8 +270,7 @@
                   ("daoism" . ,(all-the-icons-fileicon "yin-yang" :face '(:foreground "DimGray")))
                   ;; society
                   ("tree" . ,(all-the-icons-faicon "tree" :face '(:foreground "ForestGreen")))
-                  ("empire" . ,(all-the-icons-faicon "empire" :face '(:foreground "gold")))
-                  ))))
+                  ("empire" . ,(all-the-icons-faicon "empire" :face '(:foreground "gold")))))))
 
 (defun org-tag-beautify-set-programming-tag-icons ()
   "Display programming tag as icon."
@@ -492,8 +491,7 @@
                   ("CC" . ,(all-the-icons-faicon "cc" :face '(:foreground "WhiteSmoke")))
                   ;; -----------------------------------------------------
                   ;; Project
-                  ("@project" . ,(all-the-icons-faicon "bolt" :face '(:foreground "yellow")))
-                  ))))
+                  ("@project" . ,(all-the-icons-faicon "bolt" :face '(:foreground "yellow")))))))
 
 (defun org-tag-beautify-set-internet-company-tag-icons ()
   (setq org-pretty-tags-surrogate-strings
@@ -524,8 +522,7 @@
                   ("weixin" . ,(all-the-icons-faicon "weixin" :face '(:foreground "LawnGreen")))
                   ("wechat" . ,(all-the-icons-faicon "weixin" :face '(:foreground "LawnGreen")))
                   ("weibo" . ,(all-the-icons-faicon "weibo" :face '(:foreground "orange")))
-                  ("whatsapp" . ,(all-the-icons-faicon "whatsapp" :face '(:foreground "chartreuse")))
-                  ))))
+                  ("whatsapp" . ,(all-the-icons-faicon "whatsapp" :face '(:foreground "chartreuse")))))))
 
 (defun org-tag-beautify-set-countries-tag-icons ()
   "Display countries name tag as flag icon."
