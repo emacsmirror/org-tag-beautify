@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 16:02:57 stardiviner>
+;;; Time-stamp: <2021-01-09 18:56:08 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -42,6 +42,10 @@
   "Customize group of `org-tag-beautify-mode'."
   :prefix "org-tag-beautify-"
   :group 'org)
+
+(defvar org-tag-beautify-data-dir (file-name-directory
+                                   (or load-file-name (buffer-file-name)))
+  "The org-tag-beautify data directory.")
 
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
@@ -527,8 +531,7 @@
 
 (defun org-tag-beautify-set-countries-tag-icons ()
   "Display countries name tag as flag icon."
-  (let ((dir (concat (file-name-directory (or load-file-name (buffer-file-name)))
-                     "data/countries/")))
+  (let ((dir (concat org-tag-beautify-data-dir "countries/")))
     (setq org-pretty-tags-surrogate-strings
           (append org-pretty-tags-surrogate-strings
                   `(("afghanistan" . ,(create-image (concat dir "afghanistan.png") nil nil :ascent 'center :height 35 :width 35))
