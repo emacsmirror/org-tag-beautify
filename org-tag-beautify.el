@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags. -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 14:17:26 stardiviner>
+;;; Time-stamp: <2021-01-09 15:50:26 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -805,7 +805,8 @@
 ;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  )
+  (setq org-pretty-tags-surrogate-strings nil)
+  (org-pretty-tags-global-mode -1))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
