@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-09 18:56:08 stardiviner>
+;;; Time-stamp: <2021-01-12 00:41:32 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -172,7 +172,7 @@
                   ("healing" . ,(all-the-icons-material "healing" :face '(:foreground "LightGray")))
                   ("health" . ,(all-the-icons-faicon "medkit" :face '(:foreground "LightGray")))
                   ("law" . ,(all-the-icons-material "gavel" :face '(:foreground "LightGray")))
-                  ("government" . ,(all-the-icons-faicon "building-o" :face '(:foreground "black")))
+                  ("government" . ,(all-the-icons-faicon "building-o" :face '(:foreground "LightGray")))
                   ("school" . ,(all-the-icons-material "school" :face '(:foreground "black")))
                   ("censorship" . ,(all-the-icons-faicon "assistive-listening-systems" :face '(:foreground "OrangeRed")))
                   ("map" . ,(all-the-icons-material "map" :face '(:foreground "RosyBrown")))
@@ -407,7 +407,7 @@
                   ;; ("Scala" . ,(all-the-icons-fileicon "" :face '(:foreground "DarkBlue")))
                   ("Kotlin" . ,(all-the-icons-fileicon "kotlin" :face '(:foreground "DarkSlateBlue")))
                   ("Go" . ,(all-the-icons-fileicon "go" :face '(:foreground "LightSkyBlue")))
-                  ("Rust" . ,(all-the-icons-alltheicon "rust" :face '(:foreground "DimGray")))
+                  ("Rust" . ,(all-the-icons-alltheicon "rust" :face '(:foreground "black")))
                   ("Swift" . ,(all-the-icons-alltheicon "swift" :face '(:foreground "CornflowerBlue")))
                   ("R" . ,(all-the-icons-fileicon "R" :face '(:foreground "RoyalBlue")))
                   ("Octave" . ,(all-the-icons-fileicon "octave" :face '(:foreground "SteelBlue")))
