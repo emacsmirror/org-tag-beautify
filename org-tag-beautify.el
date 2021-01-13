@@ -1,7 +1,7 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-12 00:41:32 stardiviner>
+;;; Time-stamp: <2021-01-13 16:00:33 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
@@ -330,6 +330,9 @@
                   ("security" . ,(all-the-icons-material "security" :face '(:foreground "ForestGreen")))
                   ("hacker" . ,(all-the-icons-faicon "user-secret" :face '(:foreground "DimGray")))
                   ("Nmap" . ,(all-the-icons-fileicon "nmap" :face '(:foreground "LightBlue")))
+                  ("forensic" . ,(all-the-icons-material "loupe" :face '(:foreground "DodgerBlue")))
+                  ("computer_forensic" .
+                   ,(all-the-icons-material "important_devices" :face '(:foreground "DodgerBlue")))
                   ("disk" . ,(all-the-icons-material "disc_full" :face '(:foreground "DarkKhaki")))
                   ("save" . ,(all-the-icons-material "save" :face '(:foreground "orange")))
                   ("sync" . ,(all-the-icons-material "sync" :face '(:foreground "orange")))
