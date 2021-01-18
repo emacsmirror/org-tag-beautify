@@ -798,7 +798,6 @@
                     ("zambia" . ,(create-image (concat dir "zambia.png") nil nil :ascent 'center :height 35 :width 35))
                     ("zimbabwe" . ,(create-image (concat dir "zimbabwe.png") nil nil :ascent 'center :height 35 :width 35)))))))
 
-;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
   (org-tag-beautify-set-common-tag-icons)
@@ -807,7 +806,6 @@
   (org-tag-beautify-set-countries-tag-icons)
   (org-pretty-tags-global-mode 1))
 
-;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings nil)
