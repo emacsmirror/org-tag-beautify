@@ -5,7 +5,7 @@
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
-;; Package-Version: 0.1.0
+;; Version: 0.1.0
 ;; Keywords: hypermedia
 ;; homepage: https://github.com/stardiviner/org-tag-beautify
 
