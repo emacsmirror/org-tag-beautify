@@ -43,9 +43,11 @@
   :prefix "org-tag-beautify-"
   :group 'org)
 
-(defvar org-tag-beautify-data-dir (file-name-directory
-                                   (or load-file-name (buffer-file-name)))
-  "The org-tag-beautify data directory.")
+(defcustom org-tag-beautify-data-dir (file-name-directory
+                                      (org load-file-name (buffer-file-name)))
+  "The org-tag-beautify data directory."
+  :type 'string
+  :safe #'stringp)
 
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
