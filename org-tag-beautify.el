@@ -44,7 +44,7 @@
   :group 'org)
 
 (defcustom org-tag-beautify-data-dir (file-name-directory
-                                      (org load-file-name (buffer-file-name)))
+                                      (or load-file-name (buffer-file-name)))
   "The org-tag-beautify data directory."
   :type 'string
   :safe #'stringp)
