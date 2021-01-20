@@ -1,8 +1,6 @@
 ;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
-;;; Time-stamp: <2021-01-13 16:00:33 stardiviner>
-
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
 ;; Version: 0.1.0
@@ -100,7 +98,7 @@
                   ("star" . ,(all-the-icons-material "star" :face '(:foreground "coral")))
                   ("heart" . ,(all-the-icons-faicon "heart-o" :face '(:foreground "red")))
                   ("brain" . ,(all-the-icons-fileicon "brain" :face '(:foreground "BlueViolet")))
-                  ("smile" . ,(all-the-icons-material "tag_faces" :face '(:foreground "WhiteSmoke")))
+                  ("smile" . ,(all-the-icons-material "tag_faces" :face '(:foreground "yellow")))
                   ("trash" . ,(all-the-icons-material "delete" :face '(:foreground "DarkOliveGreen")))
                   ("delete" . ,(all-the-icons-material "delete" :face '(:foreground "DarkOliveGreen")))
                   ("clear" . ,(all-the-icons-material "clear" :face '(:foreground "DarkOliveGreen")))
@@ -373,19 +371,19 @@
                   ("AutoHotKey" . ,(all-the-icons-fileicon "auto-hotkey" :face '(:foreground "MediumSeaGreen")))
                   ;; -----------------------------------------------------
                   ;; Systems
-                  ("Linux" . ,(all-the-icons-faicon "linux" :face '(:foreground "WhiteSmoke")))
+                  ("Linux" . ,(all-the-icons-faicon "linux" :face '(:foreground "DarkGray")))
                   ("ArchLinux" . ,(all-the-icons-fileicon "arch-linux" :face '(:foreground "LightSkyBlue")))
                   ("Gentoo" . ,(all-the-icons-fileicon "gentoo" :face '(:foreground "YellowGreen")))
                   ("Alpine" . ,(all-the-icons-fileicon "alpine-linux" :face '(:foreground "DarkTurquoise")))
-                  ("Apple" . ,(all-the-icons-faicon "apple" :face '(:foreground "white")))
-                  ("macOS" . ,(all-the-icons-faicon "apple" :face '(:foreground "white")))
+                  ("Apple" . ,(all-the-icons-faicon "apple" :face '(:foreground "LightGray")))
+                  ("macOS" . ,(all-the-icons-faicon "apple" :face '(:foreground "LightGray")))
                   ("Windows" . ,(all-the-icons-faicon "windows" :face '(:foreground "RoyalBlue")))
                   ("Android" . ,(all-the-icons-material "android" :face '(:foreground "MediumSeaGreen")))
                   ("adb" . ,(all-the-icons-material "adb" :face '(:foreground "MediumSeaGreen")))
                   ("VirtualBox" . ,(all-the-icons-fileicon "virtualbox" :face '(:foreground "CornflowerBlue")))
                   ("VMWare" . ,(all-the-icons-fileicon "vmware" :face '(:foreground "SandyBrown")))
-                  ("man" . ,(all-the-icons-fileicon "man-page" :face '(:foreground "white")))
-                  ("config" . ,(all-the-icons-fileicon "config" :face '(:foreground "white")))
+                  ("man" . ,(all-the-icons-fileicon "man-page" :face '(:foreground "gray")))
+                  ("config" . ,(all-the-icons-fileicon "config" :face '(:foreground "gray")))
                   ;; -----------------------------------------------------
                   ;; Programming Languages
                   ("Shell" . ,(all-the-icons-alltheicon "script" :face '(:foreground "DeepSkyBlue")))
@@ -497,7 +495,7 @@
                   ;; ("license" . ,(all-the-icons-faicon "" :face '(:foreground "SteelBlue")))
                   ("copyright" . ,(all-the-icons-material "copyright" :face '(:foreground "SteelBlue")))
                   ("registered" . ,(all-the-icons-faicon "registered" :face '(:foreground "gold")))
-                  ("CC" . ,(all-the-icons-faicon "cc" :face '(:foreground "WhiteSmoke")))
+                  ("CC" . ,(all-the-icons-faicon "cc" :face '(:foreground "gray")))
                   ;; -----------------------------------------------------
                   ;; Project
                   ("@project" . ,(all-the-icons-faicon "bolt" :face '(:foreground "yellow")))))))
@@ -506,7 +504,7 @@
   "Display internet company name tag as icon."
   (setq org-pretty-tags-surrogate-strings
         (append org-pretty-tags-surrogate-strings
-                `(("Internet" . ,(all-the-icons-faicon "globe" :face '(:foreground "white")))
+                `(("Internet" . ,(all-the-icons-faicon "globe" :face '(:foreground "SkyBlue")))
                   ("Google" . ,(all-the-icons-faicon "google" :face '(:foreground "OrangeRed")))
                   ("Windows" . ,(all-the-icons-faicon "windows" :face '(:foreground "DodgerBlue")))
                   ("Microsoft" . ,(all-the-icons-faicon "windows" :face '(:foreground "DodgerBlue")))
