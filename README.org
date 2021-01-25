@@ -4,7 +4,7 @@ This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags
 
 * Installation
 
-This package will be available on MELPA soon!
+This package is available on MELPA already!
 
 * Screenshot
 
