@@ -274,7 +274,8 @@
                   ("daoism" . ,(all-the-icons-fileicon "yin-yang" :face '(:foreground "DimGray")))
                   ;; society
                   ("tree" . ,(all-the-icons-faicon "tree" :face '(:foreground "ForestGreen")))
-                  ("empire" . ,(all-the-icons-faicon "empire" :face '(:foreground "gold")))))))
+                  ("empire" . ,(all-the-icons-faicon "empire" :face '(:foreground "gold")))
+                  ("global" . ,(all-the-icons-faicon "globe" :face '(:foreground "SkyBlue")))))))
 
 (defun org-tag-beautify-set-programming-tag-icons ()
   "Display programming tag as icon."
