@@ -372,7 +372,7 @@
                   ;; -----------------------------------------------------
                   ;; Systems
                   ("Linux" . ,(all-the-icons-faicon "linux" :face '(:foreground "DarkGray")))
-                  ("ArchLinux" . ,(all-the-icons-fileicon "arch-linux" :face '(:foreground "LightSkyBlue")))
+                  ("Arch_Linux" . ,(all-the-icons-fileicon "arch-linux" :face '(:foreground "LightSkyBlue")))
                   ("Gentoo" . ,(all-the-icons-fileicon "gentoo" :face '(:foreground "YellowGreen")))
                   ("Alpine" . ,(all-the-icons-fileicon "alpine-linux" :face '(:foreground "DarkTurquoise")))
                   ("Apple" . ,(all-the-icons-faicon "apple" :face '(:foreground "LightGray")))
