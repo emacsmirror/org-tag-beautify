@@ -380,6 +380,7 @@
                   ("macOS" . ,(all-the-icons-faicon "apple" :face '(:foreground "LightGray")))
                   ("Windows" . ,(all-the-icons-faicon "windows" :face '(:foreground "RoyalBlue")))
                   ("Android" . ,(all-the-icons-material "android" :face '(:foreground "MediumSeaGreen")))
+                  ("iOS" . ,(all-the-icons-faicon "apple" :face '(:foreground "LightGray")))
                   ("adb" . ,(all-the-icons-material "adb" :face '(:foreground "MediumSeaGreen")))
                   ("VirtualBox" . ,(all-the-icons-fileicon "virtualbox" :face '(:foreground "CornflowerBlue")))
                   ("VMWare" . ,(all-the-icons-fileicon "vmware" :face '(:foreground "SandyBrown")))
