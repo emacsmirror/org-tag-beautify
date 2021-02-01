@@ -219,7 +219,7 @@
                   ("video" . ,(all-the-icons-faicon "file-video-o" :face '(:foreground "LightGray")))
                   ("audio" . ,(all-the-icons-faicon "file-audio-o" :face '(:foreground "LightGray")))
                   ("movie" . ,(all-the-icons-material "movie" :face '(:foreground "LightGray")))
-                  ("book" . ,(all-the-icons-material "book" :face '(:foreground "LightGray")))
+                  ("book" . ,(all-the-icons-octicon "book" :face '(:foreground "LightGray")))
                   ("bookmark" . ,(all-the-icons-material "bookmark" :face '(:foreground "LightGray")))
                   ("plot" . ,(all-the-icons-faicon "bar-chart" :face '(:foreground "chartreuse")))
                   ("diagram" . ,(all-the-icons-faicon "line-chart" :face '(:foreground "chartreuse")))
