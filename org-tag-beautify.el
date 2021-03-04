@@ -322,6 +322,8 @@
                   ("Edge" . ,(all-the-icons-fileicon "edge" :face '(:foreground "DodgerBlue")))
                   ("Safari" . ,(all-the-icons-faicon "safari" :face '(:foreground "LightSkyBlue")))
                   ("terminal" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "black")))
+                  ("command" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "MediumSeaGreen")))
+                  ("ssh" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "SteelBlue")))
                   ("powershell" . ,(all-the-icons-fileicon "powershell" :face '(:foreground "RoyalBlue")))
                   ("CMake" . ,(all-the-icons-fileicon "cmake" :face '(:foreground "CornflowerBlue")))
                   ("Tcl" . ,(all-the-icons-fileicon "tcl" :face '(:foreground "SteelBlue")))
