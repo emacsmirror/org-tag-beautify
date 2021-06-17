@@ -73,6 +73,7 @@
                   ("face" . ,(all-the-icons-material "face" :face '(:foreground "black")))
                   ("like" . ,(all-the-icons-material "thumb_up" :face '(:foreground "yellow")))
                   ("suggested" . ,(all-the-icons-material "star" :face '(:foreground "yellow")))
+                  ("recommended" . ,(all-the-icons-material "star" :face '(:foreground "yellow")))
                   ("favorite" . ,(all-the-icons-material "favorite" :face '(:foreground "red")))
                   ("idea" . ,(all-the-icons-faicon "lightbulb-o" :face '(:foreground "gold")))
                   ("Org" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
