@@ -322,6 +322,8 @@
                   ("TV" . ,(all-the-icons-material "live_tv" :face '(:foreground "SkyBlue")))
                   ("cmcc" . ,(all-the-icons-fileicon "ecere" :face '(:foreground "SkyBlue"))) ; CMCC 中国移动
                   ("hardware" . ,(all-the-icons-material "devices_other" :face '(:foreground "SkyBlue")))
+                  ("server" . ,(all-the-icons-faicon "server" :face '(:foreground "SkyBlue")))
+                  ("NAS" . ,(all-the-icons-faicon "server" :face '(:foreground "SkyBlue")))
                   ("robot" . ,(all-the-icons-fileicon "robot" :face '(:foreground "SteelBlue")))
                   ("usb" . ,(all-the-icons-material "usb" :face '(:foreground "SteelBlue")))
                   ("WiFi" . ,(all-the-icons-material "wifi" :face '(:foreground "DarkGray")))
