@@ -160,7 +160,7 @@
                   ("store" . ,(all-the-icons-material "store" :face '(:foreground "khaki")))
                   ("shopping" . ,(all-the-icons-material "shopping_cart" :face '(:foreground "khaki")))
                   ("express" . ,(all-the-icons-material "local_shipping" :face '(:foreground "PaleTurquoise")))
-                  ("money" . ,(all-the-icons-material "monetization_on" :face '(:foreground "CornflowerBlue")))
+                  ("money" . ,(all-the-icons-faicon "money" :face '(:foreground "green")))
                   ("payment" . ,(all-the-icons-material "payment" :face '(:foreground "CornflowerBlue")))
                   ("credit_card" . ,(all-the-icons-material "credit_card" :face '(:foreground "CornflowerBlue")))
                   ("visa" . ,(all-the-icons-faicon "cc-visa" :face '(:foreground "CornflowerBlue")))
