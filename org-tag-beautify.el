@@ -857,9 +857,10 @@
 ;;; Add upper tags to `org-tag-alist' for `org-set-tags-command' completion.
 (setq org-tag-alist
       (append org-tag-alist
-              `((:startgrouptag) ("icons")
-                (:grouptags) ,(mapcar 'car org-pretty-tags-surrogate-strings)
-                (:endgrouptag))))
+              (append
+               '((:startgrouptag)) '(("icons"))
+               '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
+               '((:endgrouptag)))))
 
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
