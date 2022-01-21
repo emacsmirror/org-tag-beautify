@@ -859,12 +859,13 @@
                       ("zimbabwe" . ,(create-image (concat dir "zimbabwe.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width)))))))
 
 ;;; Add upper tags to `org-tag-alist' for `org-set-tags-command' completion.
-(setq org-tag-alist
-      (append org-tag-alist
-              (append
-               '((:startgrouptag)) '(("icons"))
-               '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
-               '((:endgrouptag)))))
+(with-eval-after-load 'org
+  (setq org-tag-alist
+        (append org-tag-alist
+                (append
+                 '((:startgrouptag)) '(("icons"))
+                 '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
+                 '((:endgrouptag))))))
 
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
