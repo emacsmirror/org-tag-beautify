@@ -78,7 +78,6 @@
                   ("recommended" . ,(all-the-icons-faicon "thumbs-up" :face '(:foreground "yellow")))
                   ("favorite" . ,(all-the-icons-faicon "star-o" :face '(:foreground "red")))
                   ("idea" . ,(all-the-icons-faicon "lightbulb-o" :face '(:foreground "gold")))
-                  ("Org" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
                   ("Org_mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Wiki" . ,(all-the-icons-fileicon "mediawiki" :face '(:foreground "gainsboro")))
