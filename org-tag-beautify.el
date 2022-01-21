@@ -80,7 +80,7 @@
                   ("idea" . ,(all-the-icons-faicon "lightbulb-o" :face '(:foreground "gold")))
                   ("Org" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
-                  ("org_mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
+                  ("Org_mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Wiki" . ,(all-the-icons-fileicon "mediawiki" :face '(:foreground "gainsboro")))
                   ("language" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
                   ("translate" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
