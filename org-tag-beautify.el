@@ -339,6 +339,8 @@
                   ("smartphone" . ,(all-the-icons-material "smartphone" :face '(:foreground "SkyBlue")))
                   ("phone" . ,(all-the-icons-faicon "phone" :face '(:foreground "SkyBlue")))
                   ("keyboard" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
+                  ("shortcut" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
+                  ("keybinding" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
                   ("microphone" . ,(all-the-icons-faicon "microphone" :face '(:foreground "SkyBlue")))
                   ("router" . ,(all-the-icons-material "router" :face '(:foreground "SkyBlue")))
                   ("fax" . ,(all-the-icons-faicon "fax" :face '(:foreground "DarkSlateBlue")))
