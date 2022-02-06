@@ -919,7 +919,7 @@
     (save-excursion
       (org-back-to-heading)
       ;; append `tags-list' to original tags list and set the new Org tags list.
-      (let* ((orig-tags (mapcar 'substring-no-properties (org-get-tags)))
+      (let* ((orig-tags (mapcar 'substring-no-properties (org-get-tags (point) 'local)))
              (new-tags-list (cl-remove-duplicates (append tags-list orig-tags)
                                                   :test (lambda (x y) (or (null y) (equal x y)))
                                                   :from-end t)))
