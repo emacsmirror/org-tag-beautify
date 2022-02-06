@@ -84,6 +84,8 @@
                   ("favorite" . ,(all-the-icons-faicon "star-o" :face '(:foreground "red")))
                   ("idea" . ,(all-the-icons-faicon "lightbulb-o" :face '(:foreground "gold")))
                   ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
+                  ;; ("Vim" . ,(all-the-icons-fileicon "vim" :face '(:foreground "LightSlateBlue")))
+                  ;; ("vscode" . ,(all-the-icons-fileicon "visual_studio_code" :face '(:foreground "LightSlateBlue")))
                   ("Org_Mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Wiki" . ,(all-the-icons-fileicon "mediawiki" :face '(:foreground "gainsboro")))
                   ("language" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
@@ -101,6 +103,7 @@
                   ("event" . ,(all-the-icons-material "event" :face '(:foreground "CornflowerBlue")))
                   ("event_available" . ,(all-the-icons-material "event_available" :face '(:foreground "CornflowerBlue")))
                   ("event_busy" . ,(all-the-icons-material "event_busy" :face '(:foreground "CornflowerBlue")))
+                  ("task" . ,(all-the-icons-faicon "check" :face '(:foreground "CornflowerBlue")))
                   ("check" . ,(all-the-icons-faicon "check" :face '(:foreground "CornflowerBlue")))
                   ("alert" . ,(all-the-icons-material "add_alert" :face '(:foreground "red")))
                   ("important" . ,(all-the-icons-material "priority_high" :face '(:foreground "red")))
@@ -437,6 +440,7 @@
                   ;; -----------------------------------------------------
                   ;; Systems
                   ("Linux" . ,(all-the-icons-faicon "linux" :face '(:foreground "DarkGray")))
+                  ;; ("Ubuntu_Linux" . ,(all-the-icons-fileicon "ubuntu-linux" :face '(:foreground "orange")))
                   ("Arch_Linux" . ,(all-the-icons-fileicon "arch-linux" :face '(:foreground "LightSkyBlue")))
                   ("alpine_linux" . ,(all-the-icons-fileicon "alpine-linux" :face '(:foreground "LightSkyBlue")))
                   ("Gentoo" . ,(all-the-icons-fileicon "gentoo" :face '(:foreground "YellowGreen")))
