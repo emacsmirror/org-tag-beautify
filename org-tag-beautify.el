@@ -896,7 +896,7 @@
     ;; audio formats
     ("mp3" ("audio")) ("m4a" ("audio")) ("opus" ("audio"))
     ;; image formats
-    ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("gif" ("image")) ("webp" ("image"))
+    ;; ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("gif" ("image")) ("webp" ("image"))
     ;; document file types
     ("org" ("Org_Mode")) ("md" ("Markdown")) ("txt" ("document"))
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
