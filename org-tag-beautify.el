@@ -57,6 +57,11 @@
   :type 'number
   :safe #'numberp)
 
+(defcustom org-tag-beautify-auto-add-tags t
+  "Whether auto add tags to heading."
+  :type 'boolean
+  :safe #'booleanp)
+
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
   (setq org-pretty-tags-surrogate-strings
@@ -889,18 +894,56 @@
                  '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
                  '((:endgrouptag))))))
 
+;;======================== auto add tags based on `org-attach' file types. ========================
+(defvar org-attach-attach--smart-tags-alist
+  '(;; video formats
+    ("mp4" ("video")) ("mkv" ("video")) ("webm" ("video"))
+    ;; audio formats
+    ("mp3" ("audio")) ("m4a" ("audio")) ("opus" ("audio"))
+    ;; image formats
+    ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("gif" ("image")) ("webp" ("image"))
+    ;; document file types
+    ("org" ("Org_Mode")) ("md" ("Markdown")) ("txt" ("document"))
+    ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
+    ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book"))
+    ("zip" ("archive_file")) ("rar" ("archive_file")) ("tar" ("archive_file")) ("tar.gz" ("archive_file")) ("tar.bz2" ("archive_file"))
+    ;; source code file formats
+    ("py" ("Python")) ("rb" ("Ruby"))
+    ("el" ("Emacs_Lisp")) ("cl" ("Common_Lisp")) ("clj" ("Clojure")) ("cljs" ("ClojureScript"))
+    ("js" ("JavaScript")) ("html" ("HTML")) ("css" ("CSS"))
+    ("java" ("Java")) ("c" ("C")) ("cpp" ("cpp"))
+    )
+  "An alist of file extension and tag name pairs.")
+
+(defun org-attach-attach--auto-add-smart-tag (origin-func file &optional visit-dir method)
+  "An advice function which auto add smart Org tag based on `org-attach' command attached file format."
+  (apply origin-func file visit-dir method)
+  (let* ((file (substring-no-properties file))
+         (extension (downcase (file-name-extension file)))
+         (tags-list (cadr (assoc extension org-attach-attach--smart-tags-alist))))
+    (save-excursion
+      (org-back-to-heading)
+      ;; append `tags-list' to original tags list and set the new Org tags list.
+      (let* ((orig-tags (mapcar 'substring-no-properties (org-get-tags)))
+             (new-tags-list (append tags-list orig-tags)))
+        (org-set-tags new-tags-list)))))
+
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
   (org-tag-beautify-set-common-tag-icons)
   (org-tag-beautify-set-programming-tag-icons)
   (org-tag-beautify-set-internet-company-tag-icons)
   (org-tag-beautify-set-countries-tag-icons)
-  (org-pretty-tags-global-mode 1))
+  (org-pretty-tags-global-mode 1)
+  (when org-tag-beautify-auto-add-tags
+    ;; [C-c C-a] `org-attach-commands'
+    (advice-add 'org-attach-attach :around #'org-attach-attach--auto-add-smart-tag)))
 
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings nil)
-  (org-pretty-tags-global-mode -1))
+  (org-pretty-tags-global-mode -1)
+  (advice-remove 'org-attach-attach #'org-attach-attach--auto-add-smart-tag))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
