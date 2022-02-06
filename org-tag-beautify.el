@@ -920,7 +920,9 @@
       (org-back-to-heading)
       ;; append `tags-list' to original tags list and set the new Org tags list.
       (let* ((orig-tags (mapcar 'substring-no-properties (org-get-tags)))
-             (new-tags-list (append tags-list orig-tags)))
+             (new-tags-list (cl-remove-duplicates (append tags-list orig-tags)
+                                                  :test (lambda (x y) (or (null y) (equal x y)))
+                                                  :from-end t)))
         (org-set-tags new-tags-list)))))
 
 (defun org-tag-beautify-enable ()
