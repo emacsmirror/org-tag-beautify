@@ -370,7 +370,7 @@
                   ("Edge" . ,(all-the-icons-fileicon "edge" :face '(:foreground "DodgerBlue")))
                   ("Safari" . ,(all-the-icons-faicon "safari" :face '(:foreground "LightSkyBlue")))
                   ("terminal" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "black")))
-                  ("command" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "MediumSeaGreen")))
+                  ("command" . ,(all-the-icons-alltheicon "terminal-alt" :face '(:foreground "DeepSkyBlue")))
                   ("ssh" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "SteelBlue")))
                   ("powershell" . ,(all-the-icons-fileicon "powershell" :face '(:foreground "RoyalBlue")))
                   ("compile" . ,(all-the-icons-faicon "cog" :face '(:foreground "SteelBlue")))
@@ -459,7 +459,7 @@
                   ("config" . ,(all-the-icons-fileicon "config" :face '(:foreground "gray")))
                   ;; -----------------------------------------------------
                   ;; Programming Languages
-                  ("Shell" . ,(all-the-icons-alltheicon "terminal-alt" :face '(:foreground "DeepSkyBlue")))
+                  ("Shell" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "MediumSeaGreen")))
                   ("Shell_Script" . ,(all-the-icons-alltheicon "script" :face '(:foreground "DeepSkyBlue")))
                   ("LISP" . ,(all-the-icons-fileicon "lisp" :face '(:foreground "OrangeRed")))
                   ("Common_Lisp" . ,(all-the-icons-fileicon "clisp" :face '(:foreground "black")))
