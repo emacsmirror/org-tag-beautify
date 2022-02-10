@@ -5,7 +5,7 @@
 ;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "4.0.0"))
 ;; Version: 0.1.0
 ;; Keywords: hypermedia
-;; homepage: https://github.com/stardiviner/org-tag-beautify
+;; homepage: https://repo.or.cz/org-tag-beautify.git
 
 ;; Copyright (C) 2020-2021 Free Software Foundation, Inc.
 ;; The source code is licensed under GPLv3.
