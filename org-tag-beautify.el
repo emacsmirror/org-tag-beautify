@@ -158,13 +158,48 @@
                   ("group" . ,(all-the-icons-material "group" :face '(:foreground "purple")))
                   ("user" . ,(all-the-icons-faicon "user" :face '(:foreground "purple")))
                   ("users" . ,(all-the-icons-faicon "users" :face '(:foreground "purple")))
+
+                  ("girl" . ,(propertize "㊛" 'face '(:foreground "purple")))
+                  ("boy" . ,(propertize "㊚" 'face '(:foreground "purple")))
                   ("female" . ,(all-the-icons-faicon "female" :face '(:foreground "purple")))
                   ("male" . ,(all-the-icons-faicon "male" :face '(:foreground "purple")))
-                  ("genderless" . ,(all-the-icons-faicon "genderless" :face '(:foreground "purple")))
-                  ("neuter" . ,(all-the-icons-faicon "neuter" :face '(:foreground "purple")))
-                  ("venus" . ,(all-the-icons-faicon "venus" :face '(:foreground "purple")))
-                  ("venus_double" . ,(all-the-icons-faicon "venus-double" :face '(:foreground "purple")))
-                  ("venus_mars" . ,(all-the-icons-faicon "venus-mars" :face '(:foreground "purple")))
+
+                  ;; Sexual orientation: https://en.wikipedia.org/wiki/Sexual_orientation
+                  ;; LGBTQ symbols: https://en.wikipedia.org/wiki/LGBT_symbols
+                  ;; ("heterosexual" . ,(all-the-icons-faicon "venus-mars" :face '(:foreground "purple")))
+                  ;; ("gender_female" . ,(all-the-icons-faicon "venus" :face '(:foreground "purple")))
+                  ;; ("gender_man" . ,(all-the-icons-faicon "mars" :face '(:foreground "purple")))
+                  ;; ("female_homosexual" . ,(all-the-icons-faicon "venus-double" :face '(:foreground "purple")))
+                  ;; ("male_homosexual" . ,(all-the-icons-faicon "mars-double" :face '(:foreground "purple")))
+                  ;; ("lesbian" . ,(all-the-icons-faicon "venus-double" :face '(:foreground "purple")))
+                  ;; ("gay" . ,(all-the-icons-faicon "mars-double" :face '(:foreground "purple")))
+
+                  ("heterosexual" . ,(propertize "⚥" 'face '(:foreground "purple")))
+                  ("gender_female" . ,(propertize "♀" 'face '(:foreground "purple")))
+                  ("gender_man" . ,(propertize "♂" 'face '(:foreground "purple")))
+                  ("female_homosexual" . ,(propertize "⚢" 'face '(:foreground "purple")))
+                  ("male_homosexual" . ,(propertize "⚣" 'face '(:foreground "purple")))
+                  ("lesbian" . ,(propertize "⚢" 'face '(:foreground "purple")))
+                  ("gay" . ,(propertize "⚣" 'face '(:foreground "purple")))
+                  ("asexuality" . ,(propertize "○" 'face '(:foreground "purple"))) ; 无性取向
+                  ("bisexuality" . ,(propertize "⚤" 'face '(:foreground "purple"))) ; 双性恋取向
+                  ("intersexuality" . ,(propertize "☿" 'face '(:foreground "purple"))) ; 中间性
+                  ("transsexual" . ,(propertize "⚧" 'face '(:foreground "purple"))) ; 变性取向
+                  
+                  ;; Gender:
+                  ;; ("genderless" . ,(all-the-icons-faicon "genderless" :face '(:foreground "purple"))) ; 无性别者
+                  ("genderless" . ,(propertize "○" 'face '(:foreground "purple"))) ; 无性别者
+                  ("agender" . ,(propertize "○" 'face '(:foreground "purple")))
+                  ;; ("sexless" . ,(all-the-icons-faicon "genderless" :face '(:foreground "purple"))) ; 无性别者
+                  ("sexless" . ,(propertize "○" 'face '(:foreground "purple"))) ; 无性别者
+                  ;; ("neuter" . ,(all-the-icons-faicon "neuter" :face '(:foreground "purple"))) ; 中性
+                  ("neuter" . ,(propertize "⚲" 'face '(:foreground "purple"))) ; 中性
+                  ("intersex" . ,(propertize "⚥" 'face '(:foreground "purple"))) ; 双性者
+                  ("transgender" . ,(propertize "⚧" 'face '(:foreground "purple"))) ; 变性者
+                  ("bigender" . ,(propertize "⚥" 'face '(:foreground "purple")))
+                  ("transgender-female" . ,(propertize "⧬" 'face '(:foreground "purple")))
+                  ;; TODO ("transgender-male" . ,(propertize "" 'face '(:foreground "purple")))
+                  
                   ("sleep" . ,(all-the-icons-faicon "bed" :face '(:foreground "purple")))
                   ("dining" . ,(all-the-icons-material "local_dining" :face '(:foreground "khaki")))
                   ("kitchen" . ,(all-the-icons-material "kitchen" :face '(:foreground "khaki")))
