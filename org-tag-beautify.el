@@ -501,7 +501,7 @@
                   ("Common_Lisp" . ,(all-the-icons-fileicon "clisp" :face '(:foreground "black")))
                   ("Emacs_Lisp" . ,(all-the-icons-fileicon "elisp" :face '(:foreground "RoyalBlue")))
                   ("Clojure" . ,(all-the-icons-alltheicon "clojure" :v-adjust -0.05 :face '(:foreground "DeepSkyBlue")))
-                  ("ClojureScript" . ,(all-the-icons-fileicon "cljs" :v-adjust -0.01 :face '(:foreground "DeepSkyBlue")))
+                  ("ClojureScript" . ,(all-the-icons-fileicon "cljs" :v-adjust 0 :face '(:foreground "DeepSkyBlue")))
                   ("Leiningen" . ,(all-the-icons-alltheicon "clojure-line" :v-adjust -0.01 :face '(:foreground "DeepSkyBlue")))
                   ("Scheme" . ,(all-the-icons-fileicon "scheme" :face '(:foreground "LightBlue")))
                   ("Racket" . ,(all-the-icons-fileicon "racket" :face '(:foreground "DarkOrange")))
