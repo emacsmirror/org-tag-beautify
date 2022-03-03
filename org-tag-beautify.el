@@ -311,7 +311,6 @@
                   ("download" . ,(all-the-icons-faicon "download" :face '(:foreground "gray")))
                   ("upload" . ,(all-the-icons-faicon "upload" :face '(:foreground "gold")))
                   ("link" . ,(all-the-icons-material "link" :face '(:foreground "DeepSkyBlue")))
-                  ("cloud" . ,(all-the-icons-material "cloud" :face '(:foreground "DeepSkyBlue")))
                   ("at" . ,(all-the-icons-faicon "at" :face '(:foreground "DeepSkyBlue")))
                   ("mention" . ,(all-the-icons-octicon "mention" :face '(:foreground "DeepSkyBlue")))
                   ("email" . ,(all-the-icons-material "mail_outline" :face '(:foreground "DeepSkyBlue")))
