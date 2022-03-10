@@ -397,7 +397,7 @@
                   ("usb" . ,(all-the-icons-faicon "usb" :face '(:foreground "SteelBlue")))
                   ("WiFi" . ,(all-the-icons-faicon "wifi" :face '(:foreground "DarkGray")))
                   ("bluetooth" . ,(all-the-icons-faicon "bluetooth" :face '(:foreground "DarkGray")))
-                  ("Nvidia" . ,(all-the-icons-fileicon "nvidia" :face '(:foreground "SteelBlue")))
+                  ("Nvidia" . ,(all-the-icons-fileicon "nvidia" :face '(:foreground "ForestGreen")))
                   ("Firefox" . ,(all-the-icons-faicon "firefox" :face '(:foreground "OrangeRed")))
                   ("Chromium" . ,(all-the-icons-faicon "chrome" :face '(:foreground "LightSkyBlue")))
                   ("Chrome" . ,(all-the-icons-faicon "chrome" :face '(:foreground "OrangeRed")))
