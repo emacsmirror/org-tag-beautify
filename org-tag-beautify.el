@@ -927,7 +927,7 @@
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-attach-attach--smart-tags-alist
   '(;; video formats
-    ("mp4" ("video")) ("mkv" ("video")) ("mov" ("video")) ("webm" ("video")) ("flv" ("video"))
+    ("mp4" ("video")) ("mkv" ("video")) ("mov" ("video")) ("webm" ("video")) ("flv" ("video")) ("rmvb" ("video"))
     ;; audio formats
     ("mp3" ("audio")) ("m4a" ("audio")) ("opus" ("audio"))
     ;; image formats
