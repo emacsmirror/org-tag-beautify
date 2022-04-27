@@ -446,6 +446,7 @@
                   ("DevOps" . ,(all-the-icons-faicon "cogs" :face '(:foreground "tomato"))) ; "sitemap"
                   ("package" . ,(all-the-icons-faicon "cube" :face '(:foreground "SteelBlue")))
                   ("packages" . ,(all-the-icons-faicon "cubes" :face '(:foreground "SteelBlue")))
+                  ("container" . ,(all-the-icons-fileicon "dockerfile" :face '(:foreground "DodgerBlue")))
                   ("Docker" . ,(all-the-icons-fileicon "dockerfile" :face '(:foreground "DodgerBlue")))
                   ("Dockerfile" . ,(all-the-icons-fileicon "dockerfile" :face '(:foreground "DodgerBlue")))
                   ("Vagrant" . ,(all-the-icons-fileicon "vagrant" :face '(:foreground "RoyalBlue")))
