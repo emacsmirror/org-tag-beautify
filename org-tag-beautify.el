@@ -671,7 +671,7 @@
                   ("Mozilla" . ,(all-the-icons-faicon "firefox" :face '(:foreground "OrangeRed")))
                   ("GitHub" . ,(all-the-icons-faicon "github" :face '(:foreground "DimGray")))
                   ("GitLab" . ,(all-the-icons-fileicon "gitlab" :face '(:foreground "orange")))
-                  ("Bitbucket" . ,(all-the-icons-faicon "bitbucket" :face '(:foreground "orange")))
+                  ("Bitbucket" . ,(all-the-icons-faicon "bitbucket" :face '(:foreground "DodgerBlue")))
                   ("hacker_news" . ,(all-the-icons-faicon "hacker-news" :face '(:foreground "DarkOrange")))
                   ("stack_exchange" . ,(all-the-icons-faicon "stack-exchange" :face '(:foreground "DeepSkyBlue")))
                   ("stack_overflow" . ,(all-the-icons-faicon "stack-overflow" :face '(:foreground "DarkOrange")))
