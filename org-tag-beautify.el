@@ -547,7 +547,7 @@
                   ("Kotlin" . ,(all-the-icons-fileicon "kotlin" :face '(:foreground "DarkSlateBlue")))
                   ("Go" . ,(all-the-icons-fileicon "go" :face '(:foreground "LightSkyBlue")))
                   ("Rust" . ,(all-the-icons-alltheicon "rust" :face '(:foreground "black")))
-                  ("Swift" . ,(all-the-icons-alltheicon "swift" :face '(:foreground "CornflowerBlue")))
+                  ("Swift" . ,(all-the-icons-alltheicon "swift" :face '(:foreground "orange")))
                   ("R" . ,(all-the-icons-fileicon "R" :face '(:foreground "RoyalBlue")))
                   ("Octave" . ,(all-the-icons-fileicon "octave" :face '(:foreground "SteelBlue")))
                   ("Matlab" . ,(all-the-icons-fileicon "matlab" :face '(:foreground "LightSlateBlue")))
