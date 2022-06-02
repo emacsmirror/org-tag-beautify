@@ -47,7 +47,7 @@
   :type 'string
   :safe #'stringp)
 
-(defcustom org-tag-beautify-icon-height (* (default-font-height) 2)
+(defcustom org-tag-beautify-icon-height (* (default-font-height) 1)
   "Specify the tag icon height."
   :type 'number
   :safe #'numberp)
