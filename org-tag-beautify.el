@@ -83,10 +83,6 @@
                   ("recommended" . ,(all-the-icons-faicon "thumbs-up" :face '(:foreground "yellow")))
                   ("favorite" . ,(all-the-icons-faicon "star-o" :face '(:foreground "red")))
                   ("idea" . ,(all-the-icons-faicon "lightbulb-o" :face '(:foreground "gold")))
-                  ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
-                  ;; ("Vim" . ,(all-the-icons-fileicon "vim" :face '(:foreground "LightSlateBlue")))
-                  ;; ("vscode" . ,(all-the-icons-fileicon "visual_studio_code" :face '(:foreground "LightSlateBlue")))
-                  ("Org_Mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Wiki" . ,(all-the-icons-fileicon "mediawiki" :face '(:foreground "gainsboro")))
                   ("language" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
                   ("translate" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
@@ -337,6 +333,12 @@
                   ("mic" . ,(all-the-icons-material "mic" :face '(:foreground "black")))
                   ("record" . ,(all-the-icons-faicon "microphone" :face '(:foreground "DarkSeaGreen")))
                   ("news" . ,(all-the-icons-faicon "newspaper-o" :face '(:foreground "GreenYellow")))
+
+                  ;; create
+                  ("design" . ,(all-the-icons-material "palette" :face '(:foreground "tomato")))
+                  ("paint" . ,(all-the-icons-faicon "paint-brush" :face '(:foreground "LightSkyBlue")))
+                  ("edit" . ,(all-the-icons-faicon "pencil-square-o" :face '(:foreground "LightSkyBlue")))
+                  ("write" . ,(all-the-icons-faicon "pencil" :face '(:foreground "LightSkyBlue")))
                   
                   ;; Family
                   ("@family" . ,(all-the-icons-material "home" :face '(:foreground "DarkKhaki")))
@@ -402,6 +404,7 @@
                   ("smartphone" . ,(all-the-icons-material "smartphone" :face '(:foreground "SkyBlue")))
                   ("phone" . ,(all-the-icons-faicon "phone-square" :face '(:foreground "SkyBlue")))
                   ("keyboard" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
+                  ("arduino" . ,(all-the-icons-fileicon "arduino" :face '(:foreground "SkyBlue")))
                   ("Arduino" . ,(all-the-icons-fileicon "arduino" :face '(:foreground "SkyBlue")))
                   ("hardware" . ,(all-the-icons-material "devices_other" :face '(:foreground "SkyBlue")))
                   ("desktop" . ,(all-the-icons-faicon "desktop" :face '(:foreground "SkyBlue")))
@@ -409,8 +412,11 @@
                   ("NAS" . ,(all-the-icons-faicon "server" :face '(:foreground "SkyBlue")))
                   ("robot" . ,(all-the-icons-fileicon "robot" :face '(:foreground "SteelBlue")))
                   ("usb" . ,(all-the-icons-faicon "usb" :face '(:foreground "SteelBlue")))
+                  ("USB" . ,(all-the-icons-faicon "usb" :face '(:foreground "SteelBlue")))
+                  ("wifi" . ,(all-the-icons-faicon "wifi" :face '(:foreground "DarkGray")))
                   ("WiFi" . ,(all-the-icons-faicon "wifi" :face '(:foreground "DarkGray")))
                   ("bluetooth" . ,(all-the-icons-faicon "bluetooth" :face '(:foreground "DarkGray")))
+                  ("nvidia" . ,(all-the-icons-fileicon "nvidia" :face '(:foreground "ForestGreen")))
                   ("Nvidia" . ,(all-the-icons-fileicon "nvidia" :face '(:foreground "ForestGreen")))
                   ("microphone" . ,(all-the-icons-faicon "microphone" :face '(:foreground "SkyBlue")))
                   ("router" . ,(all-the-icons-material "router" :face '(:foreground "SkyBlue")))
@@ -419,7 +425,7 @@
                   ("fax" . ,(all-the-icons-faicon "fax" :face '(:foreground "DarkSlateBlue")))
 
                   ;; network
-                  ("cmcc" . ,(all-the-icons-fileicon "ecere" :face '(:foreground "SkyBlue"))) ; CMCC 中国移动
+                  ("CMCC" . ,(all-the-icons-fileicon "ecere" :face '(:foreground "SkyBlue"))) ; CMCC 中国移动
 
                   ;; system
                   ("shortcut" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
@@ -427,21 +433,27 @@
                   ("universal-access" . ,(all-the-icons-faicon "universal-access" :face '(:foreground "cyan")))
 
                   ;; softwares & applications
+                  ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
+                  ;; ("Vim" . ,(all-the-icons-fileicon "vim" :face '(:foreground "LightSlateBlue")))
+                  ;; ("vscode" . ,(all-the-icons-fileicon "visual_studio_code" :face '(:foreground "LightSlateBlue")))
+                  ("Org_Mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ("Firefox" . ,(all-the-icons-faicon "firefox" :face '(:foreground "OrangeRed")))
                   ("Chromium" . ,(all-the-icons-faicon "chrome" :face '(:foreground "LightSkyBlue")))
                   ("Chrome" . ,(all-the-icons-faicon "chrome" :face '(:foreground "OrangeRed")))
                   ("Edge" . ,(all-the-icons-fileicon "edge" :face '(:foreground "DodgerBlue")))
+                  ("safari" . ,(all-the-icons-faicon "safari" :face '(:foreground "LightSkyBlue")))
                   ("Safari" . ,(all-the-icons-faicon "safari" :face '(:foreground "LightSkyBlue")))
                   ("terminal" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "black")))
-                  ("ssh" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "SteelBlue")))
+                  ("SSH" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "SteelBlue")))
                   ("powershell" . ,(all-the-icons-fileicon "powershell" :face '(:foreground "RoyalBlue")))
                   ("dylib" . ,(all-the-icons-fileicon "dylib" :face '(:foreground "SteelBlue")))
-                  ("gdb" . ,(all-the-icons-fileicon "gdb" :face '(:foreground "SteelBlue")))
+                  ("GDB" . ,(all-the-icons-fileicon "gdb" :face '(:foreground "SteelBlue")))
                   ("CMake" . ,(all-the-icons-fileicon "cmake" :face '(:foreground "CornflowerBlue")))
                   ("Tcl" . ,(all-the-icons-fileicon "tcl" :face '(:foreground "SteelBlue")))
                   ("Jupyter" . ,(all-the-icons-fileicon "jupyter" :face '(:foreground "DarkOrange")))
                   ("Finder" . ,(all-the-icons-fileicon "finder" :face '(:foreground "gray")))
                   ("FFmpeg" . ,(all-the-icons-fileicon "ffmpeg" :face '(:foreground "MediumSeaGreen")))
+                  ("cloud" . ,(all-the-icons-faicon "cloud" :face '(:foreground "gray")))
                   ("Cloud" . ,(all-the-icons-faicon "cloud" :face '(:foreground "gray")))
                   ("DevOps" . ,(all-the-icons-faicon "cogs" :face '(:foreground "tomato"))) ; "sitemap"
                   ("package" . ,(all-the-icons-faicon "cube" :face '(:foreground "SteelBlue")))
@@ -572,10 +584,6 @@
                   ("Lua" . ,(all-the-icons-fileicon "lua" :face '(:foreground "LightSkyBlue")))
                   ("Io" . ,(all-the-icons-fileicon "io" :face '(:foreground "RoyalBlue")))
                   ("Web" . ,(all-the-icons-material "web" :face '(:foreground "tomato")))
-                  ("design" . ,(all-the-icons-material "palette" :face '(:foreground "tomato")))
-                  ("paint" . ,(all-the-icons-faicon "paint-brush" :face '(:foreground "LightSkyBlue")))
-                  ("edit" . ,(all-the-icons-faicon "pencil-square-o" :face '(:foreground "LightSkyBlue")))
-                  ("write" . ,(all-the-icons-faicon "pencil" :face '(:foreground "LightSkyBlue")))
                   ("JavaScript" . ,(all-the-icons-alltheicon "javascript" :face '(:foreground "DarkOrange")))
                   ;; ("JavaScript" . ,(all-the-icons-alltheicon "javascript-badge" :face '(:foreground "DarkOrange")))
                   ;; ("JavaScript" . ,(all-the-icons-alltheicon "javascript-shield" :face '(:foreground "DarkOrange")))
