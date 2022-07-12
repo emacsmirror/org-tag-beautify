@@ -298,6 +298,7 @@
                   ("audio" . ,(all-the-icons-faicon "file-audio-o" :face '(:foreground "LightGray")))
                   ("movie" . ,(all-the-icons-material "movie" :face '(:foreground "LightGray")))
                   ("book" . ,(all-the-icons-octicon "book" :face '(:foreground "LightGray")))
+                  ("comic" . ,(all-the-icons-faicon "file-image-o" :face '(:foreground "LightGray")))
                   ("bookmark" . ,(all-the-icons-material "bookmark" :face '(:foreground "LightGray")))
                   ("plot" . ,(all-the-icons-faicon "bar-chart" :face '(:foreground "chartreuse")))
                   ("diagram" . ,(all-the-icons-faicon "line-chart" :face '(:foreground "chartreuse")))
@@ -974,6 +975,7 @@
     ("org" ("Org_Mode")) ("md" ("Markdown")) ("txt" ("document"))
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
     ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book"))
+    ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
     ("zip" ("archive_file")) ("rar" ("archive_file")) ("tar" ("archive_file")) ("tar.gz" ("archive_file")) ("tar.bz2" ("archive_file"))
     ;; source code file formats
     ("py" ("Python")) ("rb" ("Ruby"))
