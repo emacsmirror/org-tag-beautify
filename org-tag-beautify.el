@@ -82,6 +82,7 @@
                   ("private" . ,(all-the-icons-material "fingerprint" :face '(:foreground "LawnGreen")))
                   ("face" . ,(all-the-icons-material "face" :face '(:foreground "black")))
                   ("filter" . ,(all-the-icons-faicon "filter" :face '(:foreground "black")))
+                  ("sort" . ,(all-the-icons-faicon "sort" :face '(:foreground "black")))
                   ("like" . ,(all-the-icons-faicon "thumbs-o-up" :face '(:foreground "yellow")))
                   ("thumbs_up" . ,(all-the-icons-faicon "thumbs-o-up" :face '(:foreground "yellow")))
                   ("thumbs_down" . ,(all-the-icons-faicon "thumbs-o-down" :face '(:foreground "yellow")))
@@ -92,7 +93,6 @@
                   ("mediawiki" . ,(all-the-icons-fileicon "mediawiki" :face '(:foreground "gainsboro")))
                   ("language" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
                   ("translate" . ,(all-the-icons-faicon "language" :face '(:foreground "SkyBlue")))
-                  ("table" . ,(all-the-icons-faicon "table" :face '(:foreground "DarkGray")))
                   ("schedule" . ,(all-the-icons-faicon "calendar-check-o" :face '(:foreground "CornflowerBlue")))
                   ("clock" . ,(all-the-icons-faicon "clock-o" :face '(:foreground "CornflowerBlue")))
                   ("timer" . ,(all-the-icons-faicon "hourglass-start" :face '(:foreground "CornflowerBlue")))
@@ -156,18 +156,18 @@
                   ("talk" . ,(all-the-icons-faicon "comments-o" :face '(:foreground "NavajoWhite")))
                   ("call" . ,(all-the-icons-material "call" :face '(:foreground "NavajoWhite")))
                   ("voice_chat" . ,(all-the-icons-material "voice_chat" :face '(:foreground "NavajoWhite")))
-                  ("user" . ,(all-the-icons-material "account_circle" :face '(:foreground "purple")))
                   ("contact" . ,(all-the-icons-material "account_box" :face '(:foreground "purple")))
                   ("person" . ,(all-the-icons-material "person" :face '(:foreground "purple")))
                   ("person_pin" . ,(all-the-icons-material "person_pin" :face '(:foreground "purple")))
-                  ("group" . ,(all-the-icons-material "group" :face '(:foreground "purple")))
                   ("user" . ,(all-the-icons-faicon "user" :face '(:foreground "purple")))
                   ("users" . ,(all-the-icons-faicon "users" :face '(:foreground "purple")))
+                  ("group" . ,(all-the-icons-material "group" :face '(:foreground "purple")))
 
-                  ("girl" . ,(propertize "㊛" 'face '(:foreground "purple")))
-                  ("boy" . ,(propertize "㊚" 'face '(:foreground "purple")))
-                  ("female" . ,(all-the-icons-faicon "female" :face '(:foreground "purple")))
-                  ("male" . ,(all-the-icons-faicon "male" :face '(:foreground "purple")))
+                  ("girl" . ,(propertize "㊛" 'face '(:foreground "LightPink")))
+                  ("boy" . ,(propertize "㊚" 'face '(:foreground "DeepSkyBlue")))
+                  ("male" . ,(all-the-icons-faicon "male" :face '(:foreground "DodgerBlue")))
+                  ("female" . ,(all-the-icons-faicon "female" :face '(:foreground "LightPink1")))
+                  ("beauty" . ,(all-the-icons-faicon "female" :face '(:foreground "LightPink1")))
 
                   ;; Sexual orientation: https://en.wikipedia.org/wiki/Sexual_orientation
                   ;; LGBTQ symbols: https://en.wikipedia.org/wiki/LGBT_symbols
@@ -218,6 +218,8 @@
                   ("shopping" . ,(all-the-icons-faicon "shopping-basket" :face '(:foreground "khaki")))
                   ("express" . ,(all-the-icons-material "local_shipping" :face '(:foreground "PaleTurquoise")))
                   ("diamond" . ,(all-the-icons-faicon "diamond" :face '(:foreground "green")))
+                  ("tag" . ,(all-the-icons-faicon "tag" :face '(:foreground "white")))
+                  ("tags" . ,(all-the-icons-faicon "tags" :face '(:foreground "white")))
                   ("money" . ,(all-the-icons-faicon "money" :face '(:foreground "green")))
                   ("usd" . ,(all-the-icons-faicon "usd" :face '(:foreground "green")))
                   ("eur" . ,(all-the-icons-faicon "eur" :face '(:foreground "LightSeaGreen")))
@@ -241,6 +243,7 @@
                   ("watch" . ,(all-the-icons-faicon "eye" :face '(:foreground "LightGoldenrod")))
                   ("hospital" . ,(all-the-icons-faicon "hospital-o" :face '(:foreground "LightGray")))
                   ("university" . ,(all-the-icons-faicon "university" :face '(:foreground "LightGray")))
+                  ("student" . ,(all-the-icons-faicon "graduation-cap" :face '(:foreground "gold1")))
                   ("library" . ,(all-the-icons-material "local_library" :face '(:foreground "LightGray")))
                   ("bank" . ,(all-the-icons-material "account_balance" :face '(:foreground "LightGray")))
                   ("ATM" . ,(all-the-icons-material "local_atm" :face '(:foreground "LightGray")))
@@ -273,6 +276,7 @@
                   ("drink" . ,(all-the-icons-material "local_drink" :face '(:foreground "yellow")))
                   ("coffee" . ,(all-the-icons-material "local_cafe" :face '(:foreground "RosyBrown")))
                   ("bicycle" . ,(all-the-icons-faicon "bicycle" :face '(:foreground "LightGray")))
+                  ("motorcycle" . ,(all-the-icons-faicon "motorcycle" :face '(:foreground "LightGray")))
                   ("car" . ,(all-the-icons-material "directions_car" :face '(:foreground "LightGray")))
                   ("traffic" . ,(all-the-icons-material "traffic" :face '(:foreground "LightGray")))
                   ("road" . ,(all-the-icons-faicon "road" :face '(:foreground "LightGray")))
@@ -287,11 +291,18 @@
                   ("tram" . ,(all-the-icons-material "tram" :face '(:foreground "LightGray")))
                   ("flight" . ,(all-the-icons-material "flight" :face '(:foreground "LightGray")))
                   ("ship" . ,(all-the-icons-faicon "ship" :face '(:foreground "LightGray")))
+                  ("magic" . ,(all-the-icons-faicon "magic" :face '(:foreground "WhiteSmoke")))
+                  ("magnet" . ,(all-the-icons-faicon "magnet" :face '(:foreground "OrangeRed1")))
+                  ("power_off" . ,(all-the-icons-faicon "power-off" :face '(:foreground "red2")))
                   ("run" . ,(all-the-icons-material "directions_run" :face '(:foreground "LightGray")))
                   ("walk" . ,(all-the-icons-material "directions_walk" :face '(:foreground "LightGray")))
                   ("travel" . ,(all-the-icons-material "card_travel" :face '(:foreground "LightSeaGreen")))
                   ("child" . ,(all-the-icons-faicon "child" :face '(:foreground "LightGoldenrod")))
                   ("recycle" . ,(all-the-icons-faicon "recycle" :face '(:foreground "LimeGreen")))
+
+                  ;; natural
+                  ("sun" . ,(all-the-icons-faicon "sun-o" :face '(:foreground "gold")))
+                  ("moon" . ,(all-the-icons-faicon "moon-o" :face '(:foreground "GhostWhite")))
                   
                   ;; -----------------------------------------------------
                   ;; computer
@@ -344,11 +355,11 @@
                   ("picture" . ,(all-the-icons-material "image" :face '(:foreground "LimeGreen")))
                   ("photo" . ,(all-the-icons-material "photo" :face '(:foreground "LimeGreen")))
                   ("music" . ,(all-the-icons-material "music_note" :face '(:foreground "LightSkyBlue")))
-                  ("headphone" . ,(all-the-icons-material "headset" :face '(:foreground "LightSkyBlue")))
+                  ("headphone" . ,(all-the-icons-faicon "headphones" :face '(:foreground "LightSkyBlue")))
                   ("hearing" . ,(all-the-icons-material "hearing" :face '(:foreground "LightSkyBlue")))
                   ("film" . ,(all-the-icons-material "local_movies" :face '(:foreground "DarkCyan")))
                   ("game" . ,(all-the-icons-faicon "gamepad" :face '(:foreground "CadetBlue")))
-                  ("steam" . ,(all-the-icons-faicon "steam" :face '(:foreground "CadetBlue")))
+                  ("steam" . ,(all-the-icons-faicon "steam-square" :face '(:foreground "CadetBlue")))
                   ("camera" . ,(all-the-icons-faicon "camera-retro" :face '(:foreground "DarkSeaGreen")))
                   ("vlog" . ,(all-the-icons-faicon "video-camera" :face '(:foreground "DarkSeaGreen")))
                   ("podcast" . ,(all-the-icons-faicon "microphone" :face '(:foreground "DarkSeaGreen")))
@@ -361,9 +372,11 @@
 
                   ;; human body
                   ("eye" . ,(all-the-icons-faicon "eye" :face '(:foreground "DarkSeaGreen")))
-                  ("eye_slash" . ,(all-the-icons-faicon "eye-slash" :face '(:foreground "DarkSeaGreen")))
-                  ("deaf" . ,(all-the-icons-faicon "deaf" :face '(:foreground "DarkSeaGreen")))
-                  ("blind" . ,(all-the-icons-faicon "blind" :face '(:foreground "DarkSeaGreen")))
+                  ("eye_slash" . ,(all-the-icons-faicon "eye-slash" :face '(:foreground "SlateGrey")))
+                  ("deaf" . ,(all-the-icons-faicon "deaf" :face '(:foreground "SlateGray3")))
+                  ("blind" . ,(all-the-icons-faicon "blind" :face '(:foreground "DarkSlateGrey")))
+                  ("low-vision" . ,(all-the-icons-faicon "low-vision" :face '(:foreground "SlateGray3")))
+                  ("braille" . ,(all-the-icons-faicon "braille" :face '(:foreground "DarkSeaGreen")))
                   ("wheelchair" . ,(all-the-icons-faicon "wheelchair" :face '(:foreground "DarkSeaGreen")))
                   
                   ;; create
@@ -380,6 +393,8 @@
                   ("work" . ,(all-the-icons-faicon "black-tie" :face '(:foreground "OliveDrab4")))
                   ("print" . ,(all-the-icons-faicon "print" :face '(:foreground "SkyBlue")))
                   ("business_trip" . ,(all-the-icons-faicon "briefcase" :face '(:foreground "DarkTurquoise")))
+                  ("business_trip_briefcase" . ,(all-the-icons-faicon "briefcase" :face '(:foreground "DarkTurquoise")))
+                  ("business_trip_suitcase" . ,(all-the-icons-faicon "suitcase" :face '(:foreground "DarkTurquoise")))
                   
                   ;; Company
                   ("users" . ,(all-the-icons-faicon "users" :face '(:foreground "gainsboro")))
@@ -409,6 +424,8 @@
                   ("patch" . ,(all-the-icons-fileicon "patch" :face '(:foreground "orange")))
                   ("diff" . ,(all-the-icons-fileicon "diff" :face '(:foreground "black")))
                   ("coding" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
+                  ("object_group" . ,(all-the-icons-faicon "object-group" :face '(:foreground "cyan1")))
+                  ("object_ungroup" . ,(all-the-icons-faicon "object-ungroup" :face '(:foreground "cyan1")))
                   ("regex" . ,(all-the-icons-fileicon "regex" :face '(:foreground "GreenYellow")))
                   ("extension" . ,(all-the-icons-material "extension" :face '(:foreground "ForestGreen")))
                   ("git" . ,(all-the-icons-faicon "git" :face '(:foreground "OrangeRed")))
@@ -456,6 +473,7 @@
                   ("fax" . ,(all-the-icons-faicon "fax" :face '(:foreground "DarkSlateBlue")))
 
                   ;; network
+                  ("network" . ,(all-the-icons-faicon "connectdevelop" :face '(:foreground "LightSkyBlue")))
                   ("CMCC" . ,(all-the-icons-fileicon "ecere" :face '(:foreground "SkyBlue"))) ; CMCC 中国移动
 
                   ;; system
@@ -503,6 +521,7 @@
                   ;; ("security" . ,(all-the-icons-material "security" :face '(:foreground "ForestGreen")))
                   ("security" . ,(all-the-icons-faicon "shield" :face '(:foreground "ForestGreen")))
                   ("hacker" . ,(all-the-icons-faicon "user-secret" :face '(:foreground "LightCyan")))
+                  ("reverse_engineering" . ,(all-the-icons-faicon "gg" :face '(:foreground "green")))
                   ("cracker" . ,(all-the-icons-faicon "user-secret" :face '(:foreground "DimGray")))
                   ("Nmap" . ,(all-the-icons-fileicon "nmap" :face '(:foreground "LightBlue")))
                   ("forensic" . ,(all-the-icons-material "loupe" :face '(:foreground "DodgerBlue")))
@@ -512,6 +531,7 @@
                   ("sync" . ,(all-the-icons-material "sync" :face '(:foreground "orange")))
                   ("backup" . ,(all-the-icons-material "backup" :face '(:foreground "orange")))
                   ("restore" . ,(all-the-icons-faicon "history" :face '(:foreground "orange")))
+                  ("undo" . ,(all-the-icons-faicon "undo" :face '(:foreground "orange")))
                   ("platformio" . ,(all-the-icons-fileicon "platformio" :face '(:foreground "SkyBlue")))
                   ("Blender" . ,(all-the-icons-fileicon "blender" :face '(:foreground "orange")))
                   ("Processing" . ,(all-the-icons-fileicon "processing" :face '(:foreground "blue")))
@@ -543,6 +563,7 @@
                   ("Sketchup" . ,(all-the-icons-fileicon "sketchup-layout" :face '(:foreground "DarkOrange")))
                   ("AutoIt" . ,(all-the-icons-fileicon "autoit" :face '(:foreground "LightSkyBlue")))
                   ("AutoHotKey" . ,(all-the-icons-fileicon "auto-hotkey" :face '(:foreground "MediumSeaGreen")))
+                  ("product_hunt" . ,(all-the-icons-faicon "product-hunt" :face '(:foreground "DarkOrange1")))
                   ;; -----------------------------------------------------
                   ;; Systems
                   ("Linux" . ,(all-the-icons-faicon "linux" :face '(:foreground "DarkGray")))
@@ -727,11 +748,12 @@
                   ("Dropbox" . ,(all-the-icons-faicon "dropbox" :face '(:foreground "LightSkyBlue")))
                   ("Baidu" . ,(all-the-icons-faicon "paw" :face '(:foreground "blue")))
                   ("Tencent" . ,(all-the-icons-faicon "qq" :face '(:foreground "CornflowerBlue")))
-                  ("QQ" . ,(all-the-icons-faicon "qq" :face '(:foreground "DimGray")))
+                  ("QQ" . ,(all-the-icons-faicon "qq" :face '(:foreground "LightSkyBlue")))
                   ("weixin" . ,(all-the-icons-faicon "weixin" :face '(:foreground "LawnGreen")))
                   ("wechat" . ,(all-the-icons-faicon "weixin" :face '(:foreground "LawnGreen")))
                   ("weibo" . ,(all-the-icons-faicon "weibo" :face '(:foreground "orange")))
-                  ("whatsapp" . ,(all-the-icons-faicon "whatsapp" :face '(:foreground "chartreuse")))))))
+                  ("whatsapp" . ,(all-the-icons-faicon "whatsapp" :face '(:foreground "chartreuse")))
+                  ("pocket" . ,(all-the-icons-faicon "get-pocket" :face '(:foreground "chartreuse")))))))
 
 (defun org-tag-beautify-set-countries-tag-icons ()
   "Display countries name tag as flag icon."
