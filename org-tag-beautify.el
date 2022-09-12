@@ -1066,6 +1066,7 @@
 
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
+  (setq org-pretty-tags-surrogate-strings nil)
   (org-tag-beautify-set-common-tag-icons)
   (org-tag-beautify-set-programming-tag-icons)
   (org-tag-beautify-set-internet-company-tag-icons)
