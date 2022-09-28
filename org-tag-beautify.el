@@ -500,6 +500,7 @@
                   ("Edge" . ,(all-the-icons-fileicon "edge" :face '(:foreground "DodgerBlue")))
                   ("Safari" . ,(all-the-icons-faicon "safari" :face '(:foreground "LightSkyBlue")))
                   ("terminal" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "black")))
+                  ("REPL" . ,(all-the-icons-alltheicon "terminal-alt" :face '(:foreground "LimeGreen")))
                   ("SSH" . ,(all-the-icons-fileicon "terminal" :face '(:foreground "SteelBlue")))
                   ("powershell" . ,(all-the-icons-fileicon "powershell" :face '(:foreground "RoyalBlue")))
                   ("dylib" . ,(all-the-icons-fileicon "dylib" :face '(:foreground "SteelBlue")))
@@ -734,6 +735,8 @@
                 `(("Internet" . ,(all-the-icons-faicon "globe" :face '(:foreground "SkyBlue")))
                   ("Google" . ,(all-the-icons-faicon "google" :face '(:foreground "OrangeRed")))
                   ("Microsoft" . ,(all-the-icons-faicon "windows" :face '(:foreground "DodgerBlue")))
+                  ;; TODO: update "Meta" icon
+                  ("Meta" . ,(all-the-icons-faicon "facebook-official" :face '(:foreground "DodgerBlue")))
                   ("Facebook" . ,(all-the-icons-faicon "facebook-official" :face '(:foreground "DodgerBlue")))
                   ("Twitter" . ,(all-the-icons-faicon "twitter" :face '(:foreground "DarkTurquoise")))
                   ("Amazon" . ,(all-the-icons-faicon "amazon" :face '(:foreground "goldenrod")))
