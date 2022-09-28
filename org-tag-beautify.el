@@ -1,4 +1,4 @@
-;;; org-tag-beautify.el --- Beautify Org Mode tags -*- lexical-binding: t; -*-
+;;; org-tag-beautify.el --- Beautify Org mode tags -*- lexical-binding: t; -*-
 ;; -*- coding: utf-8 -*-
 
 ;; Authors: stardiviner <numbchild@gmail.com>
@@ -490,7 +490,7 @@
                   ("Emacs" . ,(all-the-icons-fileicon "emacs" :face '(:foreground "LightSlateBlue")))
                   ;; TODO: ("Vim" . ,(all-the-icons-fileicon "vim" :face '(:foreground "LightSlateBlue")))
                   ;; TODO: ("vscode" . ,(all-the-icons-fileicon "visual_studio_code" :face '(:foreground "LightSlateBlue")))
-                  ("Org_Mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
+                  ("Org_mode" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ;; TODO: ("office" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ;; TODO: ("wiki" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
                   ;; TODO: ("notebook" . ,(all-the-icons-fileicon "org" :face '(:foreground "SeaGreen")))
@@ -1036,7 +1036,7 @@
     ;; ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("webp" ("image"))
     ("gif" ("gif"))
     ;; document file types
-    ("org" ("Org_Mode")) ("md" ("Markdown")) ("txt" ("document"))
+    ("org" ("Org_mode")) ("md" ("Markdown")) ("txt" ("document"))
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
     ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book"))
     ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
