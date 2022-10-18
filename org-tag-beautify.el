@@ -1020,6 +1020,7 @@
                       ("united_kingdom" . ,(create-image (concat dir "united-kingdom.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("united_nations" . ,(create-image (concat dir "united-nations.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("america" . ,(create-image (concat dir "united-states-of-america.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
+                      ("united_states" . ,(create-image (concat dir "united-states-of-america.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("uruguay" . ,(create-image (concat dir "uruguay.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("uzbekistan" . ,(create-image (concat dir "uzbekistn.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("vanuatu" . ,(create-image (concat dir "vanuatu.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
