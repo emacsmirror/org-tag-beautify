@@ -461,7 +461,6 @@
                   ("iPhone" . ,(all-the-icons-faicon "mobile" :face '(:foreground "SkyBlue")))
                   ("keyboard" . ,(all-the-icons-faicon "keyboard-o" :face '(:foreground "cyan")))
                   ("mouse" . ,(all-the-icons-faicon "mouse-pointer" :face '(:foreground "cyan")))
-                  ("arduino" . ,(all-the-icons-fileicon "arduino" :face '(:foreground "SkyBlue")))
                   ("Arduino" . ,(all-the-icons-fileicon "arduino" :face '(:foreground "SkyBlue")))
                   ("hardware" . ,(all-the-icons-material "devices_other" :face '(:foreground "SkyBlue")))
                   ("desktop" . ,(all-the-icons-faicon "desktop" :face '(:foreground "SkyBlue")))
