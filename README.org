@@ -2,6 +2,11 @@
 
 This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags]] to prettify Org tags with icons or images.
 
+#+ATTR_ORG: :width 600
+#+ATTR_LATEX: :width 6.0in
+#+ATTR_HTML: :width 600px
+[[file:screenshot.png]]
+
 * Features
 
 - Display lots of tags as icons
@@ -19,11 +24,4 @@ This package is available on MELPA already!
   :custom (org-tag-beautify-data-dir "~/Code/Emacs/org-tag-beautify/data/")
   :init (org-tag-beautify-mode 1))
 #+end_src
-
-* Screenshot
-
-#+ATTR_ORG: :width 600
-#+ATTR_LATEX: :width 6.0in
-#+ATTR_HTML: :width 600px
-[[file:org-tag-beautify.png]]
 
