@@ -221,6 +221,7 @@
                   ("repair" . ,(all-the-icons-material "build" :face '(:foreground "khaki")))
                   ("store" . ,(all-the-icons-material "store" :face '(:foreground "khaki")))
                   ("shopping" . ,(all-the-icons-faicon "shopping-basket" :face '(:foreground "khaki")))
+                  ("coupon" . ,(all-the-icons-faicon "ticket" :face '(:foreground "yellow")))
                   ("express" . ,(all-the-icons-material "local_shipping" :face '(:foreground "PaleTurquoise")))
                   ("diamond" . ,(all-the-icons-faicon "diamond" :face '(:foreground "green")))
                   ("tag" . ,(all-the-icons-fileicon "tag" :face '(:foreground "white")))
