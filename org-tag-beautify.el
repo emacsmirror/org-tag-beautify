@@ -649,6 +649,7 @@
                   ("Lua" . ,(all-the-icons-fileicon "lua" :face '(:foreground "LightSkyBlue")))
                   ("Io" . ,(all-the-icons-fileicon "io" :face '(:foreground "RoyalBlue")))
                   ("Web" . ,(all-the-icons-material "web" :face '(:foreground "tomato")))
+                  ("UserScript" . ,(all-the-icons-alltheicon "javascript-shield" :face '(:foreground "OrangeRed")))
                   ("JavaScript" . ,(all-the-icons-alltheicon "javascript" :face '(:foreground "DarkOrange")))
                   ;; ("JavaScript" . ,(all-the-icons-alltheicon "javascript-badge" :face '(:foreground "DarkOrange")))
                   ;; ("JavaScript" . ,(all-the-icons-alltheicon "javascript-shield" :face '(:foreground "DarkOrange")))
