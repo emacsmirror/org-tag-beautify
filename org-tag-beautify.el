@@ -133,6 +133,7 @@
                   ("heart" . ,(all-the-icons-faicon "heart-o" :face '(:foreground "red")))
                   ("heart_beat" . ,(all-the-icons-faicon "heartbeat" :face '(:foreground "red")))
                   ("brain" . ,(all-the-icons-fileicon "brain" :face '(:foreground "BlueViolet")))
+                  ("thought" . ,(all-the-icons-fileicon "brain" :face '(:foreground "gold")))
                   ("smile" . ,(all-the-icons-faicon "smile-o" :face '(:foreground "yellow")))
                   ("ticket" . ,(all-the-icons-faicon "ticket" :face '(:foreground "gold")))
                   ("trash" . , (all-the-icons-faicon "trash" :face '(:foreground "DarkOliveGreen")))
