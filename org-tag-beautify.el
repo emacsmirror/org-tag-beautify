@@ -1083,6 +1083,30 @@
                                                   :from-end t)))
         (org-set-tags new-tags-list)))))
 
+(defun org-tag-beautify-auto-smart-tag-enable ()
+  "Enable auto add tags based on `org-attach-commands' attached file types."
+  (when org-tag-beautify-auto-add-tags
+    ;; for [C-c C-a] `org-attach-commands'
+    (advice-add 'org-attach-attach :around #'org-attach-attach--auto-add-smart-tag)))
+
+(defun org-tag-beautify-auto-smart-tag-disable ()
+  "Disable auto add tags."
+  (advice-remove 'org-attach-attach #'org-attach-attach--auto-add-smart-tag))
+
+;;========================================== org-tag-alist ==========================================
+
+(defun org-tag-beautify-add-tags-to-list ()
+  "Add org-tag-beautify tags to `org-tag-alist' for `org-set-tags-command' completion."
+  (with-eval-after-load 'org
+    (setq org-tag-alist
+          (append org-tag-alist
+                  (append
+                   '((:startgrouptag)) '(("icons"))
+                   '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
+                   '((:endgrouptag)))))))
+
+;;============================================ minor mode ===========================================
+
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings nil)
@@ -1092,26 +1116,13 @@
   (org-tag-beautify-set-countries-tag-icons)
   (org-tag-beautify-set-biology-tag-icons)
   (org-pretty-tags-global-mode 1)
-  
-  ;; Add upper tags to `org-tag-alist' for `org-set-tags-command' completion.
-  (with-eval-after-load 'org
-    (setq org-tag-alist
-          (append org-tag-alist
-                  (append
-                   '((:startgrouptag)) '(("icons"))
-                   '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
-                   '((:endgrouptag))))))
-  
-  ;; auto add tags based on `org-attach-commands' attached file types.
-  (when org-tag-beautify-auto-add-tags
-    ;; [C-c C-a] `org-attach-commands'
-    (advice-add 'org-attach-attach :around #'org-attach-attach--auto-add-smart-tag)))
+  (org-tag-beautify-auto-smart-tag-enable))
 
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings nil)
   (org-pretty-tags-global-mode -1)
-  (advice-remove 'org-attach-attach #'org-attach-attach--auto-add-smart-tag))
+  (org-tag-beautify-auto-smart-tag-disable))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
