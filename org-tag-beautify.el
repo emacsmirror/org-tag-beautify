@@ -1042,12 +1042,11 @@
                       ("zambia" . ,(create-image (concat dir "zambia.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("zimbabwe" . ,(create-image (concat dir "zimbabwe.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width)))))))
 
-(defun org-tag-beautify-set-biology-tag-icons ()
-  "Display biology tag as icon."
+(defun org-tag-beautify-set-unicode-tag-icons ()
+  "Display tag as Unicode emoji."
   (setq org-pretty-tags-surrogate-strings
         (append org-pretty-tags-surrogate-strings
-                `(("gene" . "🧬")
-                  ("monkey" . "🐒")))))
+                `(("DIY" . "🧰") ("gene" . "🧬")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-attach-attach--smart-tags-alist
@@ -1118,7 +1117,7 @@
   (org-tag-beautify-set-programming-tag-icons)
   (org-tag-beautify-set-internet-company-tag-icons)
   (org-tag-beautify-set-countries-tag-icons)
-  (org-tag-beautify-set-biology-tag-icons)
+  (org-tag-beautify-set-unicode-tag-icons)
   (org-pretty-tags-global-mode 1)
   (org-tag-beautify-auto-smart-tag-enable))
 
