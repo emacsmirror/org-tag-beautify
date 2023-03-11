@@ -9,8 +9,9 @@ This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags
 
 * Features
 
-- Display lots of tags as icons
-- Auto add Org tags based on ~org-attach~ command attached file types.
+- display lots of tags as icons
+- support unicode emojis as tag icons
+- auto add Org tags based on ~org-attach~ command attached file types.
 
 * Installation
 

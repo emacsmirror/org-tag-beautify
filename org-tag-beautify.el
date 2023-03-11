@@ -1038,6 +1038,13 @@
                       ("zambia" . ,(create-image (concat dir "zambia.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("zimbabwe" . ,(create-image (concat dir "zimbabwe.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width)))))))
 
+(defun org-tag-beautify-set-biology-tag-icons ()
+  "Display biology tag as icon."
+  (setq org-pretty-tags-surrogate-strings
+        (append org-pretty-tags-surrogate-strings
+                `(("gene" . "🧬")
+                  ("monkey" . "🐒")))))
+
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-attach-attach--smart-tags-alist
   '(;; video formats
@@ -1083,6 +1090,7 @@
   (org-tag-beautify-set-programming-tag-icons)
   (org-tag-beautify-set-internet-company-tag-icons)
   (org-tag-beautify-set-countries-tag-icons)
+  (org-tag-beautify-set-biology-tag-icons)
   (org-pretty-tags-global-mode 1)
   
   ;; Add upper tags to `org-tag-alist' for `org-set-tags-command' completion.
