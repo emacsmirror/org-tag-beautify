@@ -62,6 +62,10 @@
   :type 'boolean
   :safe #'booleanp)
 
+(defvar org-tag-beautify--surrogate-strings-original
+  (default-value 'org-pretty-tags-surrogate-strings)
+  "Store `org-pretty-tags-surrogate-strings' default value for restoring.")
+
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
   (setq org-pretty-tags-surrogate-strings
@@ -1120,7 +1124,7 @@
 
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  (setq org-pretty-tags-surrogate-strings nil)
+  (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
   (org-pretty-tags-global-mode -1)
   (org-tag-beautify-auto-smart-tag-disable))
 
