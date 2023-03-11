@@ -268,7 +268,7 @@
                   ("health" . ,(all-the-icons-faicon "medkit" :face '(:foreground "LightGray")))
                   ("law" . ,(all-the-icons-faicon "gavel" :face '(:foreground "LightGray")))
                   ("court" . ,(all-the-icons-faicon "balance-scale" :face '(:foreground "LightGray")))
-                  ("lawer" . ,(all-the-icons-faicon "black-tie" :face '(:foreground "DodgerBlue")))
+                  ("lawyer" . ,(all-the-icons-faicon "black-tie" :face '(:foreground "DodgerBlue")))
                   ("building" . ,(all-the-icons-faicon "building-o" :face '(:foreground "LightGray")))
                   ("government" . ,(all-the-icons-faicon "building-o" :face '(:foreground "SlateGray2")))
                   ("school" . ,(all-the-icons-material "school" :face '(:foreground "black")))
