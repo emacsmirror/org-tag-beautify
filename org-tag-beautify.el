@@ -488,6 +488,8 @@
 
                   ;; network
                   ("network" . ,(all-the-icons-faicon "connectdevelop" :face '(:foreground "LightSkyBlue")))
+                  ("online" . ,(all-the-icons-faicon "connectdevelop" :face '(:foreground "green")))
+                  ("offline" . ,(all-the-icons-faicon "connectdevelop" :face '(:foreground "gray")))
                   ("CMCC" . ,(all-the-icons-fileicon "ecere" :face '(:foreground "SkyBlue"))) ; CMCC 中国移动
 
                   ;; system
