@@ -238,6 +238,7 @@
                   ("jpy" . ,(all-the-icons-faicon "jpy" :face '(:foreground "GreenYellow")))
                   ("rmb" . ,(all-the-icons-faicon "jpy" :face '(:foreground "IndianRed1")))
                   ("payment" . ,(all-the-icons-faicon "credit-card" :face '(:foreground "CornflowerBlue")))
+                  ("donation" . ,(all-the-icons-faicon "money" :face '(:foreground "LightSeaGreen")))
                   ("CC" . ,(all-the-icons-faicon "cc" :face '(:foreground "gray")))
                   ("credit_card" . ,(all-the-icons-faicon "credit-card" :face '(:foreground "CornflowerBlue")))
                   ("credit_card_visa" . ,(all-the-icons-faicon "cc-visa" :face '(:foreground "CornflowerBlue")))
