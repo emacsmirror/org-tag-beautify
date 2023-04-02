@@ -1101,6 +1101,7 @@
 
 ;;========================================== org-tag-alist ==========================================
 
+;;;###autoload
 (defun org-tag-beautify-add-tags-to-list ()
   "Add org-tag-beautify tags to `org-tag-alist' for `org-set-tags-command' completion."
   (with-eval-after-load 'org
@@ -1112,7 +1113,7 @@
                    '((:endgrouptag)))))))
 
 ;;============================================ minor mode ===========================================
-
+;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings nil)
@@ -1124,6 +1125,7 @@
   (org-pretty-tags-global-mode 1)
   (org-tag-beautify-auto-smart-tag-enable))
 
+;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
   (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
