@@ -249,10 +249,12 @@
                   ("credit_card_jcb" . ,(all-the-icons-faicon "cc-jcb" :face '(:foreground "CornflowerBlue")))
                   ("credit_card_discover" . ,(all-the-icons-faicon "cc-discover" :face '(:foreground "CornflowerBlue")))
                   ("gratipay" . ,(all-the-icons-faicon "gratipay" :face '(:foreground "CornflowerBlue")))
-                  ("digital_currency" . ,(all-the-icons-faicon "btc" :face '(:foreground "gold")))
-                  ("btc" . ,(all-the-icons-faicon "btc" :face '(:foreground "gold")))
+                  ("digital_currency" . ,(all-the-icons-faicon "money" :face '(:foreground "LightSkyeBlue")))
+                  ("cryptocurrency" . ,(all-the-icons-faicon "circle-o" :face '(:foreground "gold")))
                   ("bitcoin" . ,(all-the-icons-faicon "btc" :face '(:foreground "gold")))
+                  ("BTC" . ,(all-the-icons-faicon "btc" :face '(:foreground "gold")))
                   ;; ("ethereum" . ,(all-the-icons-faicon "" :face '(:foreground "LightSkyBlue")))
+                  ;; ("ETH" . ,(all-the-icons-faicon "" :face '(:foreground "LightSkyBlue")))
                   ("watch" . ,(all-the-icons-faicon "eye" :face '(:foreground "LightGoldenrod")))
                   ("hospital" . ,(all-the-icons-faicon "hospital-o" :face '(:foreground "LightGray")))
                   ("university" . ,(all-the-icons-faicon "university" :face '(:foreground "LightGray")))
@@ -1049,7 +1051,7 @@
   "Display tag as Unicode emoji."
   (setq org-pretty-tags-surrogate-strings
         (append org-pretty-tags-surrogate-strings
-                `(("DIY" . "🧰") ("gene" . "🧬")))))
+                `(("DIY" . "🧰") ("gene" . "🧬") ("DNA" . "🧬") ("RNA" . "🧬")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-attach-attach--smart-tags-alist
