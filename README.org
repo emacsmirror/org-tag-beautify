@@ -17,6 +17,10 @@ This package use [[https://gitlab.com/marcowahl/org-pretty-tags][org-pretty-tags
 
 This package is available on MELPA already!
 
+* Changelog
+
+- Now this package switched icon support from package all-the-icons to nerd-icons.
+
 * Usage
 
 #+begin_src emacs-lisp

@@ -2,7 +2,7 @@
 ;; -*- coding: utf-8 -*-
 
 ;; Authors: stardiviner <numbchild@gmail.com>
-;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (all-the-icons "5.0.0"))
+;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (nerd-icons "0.0.1"))
 ;; Version: 0.1.0
 ;; Keywords: hypermedia
 ;; homepage: https://repo.or.cz/org-tag-beautify.git
@@ -34,7 +34,7 @@
 ;;; Code:
 
 (require 'org-pretty-tags)
-(require 'all-the-icons)
+(require 'nerd-icons)
 
 (defgroup org-tag-beautify nil
   "Customize group of `org-tag-beautify-mode'."
