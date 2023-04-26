@@ -68,6 +68,10 @@
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
+(defcustom org-tag-beautify-auto-icons t
+  "Auto search available icons for tags."
+  :type 'boolean
+  :safe #'booleanp)
 
 (defvar org-tag-beautify--nerd-icons-icons-list (nerd-icons--read-candidates)
   "Store all nerd-icons list into a variable to avoid repeatedly computing.")
@@ -124,6 +128,38 @@
 ;; (org-tag-beautify--find-tag-icon "steam")
 ;; (org-tag-beautify--find-tag-icon "heart")
 ;; (org-tag-beautify--find-tag-icon "wikipedia")
+
+(defvar org-tag-beautify-overlays nil
+  "A list of overlays of org-tag-beautify.")
+
+(defun org-tag-beautify-display-icon-refresh ()
+  "Prettify Org mode buffer all tags with icons."
+  (org-with-point-at 1
+    (unless (org-at-heading-p)
+      (outline-next-heading))
+    (while (not (eobp))
+      ;; (cl-assert (org-at-heading-p))
+      (org-match-line org-complex-heading-regexp)
+      (if (match-beginning 5)
+          (let ((tags-end (match-end 5)))
+            ;; move to next tag
+            (goto-char (1+ (match-beginning 5)))
+            ;; loop over current headline tags.
+            (while (re-search-forward (concat "\\(.+?\\):") tags-end t)
+              (push (make-overlay (match-beginning 1) (match-end 1))
+                    org-tag-beautify-overlays)
+              ;; replace tag with icon
+              (overlay-put (car org-tag-beautify-overlays)
+                           'display (org-tag-beautify--find-tag-icon
+                                     ;; the found tag
+                                     (buffer-substring-no-properties
+                                      (match-beginning 1) (match-end 1)))))))
+      (outline-next-heading))))
+
+(defun org-tag-beautify-delete-overlays ()
+  "Delete all icon tags overlays created."
+  (while org-tag-beautify-overlays
+    (delete-overlay (pop org-tag-beautify-overlays))))
 
 ;;; ----------------------------------------------------------------------------
 
@@ -1127,21 +1163,35 @@
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
-  (setq org-pretty-tags-surrogate-strings nil)
-  (org-tag-beautify-set-common-tag-icons)
-  (org-tag-beautify-set-programming-tag-icons)
-  (org-tag-beautify-set-internet-company-tag-icons)
-  (org-tag-beautify-set-countries-tag-icons)
-  (org-tag-beautify-set-unicode-tag-icons)
-  (org-pretty-tags-global-mode 1)
-  (org-tag-beautify-auto-smart-tag-enable))
+  (if org-tag-beautify-auto-icons
+      (progn
+        (org-tag-beautify-display-icon-refresh)
+        (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh)
+        ;; (add-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh)
+        )
+    (progn
+      (setq org-pretty-tags-surrogate-strings nil)
+      (org-tag-beautify-set-common-tag-icons)
+      (org-tag-beautify-set-programming-tag-icons)
+      (org-tag-beautify-set-internet-company-tag-icons)
+      (org-tag-beautify-set-countries-tag-icons)
+      (org-tag-beautify-set-unicode-tag-icons)
+      (org-pretty-tags-global-mode 1)
+      (org-tag-beautify-auto-smart-tag-enable))))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
-  (org-pretty-tags-global-mode -1)
-  (org-tag-beautify-auto-smart-tag-disable))
+  (if org-tag-beautify-auto-icons
+      (progn
+        (org-tag-beautify-delete-overlays)
+        (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh)
+        ;; (remove-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh)
+        )
+    (progn
+      (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
+      (org-pretty-tags-global-mode -1)
+      (org-tag-beautify-auto-smart-tag-disable))))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
