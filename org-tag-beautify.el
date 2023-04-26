@@ -66,6 +66,67 @@
   (default-value 'org-pretty-tags-surrogate-strings)
   "Store `org-pretty-tags-surrogate-strings' default value for restoring.")
 
+;;; ----------------------------------------------------------------------------
+;;; find the available suitable icon for tag.
+
+(defvar org-tag-beautify--nerd-icons-icons-list (nerd-icons--read-candidates)
+  "Store all nerd-icons list into a variable to avoid repeatedly computing.")
+
+(defun org-tag-beautify--nerd-icons-get-icon-name (icon-plist) ; (#("<icon>" ...))
+  "Extract only icon name string from icon plist structure."
+  (let ((icon-name-glyph-set
+         ;; strip out text-property from icon name -> "nf-mdi-access_point	[mdicon]"
+         (substring-no-properties (car icon-plist))))
+    ;; keep only icon name
+    (when (string-match
+           "\\([-_[:alpha:]]*\\)[\t\w]\\[\\(.*\\)\\]"
+           icon-name-glyph-set)
+      (match-string 1 icon-name-glyph-set))))
+
+(defun org-tag-beautify--initialize-org-tags-alist ()
+  "Append `nerd-icons' icon names into the `org-tags-alist'."
+  (let ((icon-names (mapcar
+                     'org-tag-beautify--nerd-icons-get-icon-name
+                     org-tag-beautify--nerd-icons-icons-list)))
+    (setq org-tag-alist
+          (append org-tag-alist
+                  `((:startgrouptag)
+                    ("@nerd-icons")
+                    (:grouptags)
+                    ,icon-names
+                    (:endgrouptag))))))
+
+;; (org-tag-beautify--initialize-org-tags-alist)
+
+(defun org-tag-beautify--find-tag-icon (&optional tag)
+  "Fuzzy find TAG text in icon names then return icon."
+  (interactive)
+  (let* ((selection (unless tag (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list))) ; #("<icon>" ...)
+         (tag (or tag
+                  (org-tag-beautify--nerd-icons-get-icon-name
+                   (list selection) ; (#("<icon>" ...))
+                   )))
+         (icon-name (seq-find
+                     ;; TODO: improve the tag name matching algorithm.
+                     (apply-partially 'string-match-p
+                                      (regexp-opt (list (substring-no-properties tag))))
+                     (mapcar 'org-tag-beautify--nerd-icons-get-icon-name
+                             org-tag-beautify--nerd-icons-icons-list)))
+         (icon-f (cl-find-if
+                  (lambda (f)
+                    (ignore-errors (funcall f icon-name)))
+                  (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
+         (icon (list (ignore-errors (funcall icon-f icon-name)))))
+    icon))
+
+;;; TEST:
+;; (org-tag-beautify--find-tag-icon "archlinux")
+;; (org-tag-beautify--find-tag-icon "steam")
+;; (org-tag-beautify--find-tag-icon "heart")
+;; (org-tag-beautify--find-tag-icon "wikipedia")
+
+;;; ----------------------------------------------------------------------------
+
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
   (setq org-pretty-tags-surrogate-strings
