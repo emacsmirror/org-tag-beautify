@@ -132,28 +132,32 @@
 (defvar org-tag-beautify-overlays nil
   "A list of overlays of org-tag-beautify.")
 
-(defun org-tag-beautify-display-icon-refresh ()
-  "Prettify Org mode buffer all tags with icons."
+(defun org-tag-beautify-display-icon-refresh-headline ()
+  "Prettify Org mode headline tags with icons."
+  ;; (cl-assert (org-at-heading-p))
+  (org-match-line org-complex-heading-regexp)
+  (if (match-beginning 5)
+      (let ((tags-end (match-end 5)))
+        ;; move to next tag
+        (goto-char (1+ (match-beginning 5)))
+        ;; loop over current headline tags.
+        (while (re-search-forward (concat "\\(.+?\\):") tags-end t)
+          (push (make-overlay (match-beginning 1) (match-end 1))
+                org-tag-beautify-overlays)
+          ;; replace tag with icon
+          (overlay-put (car org-tag-beautify-overlays)
+                       'display (org-tag-beautify--find-tag-icon
+                                 ;; the found tag
+                                 (buffer-substring-no-properties
+                                  (match-beginning 1) (match-end 1))))))))
+
+(defun org-tag-beautify-display-icon-refresh-all ()
+  "Prettify Org mode buffer tags with icons."
   (org-with-point-at 1
     (unless (org-at-heading-p)
       (outline-next-heading))
     (while (not (eobp))
-      ;; (cl-assert (org-at-heading-p))
-      (org-match-line org-complex-heading-regexp)
-      (if (match-beginning 5)
-          (let ((tags-end (match-end 5)))
-            ;; move to next tag
-            (goto-char (1+ (match-beginning 5)))
-            ;; loop over current headline tags.
-            (while (re-search-forward (concat "\\(.+?\\):") tags-end t)
-              (push (make-overlay (match-beginning 1) (match-end 1))
-                    org-tag-beautify-overlays)
-              ;; replace tag with icon
-              (overlay-put (car org-tag-beautify-overlays)
-                           'display (org-tag-beautify--find-tag-icon
-                                     ;; the found tag
-                                     (buffer-substring-no-properties
-                                      (match-beginning 1) (match-end 1)))))))
+      (org-tag-beautify-display-icon-refresh-headline)
       (outline-next-heading))))
 
 (defun org-tag-beautify-delete-overlays ()
@@ -1165,9 +1169,10 @@
   "Enable `org-tag-beautify'."
   (if org-tag-beautify-auto-icons
       (progn
-        (org-tag-beautify-display-icon-refresh)
-        (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh)
-        ;; (add-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh)
+        (org-tag-beautify-display-icon-refresh-all)
+        (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
+        (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
+        ;; (add-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh-headline)
         )
     (progn
       (setq org-pretty-tags-surrogate-strings nil)
@@ -1185,8 +1190,9 @@
   (if org-tag-beautify-auto-icons
       (progn
         (org-tag-beautify-delete-overlays)
-        (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh)
-        ;; (remove-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh)
+        (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
+        (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
+        ;; (remove-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh-headline)
         )
     (progn
       (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
