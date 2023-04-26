@@ -97,7 +97,7 @@
                   `((:startgrouptag)
                     ("@nerd-icons")
                     (:grouptags)
-                    ,icon-names
+                    ,@(mapcar 'list icon-names)
                     (:endgrouptag))))))
 
 ;; (org-tag-beautify--initialize-org-tags-alist)
