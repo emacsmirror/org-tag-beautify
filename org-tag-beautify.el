@@ -107,26 +107,31 @@
 
 ;; (org-tag-beautify--initialize-org-tags-alist)
 
+(defvar org-tag-beautify--tag-icon-cache-alist nil
+  "A cache list to store already search found tag and icon pair.")
+
 (defun org-tag-beautify--find-tag-icon (&optional tag)
   "Fuzzy find TAG text in icon names then return icon."
   (interactive)
   (let* ((selection (unless tag (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list))) ; #("<icon>" ...)
          (tag (or tag
-                  (org-tag-beautify--nerd-icons-get-icon-name
-                   (list selection) ; (#("<icon>" ...))
-                   )))
-         ;; TODO: improve the tag name matching algorithm.
-         (tag-regexp-matching-f (apply-partially 'string-match-p
-                                                 (regexp-opt (list (substring-no-properties tag)))))
-         (icon-name (seq-find
-                     tag-regexp-matching-f
-                     org-tag-beautify--nerd-icons-icon-names-list))
-         (icon-f (cl-find-if
-                  (lambda (f)
-                    (ignore-errors (funcall f icon-name)))
-                  (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-         (icon (list (ignore-errors (funcall icon-f icon-name)))))
-    icon))
+                  (org-tag-beautify--nerd-icons-get-icon-name (list selection))))) ; (#("<icon>" ...))
+    ;; try to get tag associated icon from cache list at first to improve performance.
+    (or (cdr (assoc tag org-tag-beautify--tag-icon-cache-alist))
+        (let* (;; TODO: improve the tag name matching algorithm.
+               (tag-regexp-matching-f (apply-partially 'string-match-p
+                                                       (regexp-opt (list (substring-no-properties tag)))))
+               (icon-name (seq-find
+                           tag-regexp-matching-f
+                           org-tag-beautify--nerd-icons-icon-names-list))
+               (icon-f (cl-find-if
+                        (lambda (f)
+                          (ignore-errors (funcall f icon-name)))
+                        (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
+               (icon (list (ignore-errors (funcall icon-f icon-name)))))
+          ;; cache already search found icon name.
+          (push `(,tag . ,icon) org-tag-beautify--tag-icon-cache-alist)
+          icon))))
 
 ;;; TEST:
 ;; (org-tag-beautify--find-tag-icon "archlinux")
