@@ -115,10 +115,11 @@
                   (org-tag-beautify--nerd-icons-get-icon-name
                    (list selection) ; (#("<icon>" ...))
                    )))
+         ;; TODO: improve the tag name matching algorithm.
+         (tag-regexp-matching-f (apply-partially 'string-match-p
+                                                 (regexp-opt (list (substring-no-properties tag)))))
          (icon-name (seq-find
-                     ;; TODO: improve the tag name matching algorithm.
-                     (apply-partially 'string-match-p
-                                      (regexp-opt (list (substring-no-properties tag))))
+                     tag-regexp-matching-f
                      org-tag-beautify--nerd-icons-icon-names-list))
          (icon-f (cl-find-if
                   (lambda (f)
