@@ -87,6 +87,11 @@
            icon-name-glyph-set)
       (match-string 1 icon-name-glyph-set))))
 
+(defvar org-tag-beautify--nerd-icons-icon-names-list
+  (mapcar 'org-tag-beautify--nerd-icons-get-icon-name
+          org-tag-beautify--nerd-icons-icons-list)
+  "Store all icon names list into a variable to avoid repeatedly computing.")
+
 (defun org-tag-beautify--initialize-org-tags-alist ()
   "Append `nerd-icons' icon names into the `org-tags-alist'."
   (let ((icon-names (mapcar
@@ -114,8 +119,7 @@
                      ;; TODO: improve the tag name matching algorithm.
                      (apply-partially 'string-match-p
                                       (regexp-opt (list (substring-no-properties tag))))
-                     (mapcar 'org-tag-beautify--nerd-icons-get-icon-name
-                             org-tag-beautify--nerd-icons-icons-list)))
+                     org-tag-beautify--nerd-icons-icon-names-list))
          (icon-f (cl-find-if
                   (lambda (f)
                     (ignore-errors (funcall f icon-name)))
