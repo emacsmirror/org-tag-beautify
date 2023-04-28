@@ -114,8 +114,9 @@
   "Fuzzy find TAG text in icon names then return icon."
   (interactive)
   (let* ((selection (unless tag (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list))) ; #("<icon>" ...)
-         (tag (or tag
-                  (org-tag-beautify--nerd-icons-get-icon-name (list selection))))) ; (#("<icon>" ...))
+         (tag (downcase
+               (or tag
+                   (org-tag-beautify--nerd-icons-get-icon-name (list selection)))))) ; (#("<icon>" ...))
     ;; try to get tag associated icon from cache list at first to improve performance.
     (or (cdr (assoc tag org-tag-beautify--tag-icon-cache-alist))
         (let* (;; TODO: improve the tag name matching algorithm.
@@ -138,6 +139,7 @@
 ;; (org-tag-beautify--find-tag-icon "steam")
 ;; (org-tag-beautify--find-tag-icon "heart")
 ;; (org-tag-beautify--find-tag-icon "wikipedia")
+;; (org-tag-beautify--find-tag-icon "LaTeX")
 
 (defvar org-tag-beautify-overlays nil
   "A list of overlays of org-tag-beautify.")
