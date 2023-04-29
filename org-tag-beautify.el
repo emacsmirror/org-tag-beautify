@@ -135,9 +135,9 @@ hardcoded (tag . icon) pair bindings to display icon."
                         (lambda (f)
                           (ignore-errors (funcall f icon-name)))
                         (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-               (icon (if-let ((found-icon (ignore-errors (funcall icon-f icon-name))))
+               (icon (if-let ((found-icon (cdr (assoc tag org-pretty-tags-surrogate-strings))))
                          found-icon
-                       (cdr (assoc tag org-pretty-tags-surrogate-strings)))))
+                       (ignore-errors (funcall icon-f icon-name)))))
           ;; cache already search found icon name.
           (push `(,tag . ,icon) org-tag-beautify--tag-icon-cache-alist)
           icon))))
