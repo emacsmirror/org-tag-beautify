@@ -129,7 +129,7 @@
                         (lambda (f)
                           (ignore-errors (funcall f icon-name)))
                         (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-               (icon (list (ignore-errors (funcall icon-f icon-name)))))
+               (icon (ignore-errors (funcall icon-f icon-name))))
           ;; cache already search found icon name.
           (push `(,tag . ,icon) org-tag-beautify--tag-icon-cache-alist)
           icon))))
@@ -158,10 +158,10 @@
                 org-tag-beautify-overlays)
           ;; replace tag with icon
           (overlay-put (car org-tag-beautify-overlays)
-                       'display (org-tag-beautify--find-tag-icon
-                                 ;; the found tag
-                                 (buffer-substring-no-properties
-                                  (match-beginning 1) (match-end 1))))))))
+                       'display (list (org-tag-beautify--find-tag-icon
+                                       ;; the found tag
+                                       (buffer-substring-no-properties
+                                        (match-beginning 1) (match-end 1)))))))))
 
 (defun org-tag-beautify-display-icon-refresh-all ()
   "Prettify Org mode buffer tags with icons."
