@@ -69,7 +69,14 @@
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
 (defcustom org-tag-beautify-auto-icons t
-  "Auto search available icons for tags."
+  "Auto search available icons for tags.
+
+If t, use string-match regexp for tag to find first available
+icon then use text-property to replace tag with icon. This will
+reduce the hardcoded code of (tag . icon) pair bindings.
+
+If nil, use `org-pretty-tags' with package internal
+hardcoded (tag . icon) pair bindings to display icon."
   :type 'boolean
   :safe #'booleanp)
 
