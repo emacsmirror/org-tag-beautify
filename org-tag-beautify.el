@@ -121,14 +121,13 @@ hardcoded (tag . icon) pair bindings to display icon."
   "Fuzzy find TAG text in icon names then return icon."
   (interactive)
   (let* ((selection (unless tag (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list))) ; #("<icon>" ...)
-         (tag (downcase
-               (or tag
-                   (org-tag-beautify--nerd-icons-get-icon-name (list selection)))))) ; (#("<icon>" ...))
+         (tag (or tag
+                  (org-tag-beautify--nerd-icons-get-icon-name (list selection))))) ; (#("<icon>" ...))
     ;; try to get tag associated icon from cache list at first to improve performance.
     (or (cdr (assoc tag org-tag-beautify--tag-icon-cache-alist))
         (let* (;; TODO: improve the tag name matching algorithm.
                (tag-regexp-matching-f (apply-partially 'string-match-p
-                                                       (regexp-opt (list (substring-no-properties tag)))))
+                                                       (regexp-opt (list (substring-no-properties (downcase tag))))))
                (icon-name (seq-find
                            tag-regexp-matching-f
                            org-tag-beautify--nerd-icons-icon-names-list))
@@ -136,7 +135,9 @@ hardcoded (tag . icon) pair bindings to display icon."
                         (lambda (f)
                           (ignore-errors (funcall f icon-name)))
                         (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-               (icon (ignore-errors (funcall icon-f icon-name))))
+               (icon (if-let ((found-icon (ignore-errors (funcall icon-f icon-name))))
+                         found-icon
+                       (cdr (assoc tag org-pretty-tags-surrogate-strings)))))
           ;; cache already search found icon name.
           (push `(,tag . ,icon) org-tag-beautify--tag-icon-cache-alist)
           icon))))
@@ -1188,6 +1189,15 @@ hardcoded (tag . icon) pair bindings to display icon."
   "Enable `org-tag-beautify'."
   (if org-tag-beautify-auto-icons
       (progn
+        ;; add hardcoded (tag . icon) pair bindings to
+        ;; `org-pretty-tags-surrogate-strings' for
+        ;; `org-tag-beautify--find-tag-icon' query.
+        (org-tag-beautify-set-common-tag-icons)
+        (org-tag-beautify-set-programming-tag-icons)
+        (org-tag-beautify-set-internet-company-tag-icons)
+        (org-tag-beautify-set-countries-tag-icons)
+        (org-tag-beautify-set-unicode-tag-icons)
+        
         (org-tag-beautify-display-icon-refresh-all)
         (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
         (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
