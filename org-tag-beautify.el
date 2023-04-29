@@ -1194,7 +1194,6 @@ hardcoded (tag . icon) pair bindings to display icon."
         ;; (add-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh-headline)
         )
     (progn
-      (setq org-pretty-tags-surrogate-strings nil)
       (org-tag-beautify-set-common-tag-icons)
       (org-tag-beautify-set-programming-tag-icons)
       (org-tag-beautify-set-internet-company-tag-icons)
