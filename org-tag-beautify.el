@@ -1177,18 +1177,18 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;;;###autoload
 (defun org-tag-beautify-add-tags-to-list ()
   "Add org-tag-beautify tags to `org-tag-alist' for `org-set-tags-command' completion."
-  (with-eval-after-load 'org
-    (setq org-tag-alist
-          (append org-tag-alist
-                  (append
-                   '((:startgrouptag)) '(("icons"))
-                   '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
-                   '((:endgrouptag)))))))
+  (setq org-tag-alist
+        (append org-tag-alist
+                (append
+                 '((:startgrouptag)) '(("icons"))
+                 '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
+                 '((:endgrouptag))))))
 
 ;;============================================ minor mode ===========================================
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
+  (org-tag-beautify-add-tags-to-list)
   (if org-tag-beautify-auto-icons
       (progn
         ;; add hardcoded (tag . icon) pair bindings to
