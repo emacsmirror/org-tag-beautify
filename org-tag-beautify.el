@@ -99,21 +99,6 @@ hardcoded (tag . icon) pair bindings to display icon."
           org-tag-beautify--nerd-icons-icons-list)
   "Store all icon names list into a variable to avoid repeatedly computing.")
 
-(defun org-tag-beautify--initialize-org-tags-alist ()
-  "Append `nerd-icons' icon names into the `org-tags-alist'."
-  (let ((icon-names (mapcar
-                     'org-tag-beautify--nerd-icons-get-icon-name
-                     org-tag-beautify--nerd-icons-icons-list)))
-    (setq org-tag-alist
-          (append org-tag-alist
-                  `((:startgrouptag)
-                    ("@nerd-icons")
-                    (:grouptags)
-                    ,@(mapcar 'list icon-names)
-                    (:endgrouptag))))))
-
-;; (org-tag-beautify--initialize-org-tags-alist)
-
 (defcustom org-tag-beautify-tag-icon-cache-alist nil
   "A cache list to store already search found tag and icon pair.")
 
@@ -1174,9 +1159,8 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 ;;========================================== org-tag-alist ==========================================
 
-;;;###autoload
-(defun org-tag-beautify-add-tags-to-list ()
-  "Add org-tag-beautify tags to `org-tag-alist' for `org-set-tags-command' completion."
+(defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
+  "Append `org-pretty-tags-surrogate-strings' tags to `org-tag-alist' for `org-set-tags-command' completion."
   (setq org-tag-alist
         (append org-tag-alist
                 (append
@@ -1184,11 +1168,27 @@ hardcoded (tag . icon) pair bindings to display icon."
                  '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
                  '((:endgrouptag))))))
 
+(org-tag-beautify-append-org-tags-alist--with-org-pretty-tags)
+
+(defun org-tag-beautify-append-org-tags-alist--with-nerd-icons ()
+  "Append `nerd-icons' icon names into the `org-tag-alist' for `org-set-tags-command' completion."
+  (let ((icon-names (mapcar
+                     'org-tag-beautify--nerd-icons-get-icon-name
+                     org-tag-beautify--nerd-icons-icons-list)))
+    (setq org-tag-alist
+          (append org-tag-alist
+                  `((:startgrouptag)
+                    ("@nerd-icons")
+                    (:grouptags)
+                    ,@(mapcar 'list icon-names)
+                    (:endgrouptag))))))
+
+(org-tag-beautify-append-org-tags-alist--with-nerd-icons)
+
 ;;============================================ minor mode ===========================================
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
-  (org-tag-beautify-add-tags-to-list)
   (if org-tag-beautify-auto-icons
       (progn
         ;; add hardcoded (tag . icon) pair bindings to
