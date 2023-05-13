@@ -1185,7 +1185,8 @@ hardcoded (tag . icon) pair bindings to display icon."
                     ,@(mapcar 'list icon-names)
                     (:endgrouptag))))))
 
-(org-tag-beautify-append-org-tags-alist--with-nerd-icons)
+;;; NOTE: Don't enable this because nerd-icons icon names are not valid Org tags.
+;; (org-tag-beautify-append-org-tags-alist--with-nerd-icons)
 
 ;;============================================ minor mode ===========================================
 ;;;###autoload
