@@ -135,6 +135,7 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;; (org-tag-beautify--find-tag-icon "heart")
 ;; (org-tag-beautify--find-tag-icon "wikipedia")
 ;; (org-tag-beautify--find-tag-icon "LaTeX")
+;; (org-tag-beautify--find-tag-icon "ATTACH")
 
 (defvar org-tag-beautify-overlays nil
   "A list of overlays of org-tag-beautify.")
