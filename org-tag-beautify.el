@@ -160,12 +160,13 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 (defun org-tag-beautify-display-icon-refresh-all ()
   "Prettify Org mode buffer tags with icons."
-  (org-with-point-at 1
-    (unless (org-at-heading-p)
-      (outline-next-heading))
-    (while (not (eobp))
-      (org-tag-beautify-display-icon-refresh-headline)
-      (outline-next-heading))))
+  (when (eq major-mode 'org-mode)
+    (org-with-point-at 1
+      (unless (org-at-heading-p)
+        (outline-next-heading))
+      (while (not (eobp))
+        (org-tag-beautify-display-icon-refresh-headline)
+        (outline-next-heading)))))
 
 (defun org-tag-beautify-delete-overlays ()
   "Delete all icon tags overlays created."
