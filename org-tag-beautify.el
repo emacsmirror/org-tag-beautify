@@ -485,6 +485,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("note" . ,(nerd-icons-codicon "nf-cod-note" :face 'nerd-icons-green))
                   ("notebook" . ,(nerd-icons-mdicon "nf-md-notebook" :face 'nerd-icons-green))
                   ("paperclip" . ,(nerd-icons-mdicon "nf-md-paperclip" :face 'nerd-icons-blue))
+                  ("mindmap" . ,(nerd-icons-mdicon "nf-md-brain" :face 'nerd-icons-orange))
                   ("search" . ,(nerd-icons-mdicon "nf-md-search_web" :face 'nerd-icons-blue))
                   ("download" . ,(nerd-icons-mdicon "nf-md-download_outline" :face 'nerd-icons-blue))
                   ("upload" . ,(nerd-icons-mdicon "nf-md-upload_outline" :face 'nerd-icons-green))
