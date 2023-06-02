@@ -581,6 +581,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("object_group" . ,(nerd-icons-faicon "nf-fa-object_group" :face 'nerd-icons-blue))
                   ("object_ungroup" . ,(nerd-icons-faicon "nf-fa-object_ungroup" :face 'nerd-icons-blue))
                   ("regex" . ,(nerd-icons-codicon "nf-cod-regex" :face 'nerd-icons-cyan-alt))
+                  ("regexp" . ,(nerd-icons-codicon "nf-cod-regex" :face 'nerd-icons-cyan-alt))
                   ("extension" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
                   ("vcs" . ,(nerd-icons-codicon "nf-cod-source_control" :face 'nerd-icons-blue))
                   ("vcs_branch" . ,(nerd-icons-mdicon "nf-md-source_branch" :face 'nerd-icons-blue))
