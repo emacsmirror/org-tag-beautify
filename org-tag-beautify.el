@@ -664,7 +664,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("Firefox" . ,(nerd-icons-mdicon "nf-md-firefox" :face 'nerd-icons-orange))
                   ("Chromium" . ,(nerd-icons-faicon "nf-fa-chrome" :face 'nerd-icons-blue-alt))
                   ("Chrome" . ,(nerd-icons-faicon "nf-fa-chrome" :face 'nerd-icons-red))
-                  ("Edge" . ,(nerd-icons-mdicon "nf-md-microsoft_edge" :face 'nerd-icons-blue))
+                  ("Microsoft_Edge" . ,(nerd-icons-mdicon "nf-md-microsoft_edge" :face 'nerd-icons-blue))
                   ("Safari" . ,(nerd-icons-mdicon "nf-md-apple_safari" :face 'nerd-icons-blue))
                   ("terminal" . ,(nerd-icons-devicon "nf-dev-terminal" :face 'nerd-icons-green))
                   ("tmux" . ,(nerd-icons-codicon "nf-cod-terminal_tmux" :face 'nerd-icons-green))
