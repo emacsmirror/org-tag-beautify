@@ -623,6 +623,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("hardware" . ,(nerd-icons-mdicon "nf-md-devices" :face 'nerd-icons-blue))
                   ("desktop_pc" . ,(nerd-icons-mdicon "nf-md-desktop_tower_monitor" :face 'nerd-icons-blue))
                   ("server" . ,(nerd-icons-mdicon "nf-md-server_network" :face 'nerd-icons-blue))
+                  ("IoT" . ,(nerd-icons-mdicon "nf-md-network_pos" :face 'nerd-icons-blue))
                   ("NAS" . ,(nerd-icons-mdicon "nf-md-nas" :face 'nerd-icons-blue))
                   ("robot" . ,(nerd-icons-mdicon "nf-md-robot_outline" :face 'nerd-icons-blue))
                   ("USB" . ,(nerd-icons-mdicon "nf-md-usb" :face 'nerd-icons-blue))
@@ -644,9 +645,10 @@ hardcoded (tag . icon) pair bindings to display icon."
                   
                   ;; network
                   ("network" . ,(nerd-icons-mdicon "nf-md-ip_network" :face 'nerd-icons-blue))
+                  ("IP" . ,(nerd-icons-mdicon "nf-md-ip_outline" :face 'nerd-icons-blue))
                   ("online" . ,(nerd-icons-mdicon "nf-md-check_network" :face 'nerd-icons-green))
                   ("offline" . ,(nerd-icons-mdicon "nf-md-close_network" :face 'nerd-icons-red))
-                  ("CMCC" . ,(nerd-icons-codicon "nf-cod-radio_tower" :face 'nerd-icons-blue)) ; CMCC 中国移动
+                  ("CMCC" . ,(nerd-icons-codicon "nf-cod-radio_tower" :face 'nerd-icons-blue))
                   
                   ;; technology
                   ("virtual_reality" . ,(nerd-icons-mdicon "nf-md-virtual_reality" :face 'nerd-icons-blue))
@@ -680,7 +682,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("package" . ,(nerd-icons-codicon "nf-cod-package" :face 'nerd-icons-orange))
                   ("container" . ,(nerd-icons-flicon "nf-linux-docker" :face 'nerd-icons-blue))
                   ("Docker" . ,(nerd-icons-flicon "nf-linux-docker" :face 'nerd-icons-blue))
-                  ("Dockerfile" . ,(nerd-icons-flicon "nf-linux-docker" :face 'nerd-icons-blue))
+                  ("Dockerfile" . ,(nerd-icons-devicon "nf-dev-docker" :face 'nerd-icons-cyan))
                   ("Ansible" . ,(nerd-icons-mdicon "nf-md-ansible" :face 'nerd-icons-red))
                   ("Puppet" . ,(nerd-icons-sucicon "nf-custom-puppet" :face 'nerd-icons-purple))
                   ("Terraform" . ,(nerd-icons-sucicon "nf-seti-terraform" :face 'nerd-icons-blue))
@@ -705,12 +707,21 @@ hardcoded (tag . icon) pair bindings to display icon."
                   ("CAD" . ,(nerd-icons-mdicon "nf-md-file_cad_box" :face 'nerd-icons-blue))
                   
                   ;; Systems
-                  ("Linux" . ,(nerd-icons-devicon "nf-dev-linux" :face 'nerd-icons-silver))
-                  ("Ubuntu_Linux" . ,(nerd-icons-flicon "nf-linux-ubuntu_inverse" :face 'nerd-icons-orange))
-                  ("Arch_Linux" . ,(nerd-icons-flicon "nf-linux-archlinux" :face 'nerd-icons-blue))
-                  ("Kali_Linux" . ,(nerd-icons-flicon "nf-linux-kali_linux" :face 'nerd-icons-blue))
-                  ("Alpine_Linux" . ,(nerd-icons-flicon "nf-linux-alpine" :face 'nerd-icons-blue))
-                  ("Gentoo_Linux" . ,(nerd-icons-flicon "nf-linux-gentoo" :face 'nerd-icons-purple))
+                  ("Linux"          . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-silver))
+                  ("Ubuntu_Linux"   . ,(nerd-icons-flicon "nf-linux-ubuntu_inverse" :face 'nerd-icons-orange))
+                  ("Debian_Linux"   . ,(nerd-icons-flicon "nf-linux-debian" :face 'nerd-icons-red))
+                  ("Fedora_Linux"   . ,(nerd-icons-flicon "nf-linux-fedora_inverse" :face 'nerd-icons-blue))
+                  ("RedHat_Linux"   . ,(nerd-icons-flicon "nf-linux-redhat" :face 'nerd-icons-dred))
+                  ("Arch_Linux"     . ,(nerd-icons-flicon "nf-linux-archlinux" :face 'nerd-icons-blue))
+                  ("Manjaro_Linux"  . ,(nerd-icons-flicon "nf-linux-manjaro" :face 'nerd-icons-green))
+                  ("Kali_Linux"     . ,(nerd-icons-flicon "nf-linux-kali_linux" :face 'nerd-icons-blue))
+                  ("Alpine_Linux"   . ,(nerd-icons-flicon "nf-linux-alpine" :face 'nerd-icons-blue))
+                  ("Gentoo_Linux"   . ,(nerd-icons-flicon "nf-linux-gentoo" :face 'nerd-icons-blue-alt))
+                  ("CentOS_Linux"   . ,(nerd-icons-flicon "nf-linux-centos" :face 'nerd-icons-purple))
+                  ("Deepin_Linux"   . ,(nerd-icons-flicon "nf-linux-deepin" :face 'nerd-icons-blue-alt))
+                  ("OpenSUSE_Linux" . ,(nerd-icons-flicon "nf-linux-opensuse" :face 'nerd-icons-lgreen))
+                  ("NixOS" . ,(nerd-icons-flicon "nf-linux-nixos" :face 'nerd-icons-lblue))
+                  ("OpenBSD" . ,(nerd-icons-flicon "nf-linux-openbsd" :face 'nerd-icons-dred))
                   ("Apple" . ,(nerd-icons-mdicon "nf-md-apple" :face 'nerd-icons-silver))
                   ("macOS" . ,(nerd-icons-mdicon "nf-md-apple_finder" :face 'nerd-icons-blue))
                   ("Windows" . ,(nerd-icons-mdicon "nf-md-microsoft_windows" :face 'nerd-icons-blue))
