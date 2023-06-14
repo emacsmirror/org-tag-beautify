@@ -90,7 +90,7 @@ hardcoded (tag . icon) pair bindings to display icon."
          (substring-no-properties (car icon-plist))))
     ;; keep only icon name
     (when (string-match
-           "\\([-_[:alpha:]]*\\)[\t\w]\\[\\(.*\\)\\]"
+           "\\([-_[:alnum:]]*\\)[\t\w]\\[\\(.*\\)\\]"
            icon-name-glyph-set)
       (match-string 1 icon-name-glyph-set))))
 
