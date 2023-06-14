@@ -105,29 +105,30 @@ hardcoded (tag . icon) pair bindings to display icon."
 (defun org-tag-beautify--find-tag-icon (&optional tag)
   "Fuzzy find TAG text in icon names then return icon."
   (interactive)
-  (let* ((selection (unless tag (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list))) ; #("<icon>" ...)
-         (tag (or tag
-                  (org-tag-beautify--nerd-icons-get-icon-name (list selection))))) ; (#("<icon>" ...))
-    ;; try to get tag associated icon from cache list at first to improve performance.
-    (or (cdr (assoc tag org-tag-beautify-tag-icon-cache-alist))
-        (let* (;; TODO: improve the tag name matching algorithm.
-               (tag-regexp-matching-f (apply-partially 'string-match-p
-                                                       (regexp-opt (list (substring-no-properties (downcase tag))))))
-               (icon-name (seq-find
-                           tag-regexp-matching-f
-                           org-tag-beautify--nerd-icons-icon-names-list))
-               (icon-f (cl-find-if
-                        (lambda (f)
-                          (ignore-errors (funcall f icon-name)))
-                        (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-               (icon (if-let ((found-icon (cdr (assoc tag org-pretty-tags-surrogate-strings))))
-                         found-icon
-                       (ignore-errors (funcall icon-f icon-name)))))
-          ;; cache already search found icon name.
-          (push `(,tag . ,icon) org-tag-beautify-tag-icon-cache-alist)
-          ;; TODO: save this `org-tag-beautify-tag-icon-cache-alist' into `custom.el' or elisp data file like `save-place-file'.
-          (setopt org-tag-beautify-tag-icon-cache-alist org-tag-beautify-tag-icon-cache-alist)
-          icon))))
+  (if tag
+      ;; try to get tag associated icon from cache list at first to improve performance.
+      (or (cdr (assoc tag org-tag-beautify-tag-icon-cache-alist))
+          (let* (;; TODO: improve the tag name matching algorithm.
+                 (tag-regexp-matching-f (apply-partially 'string-match-p
+                                                         (regexp-opt (list (substring-no-properties (downcase tag))))))
+                 (icon-name (seq-find
+                             tag-regexp-matching-f
+                             org-tag-beautify--nerd-icons-icon-names-list))
+                 (icon-f (cl-find-if
+                          (lambda (f)
+                            (ignore-errors (funcall f icon-name)))
+                          (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
+                 (icon (if-let ((found-icon (cdr (assoc tag org-pretty-tags-surrogate-strings))))
+                           found-icon
+                         (ignore-errors (funcall icon-f icon-name)))))
+            ;; cache already search found icon name.
+            (push `(,tag . ,icon) org-tag-beautify-tag-icon-cache-alist)
+            ;; TODO: save this `org-tag-beautify-tag-icon-cache-alist' into `custom.el' or elisp data file like `save-place-file'.
+            (setopt org-tag-beautify-tag-icon-cache-alist org-tag-beautify-tag-icon-cache-alist)
+            icon))
+    (org-tag-beautify--nerd-icons-get-icon-name
+     ;; (#("<icon>" ...))
+     (list (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list)))))
 
 ;;; TEST:
 ;; (org-tag-beautify--find-tag-icon "archlinux")
