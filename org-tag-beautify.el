@@ -1216,6 +1216,7 @@ hardcoded (tag . icon) pair bindings to display icon."
         ;; add hardcoded (tag . icon) pair bindings to
         ;; `org-pretty-tags-surrogate-strings' for
         ;; `org-tag-beautify--find-tag-icon' query.
+        (setq org-pretty-tags-surrogate-strings nil) ; clear original prettified tags.
         (org-tag-beautify-set-common-tag-icons)
         (org-tag-beautify-set-programming-tag-icons)
         (org-tag-beautify-set-internet-company-tag-icons)
