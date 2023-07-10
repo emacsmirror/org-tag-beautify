@@ -2,7 +2,7 @@
 ;; -*- coding: utf-8 -*-
 
 ;; Authors: stardiviner <numbchild@gmail.com>
-;; Package-Requires: ((emacs "26.1") (org-pretty-tags "0.2.2") (nerd-icons "0.0.1"))
+;; Package-Requires: ((emacs "26.1") (nerd-icons "0.0.1"))
 ;; Version: 0.1.0
 ;; Keywords: hypermedia
 ;; homepage: https://repo.or.cz/org-tag-beautify.git
@@ -33,7 +33,6 @@
 
 ;;; Code:
 
-(require 'org-pretty-tags)
 (require 'nerd-icons)
 
 (defgroup org-tag-beautify nil
@@ -68,17 +67,6 @@
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
-(defcustom org-tag-beautify-auto-find-available-icons t
-  "Auto search available icons for tags.
-
-If t, use string-match regexp for tag to find first available
-icon then use text-property to replace tag with icon. This will
-reduce the hardcoded code of (tag . icon) pair bindings.
-
-If nil, use `org-pretty-tags' with package internal
-hardcoded (tag . icon) pair bindings to display icon."
-  :type 'boolean
-  :safe #'booleanp)
 
 (defvar org-tag-beautify--nerd-icons-icons-list (nerd-icons--read-candidates)
   "Store all nerd-icons list into a variable to avoid repeatedly computing.")
@@ -1223,8 +1211,7 @@ hardcoded (tag . icon) pair bindings to display icon."
   ;; refresh headline tags
   (org-tag-beautify-display-icon-refresh-all-headlines) ; init run on mode enabled.
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
-  (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
-  (org-pretty-tags-mode 1))
+  (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
@@ -1235,8 +1222,7 @@ hardcoded (tag . icon) pair bindings to display icon."
   (setq org-tag-alist org-tag-beautify--org-tag-alist--original)
   (org-tag-beautify-auto-smart-tag-disable)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
-  (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
-  (org-pretty-tags-mode -1))
+  (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
