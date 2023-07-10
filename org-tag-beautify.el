@@ -63,8 +63,8 @@
   :safe #'booleanp)
 
 (defvar org-tag-beautify--surrogate-strings-original
-  (default-value 'org-pretty-tags-surrogate-strings)
-  "Store `org-pretty-tags-surrogate-strings' default value for restoring.")
+  (default-value 'org-tag-beautify-surrogate-strings)
+  "Store `org-tag-beautify-surrogate-strings' default value for restoring.")
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
@@ -118,7 +118,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                           (lambda (f)
                             (ignore-errors (funcall f icon-name)))
                           (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-                 (icon (if-let ((found-icon (cdr (assoc tag org-pretty-tags-surrogate-strings))))
+                 (icon (if-let ((found-icon (cdr (assoc tag org-tag-beautify-surrogate-strings))))
                            found-icon
                          (ignore-errors (funcall icon-f icon-name)))))
             ;; cache already search found icon name.
@@ -179,8 +179,8 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 (defun org-tag-beautify-set-common-tag-icons ()
   "Display most common tag as icon."
-  (setq org-pretty-tags-surrogate-strings
-        (append org-pretty-tags-surrogate-strings
+  (setq org-tag-beautify-surrogate-strings
+        (append org-tag-beautify-surrogate-strings
                 `(("ARCHIVE" . ,(nerd-icons-mdicon "nf-md-archive" :face 'nerd-icons-silver))
                   ("export" . ,(nerd-icons-mdicon "nf-md-file_export_outline" :face 'nerd-icons-blue))
                   ("noexport" . ,(nerd-icons-faicon "nf-fa-eye_slash" :face 'nerd-icons-dblue))
@@ -569,8 +569,8 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 (defun org-tag-beautify-set-programming-tag-icons ()
   "Display programming tag as icon."
-  (setq org-pretty-tags-surrogate-strings
-        (append org-pretty-tags-surrogate-strings
+  (setq org-tag-beautify-surrogate-strings
+        (append org-tag-beautify-surrogate-strings
                 `(;; programming
                   ("programming" . ,(nerd-icons-mdicon "nf-md-developer_board" :face 'nerd-icons-lblue))
                   ("code" . ,(nerd-icons-codicon "nf-cod-code" :face 'nerd-icons-cyan-alt))
@@ -827,8 +827,8 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 (defun org-tag-beautify-set-internet-company-tag-icons ()
   "Display internet company name tag as icon."
-  (setq org-pretty-tags-surrogate-strings
-        (append org-pretty-tags-surrogate-strings
+  (setq org-tag-beautify-surrogate-strings
+        (append org-tag-beautify-surrogate-strings
                 `(("Internet" . ,(nerd-icons-codicon "nf-cod-globe" :face 'nerd-icons-blue))
                   ("Google" . ,(nerd-icons-mdicon "nf-md-google" :face 'nerd-icons-red))
                   ("Microsoft" . ,(nerd-icons-mdicon "nf-md-microsoft" :face 'nerd-icons-lblue))
@@ -864,8 +864,8 @@ hardcoded (tag . icon) pair bindings to display icon."
   "Display countries name tag as flag icon."
   (if-let ((dir (concat org-tag-beautify-data-dir "countries/"))
            (available? (file-exists-p dir)))
-      (setq org-pretty-tags-surrogate-strings
-            (append org-pretty-tags-surrogate-strings
+      (setq org-tag-beautify-surrogate-strings
+            (append org-tag-beautify-surrogate-strings
                     `(("afghanistan" . ,(create-image (concat dir "afghanistan.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("aland_islands" . ,(create-image (concat dir "aland-islands.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("albania" . ,(create-image (concat dir "albania.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
@@ -1126,8 +1126,8 @@ hardcoded (tag . icon) pair bindings to display icon."
 
 (defun org-tag-beautify-set-unicode-tag-icons ()
   "Display tag as Unicode emoji."
-  (setq org-pretty-tags-surrogate-strings
-        (append org-pretty-tags-surrogate-strings
+  (setq org-tag-beautify-surrogate-strings
+        (append org-tag-beautify-surrogate-strings
                 `(("DIY" . "🧰") ("gene" . "🧬") ("DNA" . "🧬") ("RNA" . "🧬")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
@@ -1181,15 +1181,14 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;;========================================== org-tag-alist ==========================================
 
 (defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
-  "Append `org-pretty-tags-surrogate-strings' tags to `org-tag-alist' for `org-set-tags-command' completion."
-  (setq org-tag-alist
-        (append org-tag-alist
-                (append
-                 '((:startgrouptag)) '(("icons"))
-                 '((:grouptags)) (mapcar 'list (mapcar 'car org-pretty-tags-surrogate-strings))
-                 '((:endgrouptag))))))
-
-(org-tag-beautify-append-org-tags-alist--with-org-pretty-tags)
+  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-alist' for `org-set-tags-command' completion."
+  (setq org-tag-beautify-tag-alist
+        (append
+         '((:startgrouptag)) '(("icons"))
+         '((:grouptags)) (mapcar 'list (mapcar 'car org-tag-beautify-surrogate-strings))
+         '((:endgrouptag))))
+  (setq org-tag-beautify--org-tag-alist--original org-tag-alist) ; store original value
+  (setq org-tag-alist (append org-tag-alist org-tag-beautify-tag-alist)))
 
 (defun org-tag-beautify-append-org-tags-alist--with-nerd-icons ()
   "Append `nerd-icons' icon names into the `org-tag-alist' for `org-set-tags-command' completion."
@@ -1214,9 +1213,9 @@ hardcoded (tag . icon) pair bindings to display icon."
   (if org-tag-beautify-auto-find-available-icons
       (progn
         ;; add hardcoded (tag . icon) pair bindings to
-        ;; `org-pretty-tags-surrogate-strings' for
+        ;; `org-tag-beautify-surrogate-strings' for
         ;; `org-tag-beautify--find-tag-icon' query.
-        (setq org-pretty-tags-surrogate-strings nil) ; clear original prettified tags.
+        (setq org-tag-beautify-surrogate-strings nil) ; clear original prettified tags.
         (org-tag-beautify-set-common-tag-icons)
         (org-tag-beautify-set-programming-tag-icons)
         (org-tag-beautify-set-internet-company-tag-icons)
