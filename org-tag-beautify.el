@@ -65,6 +65,11 @@
   :safe #'booleanp
   :group 'org-tag-beautify)
 
+(defcustom org-tag-beautify-surrogate-strings nil
+  "DOC"
+  :type '(alist :key-type string :value-type text-property)
+  :safe #'listp
+  :group 'org-tag-beautify)
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
