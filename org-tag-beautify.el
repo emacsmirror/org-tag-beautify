@@ -68,7 +68,7 @@
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
-(defcustom org-tag-beautify-auto-icons t
+(defcustom org-tag-beautify-auto-find-available-icons t
   "Auto search available icons for tags.
 
 If t, use string-match regexp for tag to find first available
@@ -1211,7 +1211,7 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
-  (if org-tag-beautify-auto-icons
+  (if org-tag-beautify-auto-find-available-icons
       (progn
         ;; add hardcoded (tag . icon) pair bindings to
         ;; `org-pretty-tags-surrogate-strings' for
@@ -1240,7 +1240,7 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  (if org-tag-beautify-auto-icons
+  (if org-tag-beautify-auto-find-available-icons
       (progn
         (org-tag-beautify-delete-overlays)
         (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
