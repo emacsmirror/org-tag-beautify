@@ -65,9 +65,6 @@
   :safe #'booleanp
   :group 'org-tag-beautify)
 
-(defvar org-tag-beautify--surrogate-strings-original
-  (default-value 'org-tag-beautify-surrogate-strings)
-  "Store `org-tag-beautify-surrogate-strings' default value for restoring.")
 
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
@@ -1222,7 +1219,6 @@
   "Disable `org-tag-beautify'."
   (org-tag-beautify-delete-overlays)
   ;; revert `org-tag-alist'
-  (setq org-tag-beautify-surrogate-strings org-tag-beautify--surrogate-strings-original)
   (setq org-tag-alist org-tag-beautify--org-tag-alist--original)
   (org-tag-beautify-auto-smart-tag-disable)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
