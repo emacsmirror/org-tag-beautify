@@ -44,22 +44,26 @@
                                       (or load-file-name (buffer-file-name)))
   "The org-tag-beautify data directory."
   :type 'string
-  :safe #'stringp)
+  :safe #'stringp
+  :group 'org-tag-beautify)
 
 (defcustom org-tag-beautify-icon-height (* (default-font-height) 1)
   "Specify the tag icon height."
   :type 'number
-  :safe #'numberp)
+  :safe #'numberp
+  :group 'org-tag-beautify)
 
 (defcustom org-tag-beautify-icon-width (* (default-font-width) 4.5)
   "Specify the tag icon width."
   :type 'number
-  :safe #'numberp)
+  :safe #'numberp
+  :group 'org-tag-beautify)
 
 (defcustom org-tag-beautify-auto-add-tags t
   "Whether auto add tags to heading."
   :type 'boolean
-  :safe #'booleanp)
+  :safe #'booleanp
+  :group 'org-tag-beautify)
 
 (defvar org-tag-beautify--surrogate-strings-original
   (default-value 'org-tag-beautify-surrogate-strings)
