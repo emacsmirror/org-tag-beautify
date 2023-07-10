@@ -160,7 +160,7 @@ hardcoded (tag . icon) pair bindings to display icon."
                                        (buffer-substring-no-properties
                                         (match-beginning 1) (match-end 1)))))))))
 
-(defun org-tag-beautify-display-icon-refresh-all ()
+(defun org-tag-beautify-display-icon-refresh-all-headlines ()
   "Prettify Org mode buffer tags with icons."
   (when (eq major-mode 'org-mode)
     (org-with-point-at 1
@@ -1210,46 +1210,33 @@ hardcoded (tag . icon) pair bindings to display icon."
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
-  (if org-tag-beautify-auto-find-available-icons
-      (progn
-        ;; add hardcoded (tag . icon) pair bindings to
-        ;; `org-tag-beautify-surrogate-strings' for
-        ;; `org-tag-beautify--find-tag-icon' query.
-        (setq org-tag-beautify-surrogate-strings nil) ; clear original prettified tags.
-        (org-tag-beautify-set-common-tag-icons)
-        (org-tag-beautify-set-programming-tag-icons)
-        (org-tag-beautify-set-internet-company-tag-icons)
-        (org-tag-beautify-set-countries-tag-icons)
-        (org-tag-beautify-set-unicode-tag-icons)
-        
-        (org-tag-beautify-display-icon-refresh-all)
-        (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
-        (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
-        ;; (add-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh-headline)
-        )
-    (progn
-      (org-tag-beautify-set-common-tag-icons)
-      (org-tag-beautify-set-programming-tag-icons)
-      (org-tag-beautify-set-internet-company-tag-icons)
-      (org-tag-beautify-set-countries-tag-icons)
-      (org-tag-beautify-set-unicode-tag-icons)
-      (org-pretty-tags-global-mode 1)
-      (org-tag-beautify-auto-smart-tag-enable))))
+  (setq org-pretty-tags-surrogate-strings nil) ; clear original prettified tags.
+  (org-tag-beautify-set-common-tag-icons)
+  (org-tag-beautify-set-programming-tag-icons)
+  (org-tag-beautify-set-internet-company-tag-icons)
+  (org-tag-beautify-set-countries-tag-icons)
+  (org-tag-beautify-set-unicode-tag-icons)
+  ;; add `org-tag-beautify-surrogate-strings' to `org-tag-alist'.
+  (org-tag-beautify-append-org-tags-alist--with-org-pretty-tags)
+  ;; auto add tags on `org-attach'
+  (org-tag-beautify-auto-smart-tag-enable)
+  ;; refresh headline tags
+  (org-tag-beautify-display-icon-refresh-all-headlines) ; init run on mode enabled.
+  (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
+  (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
+  (org-pretty-tags-mode 1))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  (if org-tag-beautify-auto-find-available-icons
-      (progn
-        (org-tag-beautify-delete-overlays)
-        (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all)
-        (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
-        ;; (remove-hook 'org-ctrl-c-ctrl-c-hook #'org-tag-beautify-display-icon-refresh-headline)
-        )
-    (progn
-      (setq org-pretty-tags-surrogate-strings org-tag-beautify--surrogate-strings-original)
-      (org-pretty-tags-global-mode -1)
-      (org-tag-beautify-auto-smart-tag-disable))))
+  (org-tag-beautify-delete-overlays)
+  ;; revert `org-tag-alist'
+  (setq org-tag-beautify-surrogate-strings org-tag-beautify--surrogate-strings-original)
+  (setq org-tag-alist org-tag-beautify--org-tag-alist--original)
+  (org-tag-beautify-auto-smart-tag-disable)
+  (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
+  (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
+  (org-pretty-tags-mode -1))
 
 ;;;###autoload
 (define-minor-mode org-tag-beautify-mode
