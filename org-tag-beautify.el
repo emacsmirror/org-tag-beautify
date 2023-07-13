@@ -1155,12 +1155,17 @@
          (tags-list (cadr (assoc extension org-attach-attach--smart-tags-alist))))
     (save-excursion
       (org-back-to-heading)
-      ;; append `tags-list' to original tags list and set the new Org tags list.
-      (let* ((orig-tags (mapcar 'substring-no-properties (org-get-tags (point) 'local)))
-             (new-tags-list (cl-remove-duplicates (append tags-list orig-tags)
-                                                  :test (lambda (x y) (or (null y) (equal x y)))
-                                                  :from-end t)))
-        (org-set-tags new-tags-list)))))
+      (let* ((original-tags-list (mapcar 'substring-no-properties (org-get-tags (point) 'local)))) ; get original existing tags list
+        (org-set-tags
+         (cl-remove-duplicates
+          ;; Avoid duplicated tags. e.g. If existing tag is "book", don't add tag "pdf".
+          (if (or (member "book" original-tags-list)
+                  (member "document" original-tags-list))
+              original-tags-list
+            ;; append `tags-list' to original tags list and set the new Org tags list.
+            (append tags-list original-tags-list))
+          :test (lambda (x y) (or (null y) (equal x y)))
+          :from-end t))))))
 
 (defun org-tag-beautify-auto-smart-tag-enable ()
   "Enable auto add tags based on `org-attach-commands' attached file types."
