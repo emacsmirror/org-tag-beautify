@@ -80,7 +80,7 @@
   :group 'org-tag-beautify)
 
 (defcustom org-tag-beautify-surrogate-strings nil
-  "DOC"
+  "An custom option to store user defined hard-coded (tag . icon) alist."
   :type '(alist :key-type string :value-type text-property)
   :safe #'listp
   :group 'org-tag-beautify)
