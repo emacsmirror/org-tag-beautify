@@ -1203,7 +1203,8 @@
   "A variable to store original `org-tag-alist' value.")
 
 (defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
-  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-alist' for `org-set-tags-command' completion."
+  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-alist'.
+For `org-set-tags-command' completion."
   (setq org-tag-beautify-tag-alist
         (append
          '((:startgrouptag)) '(("icons"))
