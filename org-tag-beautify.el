@@ -1185,6 +1185,9 @@
 (defvar org-tag-beautify-tag-alist nil
   "A variable to store `org-tag-alist' like tags value.")
 
+(defvar org-tag-beautify--org-tag-alist--original nil
+  "A variable to store original `org-tag-alist' value.")
+
 (defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
   "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-alist' for `org-set-tags-command' completion."
   (setq org-tag-beautify-tag-alist
