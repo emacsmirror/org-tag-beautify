@@ -94,7 +94,10 @@
   "Store all icon names list into a variable to avoid repeatedly computing.")
 
 (defcustom org-tag-beautify-tag-icon-cache-alist nil
-  "A cache list to store already search found tag and icon pair.")
+  "A cache list to store already search found tag and icon pair."
+  :type 'list
+  :safe #'listp
+  :group 'org-tag-beautify)
 
 (defun org-tag-beautify--find-tag-icon (&optional tag)
   "Fuzzy find TAG text in icon names then return icon."
