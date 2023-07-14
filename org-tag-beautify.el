@@ -35,6 +35,20 @@
 
 (require 'nerd-icons)
 
+(require 'org)
+(require 'org-macs)
+;; (declare-function 'org-set-tags "org" (_fn _file &rest _args))
+;; (declare-function 'org-get-tags "org" (&optional epom local))
+;; (declare-function 'org-back-to-heading "org" (&optional invisible-ok))
+;; (declare-function 'org-at-heading-p "org" (&optional invisible-not-ok))
+;; (declare-function 'org-with-point-at "org-macs" (epom &rest body))
+;; (declare-function 'org-match-line "org-macs" (regexp))
+;; (declare-function 'outline-next-heading "outline" ())
+;; (defvar 'org-tag-alist)
+;; (defvar 'org-complex-heading-regexp)
+
+(defvar org-pretty-tags-surrogate-strings) ; variable from package "org-pretty-tags"
+
 (defgroup org-tag-beautify nil
   "Customize group of `org-tag-beautify-mode'."
   :prefix "org-tag-beautify-"
@@ -95,7 +109,7 @@
 
 (defcustom org-tag-beautify-tag-icon-cache-alist nil
   "A cache list to store already search found tag and icon pair."
-  :type 'list
+  :type 'alist
   :safe #'listp
   :group 'org-tag-beautify)
 
