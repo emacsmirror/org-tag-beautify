@@ -134,8 +134,6 @@
                          (ignore-errors (funcall icon-f icon-name)))))
             ;; cache already search found icon name.
             (push `(,tag . ,icon) org-tag-beautify-tag-icon-cache-alist)
-            ;; TODO: save this `org-tag-beautify-tag-icon-cache-alist' into `custom.el' or elisp data file like `save-place-file'.
-            (setopt org-tag-beautify-tag-icon-cache-alist org-tag-beautify-tag-icon-cache-alist)
             icon))
     (org-tag-beautify--nerd-icons-get-icon-name
      ;; (#("<icon>" ...))
