@@ -472,6 +472,8 @@
                   ("magazine" . ,(nerd-icons-mdicon "nf-md-book_open_page_variant_outline" :face 'nerd-icons-blue))
                   ("Ezine" . ,(nerd-icons-mdicon "nf-md-book_open" :face 'nerd-icons-purple))
                   ("comic" . ,(nerd-icons-mdicon "nf-md-book_open_variant" :face 'nerd-icons-orange))
+                  ("course" . ,(nerd-icons-mdicon "nf-md-google_classroom" :face 'nerd-icons-green))
+                  ("classroom" . ,(nerd-icons-mdicon "nf-md-google_classroom" :face 'nerd-icons-green))
                   ("bookmark" . ,(nerd-icons-mdicon "nf-md-bookmark_outline" :face 'nerd-icons-blue))
                   ("plot" . ,(nerd-icons-mdicon "nf-md-chart_bell_curve" :face 'nerd-icons-blue))
                   ("diagram" . ,(nerd-icons-octicon "nf-oct-graph" :face 'nerd-icons-blue))
