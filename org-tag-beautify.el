@@ -1153,7 +1153,7 @@
     ;; document file types
     ("org" ("Org_mode")) ("md" ("Markdown")) ("txt" ("document"))
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
-    ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book"))
+    ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book")) ("djvu" ("book")) ("fb2" ("book"))
     ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
     ("zip" ("archive_file")) ("rar" ("archive_file")) ("tar" ("archive_file")) ("tar.gz" ("archive_file")) ("tar.bz2" ("archive_file"))
     ;; source code file formats
