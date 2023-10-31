@@ -565,14 +565,14 @@
                   ("accounting" . ,(nerd-icons-mdicon "nf-md-wallet_outline" :face 'nerd-icons-green))
                   ("finance" . ,(nerd-icons-mdicon "nf-md-calculator_variant" :face 'nerd-icons-blue))
                   ("stock" . ,(nerd-icons-mdicon "nf-md-chart_timeline_variant_shimmer" :face 'nerd-icons-blue))
-
+                  
                   ;; Philosophy
                   ("daoism" . ,(nerd-icons-mdicon "nf-md-yin_yang" :face 'nerd-icons-blue))
-
+                  
                   ;; Science
                   ("chemistry" . ,(nerd-icons-mdicon "nf-md-chemical_weapon" :face 'nerd-icons-green))
                   ("bacteria" . ,(nerd-icons-mdicon "nf-md-bacteria_outline" :face 'nerd-icons-green))
-
+                  
                   ;; Society
                   ("forest" . ,(nerd-icons-mdicon "nf-md-tree" :face 'nerd-icons-lgreen))
                   ("empire" . ,(nerd-icons-faicon "nf-fa-empire" :face 'nerd-icons-yellow))
