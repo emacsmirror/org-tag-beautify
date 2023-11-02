@@ -828,6 +828,7 @@
                   ;; Open Source
                   ("GNU" . ,(nerd-icons-devicon "nf-dev-gnu" :face 'nerd-icons-silver))
                   ("license" . ,(nerd-icons-mdicon "nf-md-license" :face 'nerd-icons-green))
+                  ("open_source" . ,(nerd-icons-mdicon "nf-md-open_source_initiative" :face 'nerd-icons-green))
                   ("creative-commons" . ,(nerd-icons-mdicon "nf-md-creative_commons" :face 'nerd-icons-silver))
                   
                   ;; Business
