@@ -835,6 +835,7 @@
                   ("copyright" . ,(nerd-icons-mdicon "nf-md-copyright" :face 'nerd-icons-blue))
                   ("trademark" . ,(nerd-icons-mdicon "nf-md-trademark" :face 'nerd-icons-blue))
                   ("registered" . ,(nerd-icons-mdicon "nf-md-registered_trademark" :face 'nerd-icons-blue))
+                  ("DRM" . ,(nerd-icons-mdicon "nf-md-copyright" :face 'nerd-icons-silver))
                   ))))
 
 (defun org-tag-beautify-set-internet-company-tag-icons ()
