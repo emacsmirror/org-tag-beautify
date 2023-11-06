@@ -351,6 +351,7 @@
                   ("diamond" . ,(nerd-icons-mdicon "nf-md-diamond_stone" :face 'nerd-icons-silver))
                   ("tag" . ,(nerd-icons-mdicon "nf-md-tag_outline" :face 'nerd-icons-blue))
                   ("tags" . ,(nerd-icons-mdicon "nf-md-tag_multiple" :face 'nerd-icons-blue))
+                  ("capital" . ,(nerd-icons-faicon "nf-fa-money" :face 'nerd-icons-silver))
                   ("money" . ,(nerd-icons-faicon "nf-fa-money" :face 'nerd-icons-green))
                   ("usd" . ,(nerd-icons-mdicon "nf-md-currency_usd" :face 'nerd-icons-green))
                   ("eur" . ,(nerd-icons-mdicon "nf-md-currency_eur" :face 'nerd-icons-blue))
