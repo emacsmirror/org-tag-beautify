@@ -1167,7 +1167,7 @@
     )
   "An alist of file extension and tag name pairs.")
 
-(defun org-attach-attach--auto-add-smart-tag (origin-func file &optional visit-dir method)
+(defun org-tag-beautify--attach-auto-tag (origin-func file &optional visit-dir method)
   "An advice function which auto add smart Org tag based on `org-attach' command attached file format."
   (apply origin-func file visit-dir method)
   (let* ((file (substring-no-properties file))
@@ -1191,11 +1191,11 @@
   "Enable auto add tags based on `org-attach-commands' attached file types."
   (when org-tag-beautify-auto-add-tags
     ;; for [C-c C-a] `org-attach-commands'
-    (advice-add 'org-attach-attach :around #'org-attach-attach--auto-add-smart-tag)))
+    (advice-add 'org-attach-attach :around #'org-tag-beautify--attach-auto-tag)))
 
 (defun org-tag-beautify-auto-smart-tag-disable ()
   "Disable auto add tags."
-  (advice-remove 'org-attach-attach #'org-attach-attach--auto-add-smart-tag))
+  (advice-remove 'org-attach-attach #'org-tag-beautify--attach-auto-tag))
 
 ;;========================================== org-tag-alist ==========================================
 
