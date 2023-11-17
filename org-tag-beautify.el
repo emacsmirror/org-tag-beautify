@@ -1169,7 +1169,7 @@
 
 (defun org-tag-beautify--attach-auto-tag (origin-func file &optional visit-dir method)
   "An advice function which auto add smart Org tag based on `org-attach' command attached file format."
-  (apply origin-func file visit-dir method)
+  (apply origin-func file visit-dir (list method))
   (let* ((file (substring-no-properties file))
          (extension (downcase (file-name-extension file)))
          (tags-list (cadr (assoc extension org-attach-attach--smart-tags-alist))))
