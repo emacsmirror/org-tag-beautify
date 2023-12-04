@@ -93,14 +93,23 @@
 
 (defun org-tag-beautify--nerd-icons-get-icon-name (icon-plist) ; (#("<icon>" ...))
   "Extract only icon name string from icon plist structure."
-  (let ((icon-name-glyph-set
+  (let ((icon-name-glyph-set ; -> "nf-md-access_point	[mdicon]"
          ;; strip out text-property from icon name -> "nf-md-access_point	[mdicon]"
          (substring-no-properties (car icon-plist))))
     ;; keep only icon name
     (when (string-match
            "\\([-_[:alnum:]]*\\)[\t\w]\\[\\(.*\\)\\]"
            icon-name-glyph-set)
-      (match-string 1 icon-name-glyph-set))))
+      (car
+       (seq-drop
+        (split-string
+         (match-string 1 icon-name-glyph-set) ; -> nf-md-access_point
+         "-")                                 ; -> "nf" "md" "access_point"
+        2)) ; -> "access_point"
+      )))
+
+;; (seq-drop (split-string "nf-md-access_point" "-") 2) ; -> "access_point"
+;; (seq-drop (split-string "nf-md-access_point" "[-_]") 2) ; -> "access" "point"
 
 (defvar org-tag-beautify--nerd-icons-icon-names-list
   (mapcar 'org-tag-beautify--nerd-icons-get-icon-name
@@ -145,6 +154,8 @@
 ;; (org-tag-beautify--find-tag-icon "heart")
 ;; (org-tag-beautify--find-tag-icon "wikipedia")
 ;; (org-tag-beautify--find-tag-icon "LaTeX")
+;;
+;; Testing no icon associated defined tag.
 ;; (org-tag-beautify--find-tag-icon "ATTACH")
 
 (defvar org-tag-beautify-overlays nil
