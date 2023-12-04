@@ -96,31 +96,25 @@
   (let ((icon-name-glyph-set ; -> "nf-md-access_point	[mdicon]"
          ;; strip out text-property from icon name -> "nf-md-access_point	[mdicon]"
          (substring-no-properties (car icon-plist))))
-    ;; keep only icon name
-    (when (string-match
-           "\\([-_[:alnum:]]*\\)[\t\w]\\[\\(.*\\)\\]"
-           icon-name-glyph-set)
-      (car
-       (seq-drop
-        (split-string
-         (match-string 1 icon-name-glyph-set) ; -> nf-md-access_point
-         "-")                                 ; -> "nf" "md" "access_point"
-        2)) ; -> "access_point"
-      )))
+    (when (string-match "\\([[:alnum:]]*-[[:alnum:]]*\\)-\\([[:alnum:]_]*\\)"
+                        icon-name-glyph-set)
+      (cons (match-string 1 icon-name-glyph-set)
+            (match-string 2 icon-name-glyph-set)))))
 
 ;; (seq-drop (split-string "nf-md-access_point" "-") 2) ; -> "access_point"
 ;; (seq-drop (split-string "nf-md-access_point" "[-_]") 2) ; -> "access" "point"
 
-(defvar org-tag-beautify--nerd-icons-icon-names-list
+(defvar org-tag-beautify--nerd-icons-icon-pairs-list
   (mapcar 'org-tag-beautify--nerd-icons-get-icon-name
           org-tag-beautify--nerd-icons-icons-list)
+  "Store all icon glyph and icon name into a variable to avoid repeatedly computing.")
+
+(defvar org-tag-beautify--nerd-icons-icon-names-list
+  (mapcar 'cdr org-tag-beautify--nerd-icons-icon-pairs-list)
   "Store all icon names list into a variable to avoid repeatedly computing.")
 
-(defcustom org-tag-beautify-tag-icon-cache-alist nil
-  "A cache list to store already search found tag and icon pair."
-  :type 'alist
-  :safe #'listp
-  :group 'org-tag-beautify)
+(defvar org-tag-beautify-tag-icon-cache-alist nil
+  "A cache list to store already search found tag and icon pair by `org-tag-beautify--find-tag-icon'.")
 
 (defun org-tag-beautify--find-tag-icon (&optional tag)
   "Fuzzy find TAG text in icon names then return icon."
@@ -131,23 +125,28 @@
           (let* (;; TODO: improve the tag name matching algorithm.
                  (tag-regexp-matching-f (apply-partially 'string-match-p
                                                          (regexp-opt (list (substring-no-properties (downcase tag))))))
+                 ;; -> "archlinux"
                  (icon-name (seq-find
                              tag-regexp-matching-f
                              org-tag-beautify--nerd-icons-icon-names-list))
+                 ;; reverse query alist: "archlinux" -> ("nf-linux" . "archlinux")
+                 (icon-pair (rassoc icon-name org-tag-beautify--nerd-icons-icon-pairs-list))
+                 (icon-symbol (concat (car icon-pair) "-" (cdr icon-pair)))
                  (icon-f (cl-find-if
-                          (lambda (f)
-                            (ignore-errors (funcall f icon-name)))
+                          (lambda (f) (ignore-errors (funcall f icon-symbol)))
                           (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
                  (icon (if-let ((found-icon (cdr (assoc tag org-tag-beautify-surrogate-strings))))
                            found-icon
-                         (ignore-errors (funcall icon-f icon-name)))))
+                         (ignore-errors (funcall icon-f icon-symbol)))))
             ;; cache already search found icon name.
-            (push `(,tag . ,icon) org-tag-beautify-tag-icon-cache-alist)
+            (when icon ; push to list only when found icon.
+              (push `(,tag . ,icon) org-tag-beautify-tag-icon-cache-alist))
             icon))
     (org-tag-beautify--nerd-icons-get-icon-name
      ;; (#("<icon>" ...))
      (list (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list)))))
 
+;; ("Arch_Linux"     . ,(nerd-icons-flicon "nf-linux-archlinux" :face 'nerd-icons-blue))
 ;;; TEST:
 ;; (org-tag-beautify--find-tag-icon "archlinux")
 ;; (org-tag-beautify--find-tag-icon "steam")
@@ -156,6 +155,7 @@
 ;; (org-tag-beautify--find-tag-icon "LaTeX")
 ;;
 ;; Testing no icon associated defined tag.
+;; (org-tag-beautify--find-tag-icon "alpha_c_circle")
 ;; (org-tag-beautify--find-tag-icon "ATTACH")
 
 (defvar org-tag-beautify-overlays nil
@@ -1230,9 +1230,9 @@ For `org-set-tags-command' completion."
 
 (defun org-tag-beautify-append-org-tags-alist--with-nerd-icons ()
   "Append `nerd-icons' icon names into the `org-tag-alist' for `org-set-tags-command' completion."
-  (let ((icon-names (mapcar
-                     'org-tag-beautify--nerd-icons-get-icon-name
-                     org-tag-beautify--nerd-icons-icons-list)))
+  (let ((icon-names (mapcar 'cdr (mapcar
+                                  'org-tag-beautify--nerd-icons-get-icon-name
+                                  org-tag-beautify--nerd-icons-icons-list))))
     (setq org-tag-alist
           (append org-tag-alist
                   `((:startgrouptag)
@@ -1241,8 +1241,7 @@ For `org-set-tags-command' completion."
                     ,@(mapcar 'list icon-names)
                     (:endgrouptag))))))
 
-;;; NOTE: Don't enable this because nerd-icons icon names are not valid Org tags.
-;; (org-tag-beautify-append-org-tags-alist--with-nerd-icons)
+(org-tag-beautify-append-org-tags-alist--with-nerd-icons)
 
 ;;============================================ minor mode ===========================================
 ;;;###autoload
