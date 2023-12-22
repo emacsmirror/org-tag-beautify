@@ -584,6 +584,9 @@
                   ;; Science
                   ("chemistry" . ,(nerd-icons-mdicon "nf-md-chemical_weapon" :face 'nerd-icons-green))
                   ("bacteria" . ,(nerd-icons-mdicon "nf-md-bacteria_outline" :face 'nerd-icons-green))
+                  ("gene" . ,(nerd-icons-faicon "nf-fae-dna" :face 'nerd-icons-blue))
+                  ("DNA" . ,(nerd-icons-faicon "nf-fae-dna" :face 'nerd-icons-blue))
+                  ("RNA" . ,(nerd-icons-faicon "nf-fae-dna" :face 'nerd-icons-blue))
                   
                   ;; Society
                   ("forest" . ,(nerd-icons-mdicon "nf-md-tree" :face 'nerd-icons-lgreen))
@@ -1154,7 +1157,7 @@
   "Display tag as Unicode emoji."
   (setq org-tag-beautify-surrogate-strings
         (append org-tag-beautify-surrogate-strings
-                `(("DIY" . "🧰") ("gene" . "🧬") ("DNA" . "🧬") ("RNA" . "🧬")))))
+                `(("DIY" . "🧰")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-attach-attach--smart-tags-alist
