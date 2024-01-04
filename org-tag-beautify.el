@@ -758,8 +758,9 @@
                   ("adb" . ,(nerd-icons-mdicon "nf-md-android" :face 'nerd-icons-green))
                   
                   ;; Programming Languages
-                  ("Shell" . ,(nerd-icons-codicon "nf-cod-terminal_bash" :face 'nerd-icons-blue))
-                  ("Shell_Script" . ,(nerd-icons-mdicon "nf-md-bash" :face 'nerd-icons-blue))
+                  ("shell" . ,(nerd-icons-codicon "nf-cod-terminal_bash" :face 'nerd-icons-blue))
+                  ("shell_script" . ,(nerd-icons-mdicon "nf-md-bash" :face 'nerd-icons-blue))
+                  ("shebang" . ,(nerd-icons-mdicon "nf-md-bash" :face 'nerd-icons-blue))
                   ;; ("LISP" . ,())
                   ;; ("Common_Lisp" . ,())
                   ("Emacs_Lisp" . ,(nerd-icons-icon-for-mode 'emacs-lisp-mode))
