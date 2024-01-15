@@ -445,7 +445,6 @@
                   ("run" . ,(nerd-icons-mdicon "nf-md-run_fast" :face 'nerd-icons-green))
                   ("walk" . ,(nerd-icons-mdicon "nf-md-walk" :face 'nerd-icons-silver))
                   ("travel" . ,(nerd-icons-mdicon "nf-md-wallet_travel" :face 'nerd-icons-silver))
-                  ("child" . ,(nerd-icons-mdicon "nf-md-human_child" :face 'nerd-icons-silver))
                   ("recycle" . ,(nerd-icons-mdicon "nf-md-recycle_variant" :face 'nerd-icons-green))
                   
                   ;; weather
@@ -568,6 +567,20 @@
                   ("business_trip" . ,(nerd-icons-mdicon "nf-md-bag_suitcase" :face 'nerd-icons-blue))
                   ("business_trip_briefcase" . ,(nerd-icons-codicon "nf-cod-briefcase" :face 'nerd-icons-blue))
                   ("business_trip_suitcase" . ,(nerd-icons-faicon "nf-fa-suitcase" :face 'nerd-icons-blue))
+
+                  ;; People
+                  ("child" . ,(nerd-icons-mdicon "nf-md-account_child" :face 'nerd-icons-silver))
+                  ("programmer" . ,(nerd-icons-codicon "nf-cod-code" :face 'nerd-icons-blue-alt))
+                  ("coder" . ,(nerd-icons-codicon "nf-cod-code" :face 'nerd-icons-blue-alt))
+                  ("photographer" . ,(nerd-icons-mdicon "nf-md-camera_outline" :face 'nerd-icons-green))
+                  ("worker" . ,(nerd-icons-mdicon "nf-md-account_hard_hat_outline" :face 'nerd-icons-blue))
+                  ("accountant" . ,(nerd-icons-mdicon "nf-md-account_cash_outline" :face 'nerd-icons-green))
+                  ("student" . ,(nerd-icons-mdicon "nf-md-account_school_outline" :face 'nerd-icons-blue))
+                  ("supervisor" . ,(nerd-icons-mdicon "nf-md-account_supervisor_circle_outline" :face 'nerd-icons-blue))
+                  ("white_collar" . ,(nerd-icons-mdicon "nf-md-account_tie" :face 'nerd-icons-blue))
+                  ("driver" . ,(nerd-icons-mdicon "nf-md-account_tie_hat" :face 'nerd-icons-blue-alt))
+                  ("woman" . ,(nerd-icons-mdicon "nf-md-account_tie_woman" :face 'nerd-icons-pink))
+                  ("repairman" . ,(nerd-icons-mdicon "nf-md-account_wrench" :face 'nerd-icons-purple))
                   
                   ;; Company
                   ("users" . ,(nerd-icons-faicon "nf-fa-users" :face 'nerd-icons-blue))
