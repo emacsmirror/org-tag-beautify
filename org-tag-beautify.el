@@ -1208,8 +1208,9 @@
         (org-set-tags
          (cl-remove-duplicates
           ;; Avoid duplicated tags. e.g. If existing tag is "book", don't add tag "pdf".
-          (if (or (member "book" original-tags-list)
-                  (member "document" original-tags-list))
+          (if (seq-intersection
+               '("book" "document" "comic" "magazine" "paper")
+               original-tags-list)
               original-tags-list
             ;; append `tags-list' to original tags list and set the new Org tags list.
             (append tags-list original-tags-list))
