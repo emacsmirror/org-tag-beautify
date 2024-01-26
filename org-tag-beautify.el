@@ -330,6 +330,7 @@
                   ("male_homosexual" . ,(propertize "⚣" 'face '(:foreground "purple")))
                   ("lesbian" . ,(propertize "⚢" 'face '(:foreground "purple")))
                   ("gay" . ,(propertize "⚣" 'face '(:foreground "purple")))
+                  ("BL" . ,(propertize "⚣" 'face '(:foreground "purple")))
                   ("asexuality" . ,(propertize "○" 'face '(:foreground "purple")))     ; 无性取向
                   ("bisexuality" . ,(propertize "⚤" 'face '(:foreground "purple")))    ; 双性恋取向
                   ("intersexuality" . ,(propertize "☿" 'face '(:foreground "purple"))) ; 中间性
@@ -483,6 +484,7 @@
                   ("magazine" . ,(nerd-icons-mdicon "nf-md-book_open_page_variant_outline" :face 'nerd-icons-blue))
                   ("Ezine" . ,(nerd-icons-mdicon "nf-md-book_open" :face 'nerd-icons-purple))
                   ("comic" . ,(nerd-icons-mdicon "nf-md-book_open_variant" :face 'nerd-icons-orange))
+                  ("manga" . ,(nerd-icons-mdicon "nf-md-book_open_variant" :face 'nerd-icons-orange))
                   ("course" . ,(nerd-icons-mdicon "nf-md-google_classroom" :face 'nerd-icons-green))
                   ("classroom" . ,(nerd-icons-mdicon "nf-md-google_classroom" :face 'nerd-icons-green))
                   ("bookmark" . ,(nerd-icons-mdicon "nf-md-bookmark_outline" :face 'nerd-icons-blue))
@@ -624,6 +626,7 @@
                   ("regex" . ,(nerd-icons-codicon "nf-cod-regex" :face 'nerd-icons-cyan-alt))
                   ("regexp" . ,(nerd-icons-codicon "nf-cod-regex" :face 'nerd-icons-cyan-alt))
                   ("extension" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
+                  ("plugin" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
                   ("vcs" . ,(nerd-icons-codicon "nf-cod-source_control" :face 'nerd-icons-blue))
                   ("vcs_branch" . ,(nerd-icons-mdicon "nf-md-source_branch" :face 'nerd-icons-blue))
                   ("vcs_commit" . ,(nerd-icons-mdicon "nf-md-source_commit" :face 'nerd-icons-blue))
