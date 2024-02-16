@@ -660,7 +660,7 @@
                   ("iPhone" . ,(nerd-icons-mdicon "nf-md-cellphone" :face 'nerd-icons-blue))
                   ("keyboard" . ,(nerd-icons-mdicon "nf-md-keyboard" :face 'nerd-icons-blue))
                   ("mouse" . ,(nerd-icons-mdicon "nf-md-mouse" :face 'nerd-icons-blue))
-                  ;; ("Arduino" . ,())
+                  ("Arduino" . ,(nerd-icons-flicon "nf-linux-arduino" :face 'nerd-icons-green))
                   ("Raspberry_Pi" . ,(nerd-icons-flicon "nf-linux-raspberry_pi" :face 'nerd-icons-lred))
                   ("PlatformIO" . ,(nerd-icons-sucicon "nf-seti-platformio" :face 'nerd-icons-orange))
                   ("hardware" . ,(nerd-icons-mdicon "nf-md-devices" :face 'nerd-icons-blue))
