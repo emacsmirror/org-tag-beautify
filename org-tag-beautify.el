@@ -44,7 +44,7 @@
 ;; (declare-function 'org-with-point-at "org-macs" (epom &rest body))
 ;; (declare-function 'org-match-line "org-macs" (regexp))
 ;; (declare-function 'outline-next-heading "outline" ())
-;; (defvar 'org-tag-alist)
+;; (defvar 'org-tag-persistent-alist)
 ;; (defvar 'org-complex-heading-regexp)
 
 (defvar org-pretty-tags-surrogate-strings) ; variable from package "org-pretty-tags"
@@ -1230,32 +1230,32 @@
   "Disable auto add tags."
   (advice-remove 'org-attach-attach #'org-tag-beautify--attach-auto-tag))
 
-;;========================================== org-tag-alist ==========================================
+;;========================================== org-tag-persistent-alist ==========================================
 
 (defvar org-tag-beautify-tag-alist nil
-  "A variable to store `org-tag-alist' like tags value.")
+  "A variable to store `org-tag-persistent-alist' like tags value.")
 
-(defvar org-tag-beautify--org-tag-alist--original nil
-  "A variable to store original `org-tag-alist' value.")
+(defvar org-tag-beautify--org-tag-persistent-alist--original nil
+  "A variable to store original `org-tag-persistent-alist' value.")
 
 (defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
-  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-alist'.
+  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-persistent-alist'.
 For `org-set-tags-command' completion."
   (setq org-tag-beautify-tag-alist
         (append
          '((:startgrouptag)) '(("icons"))
          '((:grouptags)) (mapcar 'list (mapcar 'car org-tag-beautify-surrogate-strings))
          '((:endgrouptag))))
-  (setq org-tag-beautify--org-tag-alist--original org-tag-alist) ; store original value
-  (setq org-tag-alist (append org-tag-alist org-tag-beautify-tag-alist)))
+  (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist) ; store original value
+  (setq org-tag-persistent-alist (append org-tag-persistent-alist org-tag-beautify-tag-alist)))
 
 (defun org-tag-beautify-append-org-tags-alist--with-nerd-icons ()
-  "Append `nerd-icons' icon names into the `org-tag-alist' for `org-set-tags-command' completion."
+  "Append `nerd-icons' icon names into the `org-tag-persistent-alist' for `org-set-tags-command' completion."
   (let ((icon-names (mapcar 'cdr (mapcar
                                   'org-tag-beautify--nerd-icons-get-icon-name
                                   org-tag-beautify--nerd-icons-icons-list))))
-    (setq org-tag-alist
-          (append org-tag-alist
+    (setq org-tag-persistent-alist
+          (append org-tag-persistent-alist
                   `((:startgrouptag)
                     ("@nerd-icons")
                     (:grouptags)
@@ -1274,7 +1274,7 @@ For `org-set-tags-command' completion."
   (org-tag-beautify-set-internet-company-tag-icons)
   (org-tag-beautify-set-countries-tag-icons)
   (org-tag-beautify-set-unicode-tag-icons)
-  ;; add `org-tag-beautify-surrogate-strings' to `org-tag-alist'.
+  ;; add `org-tag-beautify-surrogate-strings' to `org-tag-persistent-alist'.
   (org-tag-beautify-append-org-tags-alist--with-org-pretty-tags)
   ;; auto add tags on `org-attach'
   (org-tag-beautify-auto-smart-tag-enable)
@@ -1287,8 +1287,8 @@ For `org-set-tags-command' completion."
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
   (org-tag-beautify-delete-overlays)
-  ;; revert `org-tag-alist'
-  (setq org-tag-alist org-tag-beautify--org-tag-alist--original)
+  ;; revert `org-tag-persistent-alist'
+  (setq org-tag-persistent-alist org-tag-beautify--org-tag-persistent-alist--original)
   (org-tag-beautify-auto-smart-tag-disable)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
