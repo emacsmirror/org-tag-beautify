@@ -1229,10 +1229,6 @@
     (advice-remove 'org-attach-attach #'org-tag-beautify--org-attach--auto-tags)))
 
 ;;==================================== `org-tag-persistent-alist' ===================================
-
-(defvar org-tag-beautify--org-tag-persistent-alist--original nil
-  "A variable to store original `org-tag-persistent-alist' value.")
-
 (defun org-tag-beautify-append-tags--with-hardcode-icons ()
   "Append hardcoded `org-tag-beautify-tag-icons-alist' icon tags to `org-tag-persistent-alist'.
 For `org-set-tags-command' completion."
@@ -1243,8 +1239,6 @@ For `org-set-tags-command' completion."
   (org-tag-beautify--add-internet-company-tag-icons)
   (org-tag-beautify--add-countries-tag-icons)
   (org-tag-beautify--add-unicode-tag-icons)
-  ;; store current value of `org-tag-persistent-alist'.
-  (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist)
   (let ((icon-names (mapcar 'car org-tag-beautify-tag-icons-alist)))
     (setq org-tag-persistent-alist
           (append org-tag-persistent-alist
@@ -1264,26 +1258,31 @@ For `org-set-tags-command' completion."
                     (:endgrouptag))))))
 
 ;;============================================ minor mode ===========================================
+(defvar org-tag-beautify--org-tag-persistent-alist--original nil
+  "A variable to store `org-tag-persistent-alist' value before enable `org-tag-beautify-mode'.")
+
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
+  ;; store current value of `org-tag-persistent-alist'.
+  (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist)
   ;; add extra tags to `org-tag-persistent-alist'
   ;; FIXME: caused [C-c C-q] can't complete Org buffer local tags.
   (org-tag-beautify-append-tags--with-hardcode-icons)
   (org-tag-beautify-append-tags--with-nerd-icons)
+  ;; refresh Org headline tags on first loading.
+  (org-tag-beautify-display-icon-refresh-all-headlines) ; initial run on mode enabled.
   ;; auto add tags on `org-attach'
   (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
-  ;; refresh Org headline tags on first loading.
-  (org-tag-beautify-display-icon-refresh-all-headlines) ; init run on mode enabled.
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
   "Disable `org-tag-beautify'."
-  (org-tag-beautify-delete-overlays)
-  ;; revert `org-tag-persistent-alist'
+  ;; revert `org-tag-persistent-alist' value
   (setq org-tag-persistent-alist org-tag-beautify--org-tag-persistent-alist--original)
+  (org-tag-beautify-delete-overlays)
   (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
