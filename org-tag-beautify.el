@@ -92,7 +92,7 @@
   "Store all nerd-icons list into a variable to avoid repeatedly computing.")
 
 (defun org-tag-beautify--nerd-icons-get-icon-name (icon-plist) ; (#("<icon>" ...))
-  "Extract only icon name string from icon plist structure."
+  "Extract only icon name string from ICON-PLIST structure."
   (let ((icon-name-glyph-set ; -> "nf-md-access_point	[mdicon]"
          ;; strip out text-property from icon name -> "nf-md-access_point	[mdicon]"
          (substring-no-properties (car icon-plist))))
@@ -197,7 +197,7 @@
 
 ;;; ----------------------------------------------------------------------------
 
-(defun org-tag-beautify-set-common-tag-icons ()
+(defun org-tag-beautify--add-common-tag-icons ()
   "Display most common tag as icon."
   (setq org-tag-beautify-surrogate-strings
         (append org-tag-beautify-surrogate-strings
@@ -608,7 +608,7 @@
                   ("empire" . ,(nerd-icons-faicon "nf-fa-empire" :face 'nerd-icons-yellow))
                   ("global" . ,(nerd-icons-faicon "nf-fa-globe" :face 'nerd-icons-blue))))))
 
-(defun org-tag-beautify-set-programming-tag-icons ()
+(defun org-tag-beautify--add-programming-tag-icons ()
   "Display programming tag as icon."
   (setq org-tag-beautify-surrogate-strings
         (append org-tag-beautify-surrogate-strings
@@ -871,7 +871,7 @@
                   ("DRM" . ,(nerd-icons-mdicon "nf-md-copyright" :face 'nerd-icons-silver))
                   ))))
 
-(defun org-tag-beautify-set-internet-company-tag-icons ()
+(defun org-tag-beautify--add-internet-company-tag-icons ()
   "Display internet company name tag as icon."
   (setq org-tag-beautify-surrogate-strings
         (append org-tag-beautify-surrogate-strings
@@ -906,7 +906,7 @@
                   ("whatsapp" . ,(nerd-icons-mdicon "nf-md-whatsapp" :face 'nerd-icons-green))
                   ("pocket" . ,(nerd-icons-faicon "nf-fa-get_pocket" :face 'nerd-icons-red))))))
 
-(defun org-tag-beautify-set-countries-tag-icons ()
+(defun org-tag-beautify--add-countries-tag-icons ()
   "Display countries name tag as flag icon."
   (if-let ((dir (concat org-tag-beautify-data-dir "countries/"))
            (available? (file-exists-p dir)))
@@ -1170,14 +1170,14 @@
                       ("zambia" . ,(create-image (concat dir "zambia.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("zimbabwe" . ,(create-image (concat dir "zimbabwe.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width)))))))
 
-(defun org-tag-beautify-set-unicode-tag-icons ()
+(defun org-tag-beautify--add-unicode-tag-icons ()
   "Display tag as Unicode emoji."
   (setq org-tag-beautify-surrogate-strings
         (append org-tag-beautify-surrogate-strings
                 `(("DIY" . "🧰")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
-(defvar org-attach-attach--smart-tags-alist
+(defvar org-tag-beautify--org-attach--auto-tags-alist
   '(;; video formats
     ("mp4" ("video")) ("mkv" ("video")) ("mov" ("video")) ("webm" ("video")) ("flv" ("video")) ("rmvb" ("video")) ("avi" ("video"))
     ;; audio formats
@@ -1199,12 +1199,12 @@
     )
   "An alist of file extension and tag name pairs.")
 
-(defun org-tag-beautify--attach-auto-tag (origin-func file &optional visit-dir method)
-  "An advice function which auto add smart Org tag based on `org-attach' command attached file format."
+(defun org-tag-beautify--org-attach--auto-tags (origin-func file &optional visit-dir method)
+  "Advice function on ORIGIN-FUNC to auto add tags for `org-attach' FILE format."
   (apply origin-func file visit-dir (list method))
   (let* ((file (substring-no-properties file))
          (extension (downcase (file-name-extension file)))
-         (tags-list (cadr (assoc extension org-attach-attach--smart-tags-alist))))
+         (tags-list (cadr (assoc extension org-tag-beautify--org-attach--auto-tags-alist))))
     (save-excursion
       (org-back-to-heading)
       (let* ((original-tags-list (mapcar 'substring-no-properties (org-get-tags (point) 'local)))) ; get original existing tags list
@@ -1220,64 +1220,59 @@
           :test (lambda (x y) (or (null y) (equal x y)))
           :from-end t))))))
 
-(defun org-tag-beautify-auto-smart-tag-enable ()
-  "Enable auto add tags based on `org-attach-commands' attached file types."
-  (when org-tag-beautify-auto-add-tags
-    ;; for [C-c C-a] `org-attach-commands'
-    (advice-add 'org-attach-attach :around #'org-tag-beautify--attach-auto-tag)))
+(defun org-tag-beautify-toggle--auto-add-tag-after-org-attach ()
+  "Toggle auto add tags based on `org-attach-commands' attached file types."
+  (if org-tag-beautify-mode
+      (when org-tag-beautify-auto-add-tags
+        ;; for [C-c C-a] `org-attach-commands'
+        (advice-add 'org-attach-attach :around #'org-tag-beautify--org-attach--auto-tags))
+    (advice-remove 'org-attach-attach #'org-tag-beautify--org-attach--auto-tags)))
 
-(defun org-tag-beautify-auto-smart-tag-disable ()
-  "Disable auto add tags."
-  (advice-remove 'org-attach-attach #'org-tag-beautify--attach-auto-tag))
-
-;;========================================== org-tag-persistent-alist ==========================================
-
-(defvar org-tag-beautify-tag-alist nil
-  "A variable to store `org-tag-persistent-alist' like tags value.")
+;;==================================== `org-tag-persistent-alist' ===================================
 
 (defvar org-tag-beautify--org-tag-persistent-alist--original nil
   "A variable to store original `org-tag-persistent-alist' value.")
 
-(defun org-tag-beautify-append-org-tags-alist--with-org-pretty-tags ()
-  "Append `org-tag-beautify-surrogate-strings' tags to `org-tag-persistent-alist'.
+(defun org-tag-beautify-append-tags--with-hardcode-icons ()
+  "Append hardcoded `org-tag-beautify-surrogate-strings' icon tags to `org-tag-persistent-alist'.
 For `org-set-tags-command' completion."
-  (setq org-tag-beautify-tag-alist
-        (append
-         '((:startgrouptag)) '(("icons"))
-         '((:grouptags)) (mapcar 'list (mapcar 'car org-tag-beautify-surrogate-strings))
-         '((:endgrouptag))))
-  (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist) ; store original value
-  (setq org-tag-persistent-alist (append org-tag-persistent-alist org-tag-beautify-tag-alist)))
+  ;; Add hardcoded tags to `org-pretty-tags-surrogate-strings'.
+  (setq org-pretty-tags-surrogate-strings nil) ; initialize original prettified tags.
+  (org-tag-beautify--add-common-tag-icons)
+  (org-tag-beautify--add-programming-tag-icons)
+  (org-tag-beautify--add-internet-company-tag-icons)
+  (org-tag-beautify--add-countries-tag-icons)
+  (org-tag-beautify--add-unicode-tag-icons)
+  ;; store current value of `org-tag-persistent-alist'.
+  (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist)
+  (let ((icon-names (mapcar 'car org-tag-beautify-surrogate-strings)))
+    (setq org-tag-persistent-alist
+          (append org-tag-persistent-alist
+                  `((:startgrouptag) ("@icons")
+                    (:grouptags) ,@(mapcar 'list icon-names)
+                    (:endgrouptag))))))
 
-(defun org-tag-beautify-append-org-tags-alist--with-nerd-icons ()
-  "Append `nerd-icons' icon names into the `org-tag-persistent-alist' for `org-set-tags-command' completion."
+(defun org-tag-beautify-append-tags--with-nerd-icons ()
+  "Append `nerd-icons' icon names as tags into the `org-tag-persistent-alist'."
   (let ((icon-names (mapcar 'cdr (mapcar
                                   'org-tag-beautify--nerd-icons-get-icon-name
                                   org-tag-beautify--nerd-icons-icons-list))))
     (setq org-tag-persistent-alist
           (append org-tag-persistent-alist
-                  `((:startgrouptag)
-                    ("@nerd-icons")
-                    (:grouptags)
-                    ,@(mapcar 'list icon-names)
+                  `((:startgrouptag) ("@nerd-icons")
+                    (:grouptags) ,@(mapcar 'list icon-names)
                     (:endgrouptag))))))
-
-(org-tag-beautify-append-org-tags-alist--with-nerd-icons)
 
 ;;============================================ minor mode ===========================================
 ;;;###autoload
 (defun org-tag-beautify-enable ()
   "Enable `org-tag-beautify'."
-  (setq org-pretty-tags-surrogate-strings nil) ; clear original prettified tags.
-  (org-tag-beautify-set-common-tag-icons)
-  (org-tag-beautify-set-programming-tag-icons)
-  (org-tag-beautify-set-internet-company-tag-icons)
-  (org-tag-beautify-set-countries-tag-icons)
-  (org-tag-beautify-set-unicode-tag-icons)
-  ;; add `org-tag-beautify-surrogate-strings' to `org-tag-persistent-alist'.
-  (org-tag-beautify-append-org-tags-alist--with-org-pretty-tags)
+  ;; add extra tags to `org-tag-persistent-alist'
+  ;; FIXME: caused [C-c C-q] can't complete Org buffer local tags.
+  (org-tag-beautify-append-tags--with-hardcode-icons)
+  (org-tag-beautify-append-tags--with-nerd-icons)
   ;; auto add tags on `org-attach'
-  (org-tag-beautify-auto-smart-tag-enable)
+  (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   ;; refresh headline tags
   (org-tag-beautify-display-icon-refresh-all-headlines) ; init run on mode enabled.
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
@@ -1289,7 +1284,7 @@ For `org-set-tags-command' completion."
   (org-tag-beautify-delete-overlays)
   ;; revert `org-tag-persistent-alist'
   (setq org-tag-persistent-alist org-tag-beautify--org-tag-persistent-alist--original)
-  (org-tag-beautify-auto-smart-tag-disable)
+  (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
 
