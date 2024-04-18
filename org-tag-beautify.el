@@ -79,7 +79,7 @@
   :safe #'booleanp
   :group 'org-tag-beautify)
 
-(defcustom org-tag-beautify-surrogate-strings nil
+(defcustom org-tag-beautify-tag-icons-alist nil
   "An custom option to store user defined hard-coded (tag . icon) alist."
   :type '(alist :key-type string :value-type text-property)
   :safe #'listp
@@ -135,7 +135,7 @@
                  (icon-f (cl-find-if
                           (lambda (f) (ignore-errors (funcall f icon-symbol)))
                           (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-                 (icon (if-let ((found-icon (cdr (assoc tag org-tag-beautify-surrogate-strings))))
+                 (icon (if-let ((found-icon (cdr (assoc tag org-tag-beautify-tag-icons-alist))))
                            found-icon
                          (ignore-errors (funcall icon-f icon-symbol)))))
             ;; cache already search found icon name.
@@ -199,8 +199,8 @@
 
 (defun org-tag-beautify--add-common-tag-icons ()
   "Display most common tag as icon."
-  (setq org-tag-beautify-surrogate-strings
-        (append org-tag-beautify-surrogate-strings
+  (setq org-tag-beautify-tag-icons-alist
+        (append org-tag-beautify-tag-icons-alist
                 `(("ARCHIVE" . ,(nerd-icons-mdicon "nf-md-archive" :face 'nerd-icons-silver))
                   ("export" . ,(nerd-icons-mdicon "nf-md-file_export_outline" :face 'nerd-icons-blue))
                   ("noexport" . ,(nerd-icons-faicon "nf-fa-eye_slash" :face 'nerd-icons-dblue))
@@ -610,8 +610,8 @@
 
 (defun org-tag-beautify--add-programming-tag-icons ()
   "Display programming tag as icon."
-  (setq org-tag-beautify-surrogate-strings
-        (append org-tag-beautify-surrogate-strings
+  (setq org-tag-beautify-tag-icons-alist
+        (append org-tag-beautify-tag-icons-alist
                 `(;; programming
                   ("programming" . ,(nerd-icons-mdicon "nf-md-developer_board" :face 'nerd-icons-lblue))
                   ("code" . ,(nerd-icons-codicon "nf-cod-code" :face 'nerd-icons-cyan-alt))
@@ -873,8 +873,8 @@
 
 (defun org-tag-beautify--add-internet-company-tag-icons ()
   "Display internet company name tag as icon."
-  (setq org-tag-beautify-surrogate-strings
-        (append org-tag-beautify-surrogate-strings
+  (setq org-tag-beautify-tag-icons-alist
+        (append org-tag-beautify-tag-icons-alist
                 `(("Internet" . ,(nerd-icons-codicon "nf-cod-globe" :face 'nerd-icons-blue))
                   ("Google" . ,(nerd-icons-mdicon "nf-md-google" :face 'nerd-icons-red))
                   ("Microsoft" . ,(nerd-icons-mdicon "nf-md-microsoft" :face 'nerd-icons-lblue))
@@ -910,8 +910,8 @@
   "Display countries name tag as flag icon."
   (if-let ((dir (concat org-tag-beautify-data-dir "countries/"))
            (available? (file-exists-p dir)))
-      (setq org-tag-beautify-surrogate-strings
-            (append org-tag-beautify-surrogate-strings
+      (setq org-tag-beautify-tag-icons-alist
+            (append org-tag-beautify-tag-icons-alist
                     `(("afghanistan" . ,(create-image (concat dir "afghanistan.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("aland_islands" . ,(create-image (concat dir "aland-islands.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
                       ("albania" . ,(create-image (concat dir "albania.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
@@ -1172,8 +1172,8 @@
 
 (defun org-tag-beautify--add-unicode-tag-icons ()
   "Display tag as Unicode emoji."
-  (setq org-tag-beautify-surrogate-strings
-        (append org-tag-beautify-surrogate-strings
+  (setq org-tag-beautify-tag-icons-alist
+        (append org-tag-beautify-tag-icons-alist
                 `(("DIY" . "🧰")))))
 
 ;;======================== auto add tags based on `org-attach' file types. ========================
@@ -1234,7 +1234,7 @@
   "A variable to store original `org-tag-persistent-alist' value.")
 
 (defun org-tag-beautify-append-tags--with-hardcode-icons ()
-  "Append hardcoded `org-tag-beautify-surrogate-strings' icon tags to `org-tag-persistent-alist'.
+  "Append hardcoded `org-tag-beautify-tag-icons-alist' icon tags to `org-tag-persistent-alist'.
 For `org-set-tags-command' completion."
   ;; Add hardcoded tags to `org-pretty-tags-surrogate-strings'.
   (setq org-pretty-tags-surrogate-strings nil) ; initialize original prettified tags.
@@ -1245,7 +1245,7 @@ For `org-set-tags-command' completion."
   (org-tag-beautify--add-unicode-tag-icons)
   ;; store current value of `org-tag-persistent-alist'.
   (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-persistent-alist)
-  (let ((icon-names (mapcar 'car org-tag-beautify-surrogate-strings)))
+  (let ((icon-names (mapcar 'car org-tag-beautify-tag-icons-alist)))
     (setq org-tag-persistent-alist
           (append org-tag-persistent-alist
                   `((:startgrouptag) ("@icons")
@@ -1273,7 +1273,7 @@ For `org-set-tags-command' completion."
   (org-tag-beautify-append-tags--with-nerd-icons)
   ;; auto add tags on `org-attach'
   (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
-  ;; refresh headline tags
+  ;; refresh Org headline tags on first loading.
   (org-tag-beautify-display-icon-refresh-all-headlines) ; init run on mode enabled.
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
