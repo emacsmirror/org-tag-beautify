@@ -1286,7 +1286,9 @@ For `org-set-tags-command' completion."
   ;; auto add tags on `org-attach'
   (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
-  (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
+  (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
+  ;; refresh Org buffer local tags on `org-tag-beautify-mode' initialize.
+  (org-set-regexps-and-options))
 
 ;;;###autoload
 (defun org-tag-beautify-disable ()
