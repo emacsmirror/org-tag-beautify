@@ -693,6 +693,7 @@
                   ;; network
                   ("network" . ,(nerd-icons-mdicon "nf-md-ip_network" :face 'nerd-icons-blue))
                   ("IP" . ,(nerd-icons-mdicon "nf-md-ip_outline" :face 'nerd-icons-blue))
+                  ("IPv6" . ,(nerd-icons-mdicon "nf-md-ip_network" :face 'nerd-icons-red-alt))
                   ("online" . ,(nerd-icons-mdicon "nf-md-check_network" :face 'nerd-icons-green))
                   ("offline" . ,(nerd-icons-mdicon "nf-md-close_network" :face 'nerd-icons-red))
                   ("CMCC" . ,(nerd-icons-codicon "nf-cod-radio_tower" :face 'nerd-icons-blue))
