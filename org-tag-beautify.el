@@ -733,7 +733,7 @@
                   ("REPL" . ,(nerd-icons-devicon "nf-dev-terminal_badge" :face 'nerd-icons-blue))
                   ("SSH" . ,(nerd-icons-mdicon "nf-md-ssh" :face 'nerd-icons-green))
                   ("PowerShell" . ,(nerd-icons-mdicon "nf-md-powershell" :face 'nerd-icons-blue))
-                  ("systemd" . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-green))
+                  ("systemd" . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-blue))
                   ("Thunderbird" . ,(nerd-icons-flicon "nf-linux-thunderbird" :face 'nerd-icons-blue))
                   ;; Linux Desktop Envirnments
                   ("FreeDesktop" . ,(nerd-icons-flicon "nf-linux-freedesktop" :face 'nerd-icons-blue-alt))
