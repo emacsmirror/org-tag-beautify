@@ -1244,14 +1244,15 @@
 ;;======================== auto add tags based on `org-attach' file types. ========================
 (defvar org-tag-beautify--org-attach--auto-tags-alist
   '(;; video formats
-    ("mp4" ("video")) ("mkv" ("video")) ("mov" ("video")) ("webm" ("video")) ("flv" ("video")) ("rmvb" ("video")) ("avi" ("video"))
+    ("mp4" ("file_video")) ("mkv" ("file_video")) ("mov" ("file_video")) ("webm" ("file_video"))
+    ("flv" ("file_video")) ("rmvb" ("file_video")) ("avi" ("file_video"))
     ;; audio formats
-    ("mp3" ("audio")) ("m4a" ("audio")) ("opus" ("audio"))
+    ("mp3" ("file_audio")) ("m4a" ("file_audio")) ("opus" ("file_audio"))
     ;; image formats
     ;; ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("webp" ("image"))
-    ("gif" ("gif"))
+    ("gif" ("file_gif"))
     ;; document file types
-    ("org" ("Org_mode")) ("md" ("Markdown")) ("txt" ("document"))
+    ("org" ("Org_mode")) ("md" ("markdown")) ("txt" ("document"))
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
     ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book")) ("djvu" ("book")) ("fb2" ("book"))
     ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
@@ -1260,8 +1261,7 @@
     ("py" ("Python")) ("rb" ("Ruby"))
     ("el" ("Emacs_Lisp")) ("cl" ("Common_Lisp")) ("clj" ("Clojure")) ("cljs" ("ClojureScript"))
     ("js" ("JavaScript")) ("html" ("HTML")) ("css" ("CSS"))
-    ("java" ("Java")) ("c" ("C")) ("cpp" ("cpp"))
-    )
+    ("java" ("Java")) ("c" ("language_c")) ("cpp" ("language_cpp")))
   "An alist of file extension and tag name pairs.")
 
 (defun org-tag-beautify--org-attach--auto-tags (origin-func file &optional visit-dir method)
