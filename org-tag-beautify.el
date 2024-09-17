@@ -1270,7 +1270,7 @@
     ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
     ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book")) ("djvu" ("book")) ("fb2" ("book"))
     ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
-    ("zip" ("archive_file")) ("rar" ("archive_file")) ("tar" ("archive_file")) ("tar.gz" ("archive_file")) ("tar.bz2" ("archive_file"))
+    ("zip" ("file_archive")) ("rar" ("file_archive")) ("tar" ("file_archive")) ("tar.gz" ("file_archive")) ("tar.bz2" ("file_archive"))
     ;; source code file formats
     ("py" ("Python")) ("rb" ("Ruby"))
     ("el" ("Emacs_Lisp")) ("cl" ("Common_Lisp")) ("clj" ("Clojure")) ("cljs" ("ClojureScript"))
