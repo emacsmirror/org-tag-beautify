@@ -946,7 +946,7 @@
                   ("UserScript" . ,(nerd-icons-mdicon "nf-md-script_text_outline" :face 'nerd-icons-blue))
                   ("JavaScript" . ,(nerd-icons-mdicon "nf-md-language_javascript" :face 'nerd-icons-orange))
                   ("nodejs" . ,(nerd-icons-mdicon "nf-md-nodejs" :face 'nerd-icons-green))
-                  ;; ("nodejs" . ,(nerd-icons-faicon "nf-fa-node" :face 'nerd-icons-green))
+                  ("node_js" . ,(nerd-icons-faicon "nf-fa-node" :face 'nerd-icons-green))
                   ("npm" . ,(nerd-icons-mdicon "nf-md-npm" :face 'nerd-icons-red))
                   ("TypeScript" . ,(nerd-icons-mdicon "nf-md-language_typescript" :face 'nerd-icons-blue))
                   ("WebAssembly" . ,(nerd-icons-sucicon "nf-seti-wasm" :face 'nerd-icons-dblue))
