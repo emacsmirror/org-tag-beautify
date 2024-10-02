@@ -508,6 +508,7 @@
                   ("audio" . ,(nerd-icons-sucicon "nf-seti-audio" :face 'nerd-icons-blue))
                   ("audio_cut" . ,(nerd-icons-faicon "nf-fa-scissors" :face 'nerd-icons-silver))
                   ("audio_description" . ,(nerd-icons-faicon "nf-fa-audio_description" :face 'nerd-icons-silver))
+                  ("audiobook" . ,(nerd-icons-faicon "nf-fa-audible" :face 'nerd-icons-orange))
                   ("audible" . ,(nerd-icons-faicon "nf-fa-audible" :face 'nerd-icons-silver))
                   ("movie" . ,(nerd-icons-mdicon "nf-md-movie_open_outline" :face 'nerd-icons-silver))
                   ("subtitle" . ,(nerd-icons-mdicon "nf-md-subtitles_outline" :face 'nerd-icons-silver))
