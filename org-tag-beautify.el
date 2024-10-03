@@ -414,6 +414,7 @@
                   ("medical" . ,(nerd-icons-faicon "nf-fa-medkit" :face 'nerd-icons-silver))
                   ("medicine" . ,(nerd-icons-faicon "nf-fae-medicine" :face 'nerd-icons-blue))
                   ("poison" . ,(nerd-icons-faicon "nf-fae-poison" :face 'nerd-icons-red))
+                  ("virus" . ,(nerd-icons-mdicon "nf-md-virus" :face 'nerd-icons-green))
                   ("x_ray" . ,(nerd-icons-faicon "nf-fa-x_ray" :face 'nerd-icons-silver))
                   ("health" . ,(nerd-icons-mdicon "nf-md-medical_cotton_swab" :face 'nerd-icons-green))
                   ("law" . ,(nerd-icons-codicon "nf-cod-law" :face 'nerd-icons-blue))
