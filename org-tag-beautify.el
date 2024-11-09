@@ -830,6 +830,7 @@
                   ("container" . ,(nerd-icons-flicon "nf-linux-docker" :face 'nerd-icons-blue))
                   ("Docker" . ,(nerd-icons-flicon "nf-linux-docker" :face 'nerd-icons-blue))
                   ("Dockerfile" . ,(nerd-icons-devicon "nf-dev-docker" :face 'nerd-icons-cyan))
+                  ("Kubernetes" . ,(nerd-icons-mdicon "nf-md-kubernetes" :face 'nerd-icons-blue))
                   ("Ansible" . ,(nerd-icons-mdicon "nf-md-ansible" :face 'nerd-icons-red))
                   ("Puppet" . ,(nerd-icons-sucicon "nf-custom-puppet" :face 'nerd-icons-purple))
                   ("Terraform" . ,(nerd-icons-sucicon "nf-seti-terraform" :face 'nerd-icons-blue))
