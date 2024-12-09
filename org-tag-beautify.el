@@ -775,7 +775,7 @@
                   ("Emacs" . ,(nerd-icons-sucicon "nf-custom-emacs" :face 'nerd-icons-purple-alt))
                   ("Org_mode" . ,(nerd-icons-sucicon "nf-custom-orgmode" :face 'nerd-icons-dgreen))
                   ("Vim" . ,(nerd-icons-devicon "nf-dev-vim" :face 'nerd-icons-green))
-                  ("VimScript" . ,(nerd-icons-sucicon "nf-custom-vim" :face 'nerd-icons-green))
+                  ("Vimscript" . ,(nerd-icons-sucicon "nf-custom-vim" :face 'nerd-icons-green))
                   ;; ("Neovim" . ,(nerd-icons-sucicon "nf-custom-neovim" :face 'nerd-icons-green))
                   ("Neovim" . ,(nerd-icons-flicon "nf-linux-neovim" :face 'nerd-icons-green))
                   ("Visual_Studio" . ,(nerd-icons-mdicon "nf-md-microsoft_visual_studio" :face 'nerd-icons-silver))
