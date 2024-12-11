@@ -795,7 +795,7 @@
                   ("Safari" . ,(nerd-icons-mdicon "nf-md-apple_safari" :face 'nerd-icons-blue))
                   ("terminal" . ,(nerd-icons-devicon "nf-dev-terminal" :face 'nerd-icons-green))
                   ("tmux" . ,(nerd-icons-codicon "nf-cod-terminal_tmux" :face 'nerd-icons-green))
-                  ("REPL" . ,(nerd-icons-devicon "nf-dev-terminal_badge" :face 'nerd-icons-blue))
+                  ("REPL" . ,(nerd-icons-devicon "nf-dev-terminal" :face 'nerd-icons-blue))
                   ("SSH" . ,(nerd-icons-mdicon "nf-md-ssh" :face 'nerd-icons-green))
                   ("PowerShell" . ,(nerd-icons-mdicon "nf-md-powershell" :face 'nerd-icons-blue))
                   ("systemd" . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-blue))
