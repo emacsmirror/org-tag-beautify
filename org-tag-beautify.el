@@ -1018,8 +1018,7 @@
                   ("trademark" . ,(nerd-icons-mdicon "nf-md-trademark" :face 'nerd-icons-blue))
                   ;; ("registered" . ,(nerd-icons-mdicon "nf-md-registered_trademark" :face 'nerd-icons-blue))
                   ("registered" . ,(nerd-icons-faicon "nf-fa-registered" :face 'nerd-icons-blue))
-                  ("DRM" . ,(nerd-icons-mdicon "nf-md-copyright" :face 'nerd-icons-silver))
-                  ))))
+                  ("DRM" . ,(nerd-icons-mdicon "nf-md-copyright" :face 'nerd-icons-silver))))))
 
 (defun org-tag-beautify--add-internet-company-tag-icons ()
   "Display internet company name tag as icon."
@@ -1355,7 +1354,8 @@
   "An alist of file extension and tag name pairs.")
 
 (defun org-tag-beautify--org-attach--auto-tags (origin-func file &optional visit-dir method)
-  "Advice function on ORIGIN-FUNC to auto add tags for `org-attach' FILE format."
+  "Advice function on ORIGIN-FUNC to auto add tags for `org-attach' FILE format.
+The VISIT-DIR is the `org-attach' directory. The METHOD is `org-attach' method."
   (apply origin-func file visit-dir (list method))
   (let* ((file (substring-no-properties file))
          (extension (downcase (file-name-extension file)))
@@ -1385,7 +1385,7 @@
 
 ;;==================================== `org-tag-alist' ===================================
 (defun org-tag-beautify-append-tags--with-hardcode-icons ()
-  "Append hardcoded `org-tag-beautify-tag-icons-alist' icon tags to `org-tag-alist'.
+  "Append hardcoded `org-tag-beautify-tag-icons-alist' tags to `org-tag-alist'.
 For `org-set-tags-command' completion."
   ;; Add hardcoded tags to `org-pretty-tags-surrogate-strings'.
   (setq org-pretty-tags-surrogate-strings nil) ; initialize original prettified tags.
