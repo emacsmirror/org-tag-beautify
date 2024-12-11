@@ -3,7 +3,7 @@
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "26.1") (nerd-icons "0.0.1"))
-;; Version: 0.1.0
+;; Version: 0.1.1
 ;; Keywords: hypermedia
 ;; homepage: https://repo.or.cz/org-tag-beautify.git
 
