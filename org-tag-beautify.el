@@ -485,6 +485,13 @@
                   ("Excel" . ,(nerd-icons-mdicon "nf-md-microsoft_excel" :face 'nerd-icons-dgreen))
                   ("PowerPoint" . ,(nerd-icons-mdicon "nf-md-microsoft_powerpoint" :face 'nerd-icons-red))
                   ("Access" . ,(nerd-icons-mdicon "nf-md-microsoft_access" :face 'nerd-icons-red))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreoffice" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficebase" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficecalc" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficedraw" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficeimpress" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficemath" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreofficewriter" :face 'nerd-icons-green))
                   ("Azure" . ,(nerd-icons-mdicon "nf-md-microsoft_azure" :face 'nerd-icons-silver))
                   ("WordPress" . ,(nerd-icons-mdicon "nf-md-wordpress" :face 'nerd-icons-silver))
                   ;; ("WordPress" . ,(nerd-icons-faicon "nf-fa-wordpress" :face 'nerd-icons-silver))
@@ -708,13 +715,23 @@
                   ("jupyter" . ,(nerd-icons-codicon "nf-cod-notebook" :face 'nerd-icons-orange))
                   
                   ;; database
-                  ("database" . ,(nerd-icons-mdicon "nf-md-database" :face 'nerd-icons-blue))
+                  ("database" . ,(nerd-icons-devicon "nf-dev-database" :face 'nerd-icons-blue))
                   ("database_schema" . ,(nerd-icons-mdicon "nf-md-file_table_box_outline" :face 'nerd-icons-blue))
                   ("database_catalog" . ,(nerd-icons-mdicon "nf-md-grid_large" :face 'nerd-icons-blue))
                   ("database_table" . ,(nerd-icons-mdicon "nf-md-table_large" :face 'nerd-icons-green))
                   ("database_view" . ,(nerd-icons-faicon "nf-fa-th" :face 'nerd-icons-blue))
                   ("database_index" . ,(nerd-icons-faicon "nf-fa-th_list" :face 'nerd-icons-blue))
                   ("database_sort" . ,(nerd-icons-mdicon "nf-md-sort_bool_ascending_variant" :face 'nerd-icons-blue-alt))
+
+                  ;; SQL Databases
+                  ("SQL" . ,(nerd-icons-mdicon "nf-md-database_search_outline" :face 'nerd-icons-blue))
+                  ("SQLite" . ,(nerd-icons-devicon "nf-dev-sqlite" :face 'nerd-icons-blue))
+                  ("MySQL" . ,(nerd-icons-devicon "nf-dev-mysql" :face 'nerd-icons-blue))
+                  ("MariaDB" . ,(nerd-icons-devicon "nf-dev-mariadb" :face 'nerd-icons-blue))
+                  ("PostgreSQL" . ,(nerd-icons-devicon "nf-dev-postgresql" :face 'nerd-icons-blue))
+                  ("Microsoft_SQL_Server" . ,(nerd-icons-devicon "nf-dev-microsoftsqlserver" :face 'nerd-icons-blue))
+                  ("Redis" . ,(nerd-icons-devicon "nf-dev-redis" :face 'nerd-icons-red))
+                  ("Firebase" . ,(nerd-icons-mdicon "nf-md-firebase" :face 'nerd-icons-red))
                   
                   ;; computer etc hardware
                   ("computer" . ,(nerd-icons-mdicon "nf-md-desktop_mac" :face 'nerd-icons-blue))
@@ -771,21 +788,6 @@
                   ("keybinding" . ,(nerd-icons-mdicon "nf-md-keyboard_settings_outline" :face 'nerd-icons-blue))
                   ("universal_access" . ,(nerd-icons-faicon "nf-fa-universal_access" :face 'nerd-icons-blue))
                   
-                  ;; Development Tools
-                  ("Emacs" . ,(nerd-icons-sucicon "nf-custom-emacs" :face 'nerd-icons-purple-alt))
-                  ("Org_mode" . ,(nerd-icons-sucicon "nf-custom-orgmode" :face 'nerd-icons-dgreen))
-                  ("Vim" . ,(nerd-icons-devicon "nf-dev-vim" :face 'nerd-icons-green))
-                  ("Vimscript" . ,(nerd-icons-sucicon "nf-custom-vim" :face 'nerd-icons-green))
-                  ;; ("Neovim" . ,(nerd-icons-sucicon "nf-custom-neovim" :face 'nerd-icons-green))
-                  ("Neovim" . ,(nerd-icons-flicon "nf-linux-neovim" :face 'nerd-icons-green))
-                  ("Visual_Studio" . ,(nerd-icons-mdicon "nf-md-microsoft_visual_studio" :face 'nerd-icons-silver))
-                  ("Visual_Studio_Code" . ,(nerd-icons-mdicon "nf-md-microsoft_visual_studio_code" :face 'nerd-icons-blue-alt))
-                  ("VSCodium" . ,(nerd-icons-flicon "nf-linux-vscodium" :face 'nerd-icons-green))
-                  ("dylib" . ,(nerd-icons-codicon "nf-cod-folder_library" :face 'nerd-icons-blue))
-                  ("GDB" . ,(nerd-icons-codicon "nf-cod-debug_console" :face 'nerd-icons-orange))
-                  ("GNU_Make" . ,(nerd-icons-sucicon "nf-seti-makefile" :face 'nerd-icons-red))
-                  ("Makefile" . ,(nerd-icons-sucicon "nf-seti-makefile" :face 'nerd-icons-lorange))
-                  
                   ;; Softwares & Applications
                   ("Firefox" . ,(nerd-icons-mdicon "nf-md-firefox" :face 'nerd-icons-orange))
                   ("Chromium" . ,(nerd-icons-faicon "nf-fa-chrome" :face 'nerd-icons-blue-alt))
@@ -799,7 +801,10 @@
                   ("SSH" . ,(nerd-icons-mdicon "nf-md-ssh" :face 'nerd-icons-green))
                   ("PowerShell" . ,(nerd-icons-mdicon "nf-md-powershell" :face 'nerd-icons-blue))
                   ("systemd" . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-blue))
+		          ;; ("VirtualBox" . ,(nerd-icons-devicon "" :face 'nerd-icons-blue))
+		          ("VMWare" . ,(nerd-icons-devicon "nf-dev-vsphere" :face 'nerd-icons-blue))
                   ("Thunderbird" . ,(nerd-icons-flicon "nf-linux-thunderbird" :face 'nerd-icons-blue))
+
                   ;; Linux Desktop Envirnments
                   ("FreeDesktop" . ,(nerd-icons-flicon "nf-linux-freedesktop" :face 'nerd-icons-blue-alt))
                   ("Xorg" . ,(nerd-icons-flicon "nf-linux-xorg" :face 'nerd-icons-orange))
@@ -819,9 +824,11 @@
                   ("Fluxbox" . ,(nerd-icons-flicon "nf-linux-fluxbox" :face 'nerd-icons-silver))
                   ("i3" . ,(nerd-icons-flicon "nf-linux-i3" :face 'nerd-icons-silver))
                   ("jwm" . ,(nerd-icons-flicon "nf-linux-jwm" :face 'nerd-icons-silver))
+
                   ;; DevOps
                   ("Cloud" . ,(nerd-icons-mdicon "nf-md-cloud" :face 'nerd-icons-silver))
                   ("DevOps" . ,(nerd-icons-sucicon "nf-seti-pipeline" :face 'nerd-icons-blue))
+
                   ;; package manager
                   ("package" . ,(nerd-icons-codicon "nf-cod-package" :face 'nerd-icons-orange))
                   ("flathub" . ,(nerd-icons-flicon "nf-linux-flathub" :face 'nerd-icons-orange))
@@ -836,6 +843,7 @@
                   ("Terraform" . ,(nerd-icons-sucicon "nf-seti-terraform" :face 'nerd-icons-blue))
                   ("Nix" . ,(nerd-icons-mdicon "nf-md-nix" :face 'nerd-icons-blue))
                   ("settings" . ,(nerd-icons-codicon "nf-cod-settings" :face 'nerd-icons-blue))
+
                   ;; Hack & Crack
                   ("security" . ,(nerd-icons-mdicon "nf-md-security" :face 'nerd-icons-green))
                   ("hacker" . ,(nerd-icons-faicon "nf-fa-user_secret" :face 'nerd-icons-dsilver))
@@ -847,6 +855,7 @@
                   ("forensic" . ,(nerd-icons-mdicon "nf-md-loupe" :face 'nerd-icons-blue))
                   ("computer_forensic" . ,(nerd-icons-mdicon "nf-md-text_box_search_outline" :face 'nerd-icons-blue))
                   ("font" . ,(nerd-icons-faicon "nf-fa-font" :face 'nerd-icons-dsilver))
+
                   ;; Development Frameworks
                   ("Godot" . ,(nerd-icons-sucicon "nf-seti-godot" :face 'nerd-icons-blue))
                   ("Nginx" . ,(nerd-icons-devicon "nf-dev-nginx" :face 'nerd-icons-green))
@@ -855,9 +864,18 @@
                   ("Electron" . ,(nerd-icons-mdicon "nf-md-electron_framework" :face 'nerd-icons-green))
                   ("Xamarin" . ,(nerd-icons-mdicon "nf-md-xamarin" :face 'nerd-icons-blue))
                   ("Ionic" . ,(nerd-icons-sucicon "nf-seti-ionic" :face 'nerd-icons-blue))
+
+		          ;; Development Libraries
+		          ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
+		          ("OpenGL" . ,(nerd-icons-devicon "nf-dev-opengl" :face 'nerd-icons-blue))
+		          ("OpenCL" . ,(nerd-icons-devicon "nf-dev-opencl" :face 'nerd-icons-blue))
+		          ("OpenAL" . ,(nerd-icons-devicon "nf-dev-openal" :face 'nerd-icons-orange))
+		          ("OpenAPI" . ,(nerd-icons-devicon "nf-dev-openapi" :face 'nerd-icons-blue-alt))
+
                   ;; Adobe softwares
                   ("Adobe_Photoshop" . ,(nerd-icons-devicon "nf-dev-photoshop" :face 'nerd-icons-blue))
                   ("Adobe_Illustrator" . ,(nerd-icons-devicon "nf-dev-illustrator" :face 'nerd-icons-orange))
+
                   ;; Design softwares
                   ("Blender" . ,(nerd-icons-mdicon "nf-md-blender_software" :face 'nerd-icons-orange))
                   ("CAD" . ,(nerd-icons-mdicon "nf-md-file_cad_box" :face 'nerd-icons-blue))
@@ -959,10 +977,6 @@
                   ("CSS" . ,(nerd-icons-mdicon "nf-md-language_css3" :face 'nerd-icons-blue))
                   ("CSS3" . ,(nerd-icons-mdicon "nf-md-language_css3" :face 'nerd-icons-blue))
                   ("SVG" . ,(nerd-icons-mdicon "nf-md-svg" :face 'nerd-icons-blue))
-                  ("SQL" . ,(nerd-icons-mdicon "nf-md-database_search_outline" :face 'nerd-icons-blue))
-                  ("SQLite" . ,(nerd-icons-devicon "nf-dev-sqllite" :face 'nerd-icons-blue))
-                  ("PostgreSQL" . ,(nerd-icons-devicon "nf-dev-postgresql" :face 'nerd-icons-blue))
-                  ("Firebase" . ,(nerd-icons-mdicon "nf-md-firebase" :face 'nerd-icons-red))
                   ("TeX" . ,(nerd-icons-sucicon "nf-seti-tex" :face 'nerd-icons-blue))
                   ("LaTeX" . ,(nerd-icons-sucicon "nf-seti-tex" :face 'nerd-icons-dorange))
                   ("Hacklang" . ,(nerd-icons-sucicon "nf-seti-hacklang" :face 'nerd-icons-blue))
@@ -991,6 +1005,21 @@
                   ;; Testing
                   ("testing" . ,(nerd-icons-mdicon "nf-md-test_tube" :face 'nerd-icons-blue))
                   ("ab_testing" . ,(nerd-icons-mdicon "nf-md-ab_testing" :face 'nerd-icons-blue))
+                  
+                  ;; Development Tools
+                  ("Emacs" . ,(nerd-icons-sucicon "nf-custom-emacs" :face 'nerd-icons-purple-alt))
+                  ("Org_mode" . ,(nerd-icons-sucicon "nf-custom-orgmode" :face 'nerd-icons-dgreen))
+                  ("Vim" . ,(nerd-icons-devicon "nf-dev-vim" :face 'nerd-icons-green))
+                  ("Vimscript" . ,(nerd-icons-sucicon "nf-custom-vim" :face 'nerd-icons-green))
+                  ;; ("Neovim" . ,(nerd-icons-sucicon "nf-custom-neovim" :face 'nerd-icons-green))
+                  ("Neovim" . ,(nerd-icons-flicon "nf-linux-neovim" :face 'nerd-icons-green))
+                  ("Visual_Studio" . ,(nerd-icons-mdicon "nf-md-microsoft_visual_studio" :face 'nerd-icons-silver))
+                  ("Visual_Studio_Code" . ,(nerd-icons-mdicon "nf-md-microsoft_visual_studio_code" :face 'nerd-icons-blue-alt))
+                  ("VSCodium" . ,(nerd-icons-flicon "nf-linux-vscodium" :face 'nerd-icons-green))
+                  ("dylib" . ,(nerd-icons-codicon "nf-cod-folder_library" :face 'nerd-icons-blue))
+                  ("GDB" . ,(nerd-icons-codicon "nf-cod-debug_console" :face 'nerd-icons-orange))
+                  ("GNU_Make" . ,(nerd-icons-sucicon "nf-seti-makefile" :face 'nerd-icons-red))
+                  ("Makefile" . ,(nerd-icons-sucicon "nf-seti-makefile" :face 'nerd-icons-lorange))
                   
                   ;; Project
                   ("@project" . ,(nerd-icons-codicon "nf-cod-project" :face 'nerd-icons-blue)) ; ,(nerd-icons-sucicon "nf-seti-project")
@@ -1038,6 +1067,7 @@
                   ("GitHub" . ,(nerd-icons-mdicon "nf-md-github" :face 'nerd-icons-dsilver))
                   ("GitLab" . ,(nerd-icons-mdicon "nf-md-gitlab" :face 'nerd-icons-orange))
                   ("Bitbucket" . ,(nerd-icons-mdicon "nf-md-bitbucket" :face 'nerd-icons-blue))
+		          ("Gitea" . ,(nerd-icons-flicon "nf-linux-gitea" :face 'nerd-icons-green))
                   ("Codeberg" . ,(nerd-icons-flicon "nf-linux-codeberg" :face 'nerd-icons-blue))
                   ("Forgejo" . ,(nerd-icons-flicon "nf-linux-forgejo" :face 'nerd-icons-blue))
                   ("stack_exchange" . ,(nerd-icons-mdicon "nf-md-stack_exchange" :face 'nerd-icons-lblue))
