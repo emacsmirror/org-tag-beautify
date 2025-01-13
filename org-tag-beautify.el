@@ -526,6 +526,7 @@
                   ("Ezine" . ,(nerd-icons-mdicon "nf-md-book_open_page_variant_outline" :face 'nerd-icons-dpurple))
                   ("comic" . ,(nerd-icons-faicon "nf-fa-book" :face 'nerd-icons-orange))
                   ("manga" . ,(nerd-icons-faicon "nf-fa-book" :face 'nerd-icons-dorange))
+                  ("series" . ,(nerd-icons-faicon "nf-fa-list_ol" :face 'nerd-icons-blue))
                   ("color" . ,(nerd-icons-faicon "nf-fa-palette" :face 'nerd-icons-lred))
                   ("palette" . ,(nerd-icons-faicon "nf-fa-palette" :face 'nerd-icons-lred))
                   ("course" . ,(nerd-icons-mdicon "nf-md-google_classroom" :face 'nerd-icons-green))
