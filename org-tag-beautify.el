@@ -866,6 +866,7 @@
                   ("Electron" . ,(nerd-icons-mdicon "nf-md-electron_framework" :face 'nerd-icons-green))
                   ("Xamarin" . ,(nerd-icons-mdicon "nf-md-xamarin" :face 'nerd-icons-blue))
                   ("Ionic" . ,(nerd-icons-sucicon "nf-seti-ionic" :face 'nerd-icons-blue))
+                  ("Flutter" . ,(nerd-icons-devicon "nf-dev-flutter" :face 'nerd-icons-blue))
 
 		          ;; Development Libraries
 		          ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
