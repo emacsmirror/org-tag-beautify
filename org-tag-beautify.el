@@ -346,6 +346,10 @@
                   ("transgender-female" . ,(propertize "⧬" 'face '(:foreground "purple")))
                   ;; ("transgender-male" . ,(propertize "" 'face '(:foreground "purple")))
                   
+                  ;; Porn:
+                  ("porn" . ,(propertize "🈲" 'face '(:foreground "red")))
+                  ("erotic" . ,(propertize "🈲" 'face '(:foreground "purple")))
+                  
                   ("sleep" . ,(nerd-icons-mdicon "nf-md-sleep" :face 'nerd-icons-silver))
                   ("dining" . ,(nerd-icons-mdicon "nf-md-food_variant" :face 'nerd-icons-green))
                   ("meat" . ,(nerd-icons-faicon "nf-fae-meat" :face 'nerd-icons-red-alt))
