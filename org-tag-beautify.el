@@ -136,7 +136,7 @@
                  (icon-f (cl-find-if
                           (lambda (f) (ignore-errors (funcall f icon-symbol)))
                           (mapcar 'nerd-icons--function-name nerd-icons-glyph-sets)))
-                 (icon (if-let ((found-icon (cdr (assoc tag org-tag-beautify-tag-icons-alist))))
+                 (icon (if-let* ((found-icon (cdr (assoc tag org-tag-beautify-tag-icons-alist))))
                            found-icon
                          (ignore-errors (funcall icon-f icon-symbol)))))
             ;; cache already search found icon name.
@@ -1102,8 +1102,8 @@
 
 (defun org-tag-beautify--add-countries-tag-icons ()
   "Display countries name tag as flag icon."
-  (if-let ((dir (concat org-tag-beautify-data-dir "countries/"))
-           (available? (file-exists-p dir)))
+  (if-let* ((dir (concat org-tag-beautify-data-dir "countries/"))
+            (available? (file-exists-p dir)))
       (setq org-tag-beautify-tag-icons-alist
             (append org-tag-beautify-tag-icons-alist
                     `(("afghanistan" . ,(create-image (concat dir "afghanistan.png") nil nil :ascent 'center :height org-tag-beautify-icon-height :width org-tag-beautify-icon-width))
