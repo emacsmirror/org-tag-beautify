@@ -88,6 +88,7 @@
 ;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
 
+;; NOTE: This variable caused big memory usage.
 (defvar org-tag-beautify--nerd-icons-icons-list (nerd-icons--read-candidates)
   "Store all nerd-icons list into a variable to avoid repeatedly computing.")
 
@@ -598,8 +599,11 @@
                   ("pause" . ,(nerd-icons-mdicon "nf-md-pause_circle_outline" :face 'nerd-icons-red))
                   ("record" . ,(nerd-icons-mdicon "nf-md-record_circle_outline" :face 'nerd-icons-red))
                   ("news" . ,(nerd-icons-mdicon "nf-md-newspaper_variant_outline" :face 'nerd-icons-silver))
-                  ;; ("AI_generated" . ,(nerd-icons-faicon "nf-fa-buromobelexperte" :face 'nerd-icons-blue))
-                  ("AI_generated" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-blue))
+                  ("AI_generated" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-maroon))
+                  ("Generative_AI" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-blue-alt))
+                  ("GenAI" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-blue-alt))
+                  ("vibe_coding" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-pink))
+                  ("LLM" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-cyan))
                   
                   ;; human body
                   ("eye" . ,(nerd-icons-codicon "nf-cod-eye" :face 'nerd-icons-blue))
@@ -749,7 +753,7 @@
                   ("keyboard" . ,(nerd-icons-mdicon "nf-md-keyboard" :face 'nerd-icons-blue))
                   ("mouse" . ,(nerd-icons-mdicon "nf-md-mouse" :face 'nerd-icons-blue))
                   ("RISCV" . ,(nerd-icons-flicon "nf-linux-riscv" :face 'nerd-icons-blue))
-                  ("Arduino" . ,(nerd-icons-flicon "nf-linux-arduino" :face 'nerd-icons-green))
+                  ("Arduino" . ,(nerd-icons-flicon "nf-linux-arduino" :face 'nerd-icons-dgreen))
                   ("Raspberry_Pi" . ,(nerd-icons-flicon "nf-linux-raspberry_pi" :face 'nerd-icons-red-alt))
                   ("PlatformIO" . ,(nerd-icons-sucicon "nf-seti-platformio" :face 'nerd-icons-orange))
                   ("hardware" . ,(nerd-icons-mdicon "nf-md-devices" :face 'nerd-icons-blue))
@@ -1088,7 +1092,6 @@
                   ("Dribbble" . ,(nerd-icons-faicon "nf-fa-dribbble" :face 'nerd-icons-dpink))
                   ("Dropbox" . ,(nerd-icons-mdicon "nf-md-dropbox" :face 'nerd-icons-blue-alt))
                   ("Baidu" . ,(nerd-icons-mdicon "nf-md-paw" :face 'nerd-icons-blue))
-                  ("Tencent" . ,(nerd-icons-mdicon "nf-md-qqchat" :face 'nerd-icons-blue))
                   ("QQ" . ,(nerd-icons-mdicon "nf-md-qqchat" :face 'nerd-icons-blue))
                   ("weixin" . ,(nerd-icons-faicon "nf-fa-weixin" :face 'nerd-icons-green))
                   ("wechat" . ,(nerd-icons-faicon "nf-fa-wechat" :face 'nerd-icons-green))
