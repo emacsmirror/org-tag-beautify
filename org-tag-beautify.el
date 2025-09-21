@@ -974,6 +974,7 @@
                   ("Lua" . ,(nerd-icons-mdicon "nf-md-language_lua" :face 'nerd-icons-dblue))
                   ("Web" . ,(nerd-icons-mdicon "nf-md-web" :face 'nerd-icons-blue))
                   ("webpage" . ,(nerd-icons-codicon "nf-cod-preview" :face 'nerd-icons-blue))
+                  ("webpage_offline_archive" . ,(nerd-icons-codicon "nf-cod-preview" :face 'nerd-icons-orange))
                   ("UserScript" . ,(nerd-icons-mdicon "nf-md-script_text_outline" :face 'nerd-icons-blue))
                   ("JavaScript" . ,(nerd-icons-mdicon "nf-md-language_javascript" :face 'nerd-icons-orange))
                   ("nodejs" . ,(nerd-icons-mdicon "nf-md-nodejs" :face 'nerd-icons-green))
