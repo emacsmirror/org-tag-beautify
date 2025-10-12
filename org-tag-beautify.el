@@ -147,7 +147,6 @@
      ;; (#("<icon>" ...))
      (list (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list)))))
 
-;; ("Arch_Linux"     . ,(nerd-icons-flicon "nf-linux-archlinux" :face 'nerd-icons-blue))
 ;;; TEST:
 ;; (org-tag-beautify--find-tag-icon "archlinux")
 ;; (org-tag-beautify--find-tag-icon "steam")
@@ -958,8 +957,9 @@
                   ("Swift" . ,(nerd-icons-mdicon "nf-md-language_swift" :face 'nerd-icons-orange))
                   ("R" . ,(nerd-icons-mdicon "nf-md-language_r" :face 'nerd-icons-blue))
                   ;; ("Octave" . ,())
-                  ;; ("Matlab" . ,())
+                  ("MATLAB" . ,(nerd-icons-devicon "nf-dev-matlab" :face 'nerd-icons-blue))
                   ;; ("Mathematica" . ,())
+                  ;; ("Wolfram" . ,())
                   ;; ("Delphi" . ,())
                   ("OCaml" . ,(nerd-icons-sucicon "nf-seti-ocaml" :face 'nerd-icons-orange))
                   ("ReasonML" . ,(nerd-icons-sucicon "nf-seti-reasonml" :face 'nerd-icons-orange))
