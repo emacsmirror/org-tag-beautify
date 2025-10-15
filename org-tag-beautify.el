@@ -705,6 +705,7 @@
                   ("regexp" . ,(nerd-icons-codicon "nf-cod-regex" :face 'nerd-icons-cyan-alt))
                   ("extension" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
                   ("plugin" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
+                  ("addon" . ,(nerd-icons-codicon "nf-cod-extensions" :face 'nerd-icons-blue))
                   ("vcs" . ,(nerd-icons-codicon "nf-cod-source_control" :face 'nerd-icons-blue))
                   ("vcs_branch" . ,(nerd-icons-mdicon "nf-md-source_branch" :face 'nerd-icons-blue))
                   ("vcs_commit" . ,(nerd-icons-mdicon "nf-md-source_commit" :face 'nerd-icons-blue))
