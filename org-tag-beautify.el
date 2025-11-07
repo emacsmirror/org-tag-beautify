@@ -1371,59 +1371,6 @@
         (append org-tag-beautify-tag-icons-alist
                 `(("DIY" . "🧰")))))
 
-;;======================== auto add tags based on `org-attach' file types. ========================
-(defvar org-tag-beautify--org-attach--auto-tags-alist
-  '(;; video formats
-    ("mp4" ("file_video")) ("mkv" ("file_video")) ("mov" ("file_video")) ("webm" ("file_video"))
-    ("flv" ("file_video")) ("rmvb" ("file_video")) ("avi" ("file_video"))
-    ;; audio formats
-    ("mp3" ("file_audio")) ("m4a" ("file_audio")) ("opus" ("file_audio"))
-    ;; image formats
-    ;; ("png" ("image")) ("jpg" ("image")) ("jpeg" ("image")) ("webp" ("image"))
-    ("gif" ("file_gif"))
-    ;; document file types
-    ("org" ("Org_mode")) ("md" ("markdown")) ("txt" ("document"))
-    ("pdf" ("pdf")) ("doc" ("word")) ("docx" ("word")) ("xls" ("excel")) ("ppt" ("powerpoint"))
-    ("epub" ("book")) ("mobi" ("book")) ("azw3" ("book")) ("djvu" ("book")) ("fb2" ("book"))
-    ("cbr" ("comic")) ("cbz" ("comic")) ("cb7" ("comic"))
-    ("zip" ("file_archive")) ("rar" ("file_archive")) ("tar" ("file_archive")) ("tar.gz" ("file_archive")) ("tar.bz2" ("file_archive"))
-    ;; source code file formats
-    ("py" ("Python")) ("rb" ("Ruby"))
-    ("el" ("Emacs_Lisp")) ("cl" ("Common_Lisp")) ("clj" ("Clojure")) ("cljs" ("ClojureScript"))
-    ("js" ("JavaScript")) ("html" ("HTML")) ("css" ("CSS"))
-    ("java" ("Java")) ("c" ("language_c")) ("cpp" ("language_cpp")))
-  "An alist of file extension and tag name pairs.")
-
-(defun org-tag-beautify--org-attach--auto-tags (origin-func file &optional visit-dir method)
-  "Advice function on ORIGIN-FUNC to auto add tags for `org-attach' FILE format.
-The VISIT-DIR is the `org-attach' directory. The METHOD is `org-attach' method."
-  (apply origin-func file visit-dir (list method))
-  (let* ((file (substring-no-properties file))
-         (extension (downcase (file-name-extension file)))
-         (tags-list (cadr (assoc extension org-tag-beautify--org-attach--auto-tags-alist))))
-    (save-excursion
-      (org-back-to-heading)
-      (let* ((original-tags-list (mapcar 'substring-no-properties (org-get-tags (point) 'local)))) ; get original existing tags list
-        (org-set-tags
-         (cl-remove-duplicates
-          ;; Avoid duplicated tags. e.g. If existing tag is "book", don't add tag "pdf".
-          (if (seq-intersection
-               '("book" "document" "comic" "magazine" "paper")
-               original-tags-list)
-              original-tags-list
-            ;; append `tags-list' to original tags list and set the new Org tags list.
-            (append tags-list original-tags-list))
-          :test (lambda (x y) (or (null y) (equal x y)))
-          :from-end t))))))
-
-(defun org-tag-beautify-toggle--auto-add-tag-after-org-attach ()
-  "Toggle auto add tags based on `org-attach-commands' attached file types."
-  (if org-tag-beautify-mode
-      (when org-tag-beautify-auto-add-tags
-        ;; for [C-c C-a] `org-attach-commands'
-        (advice-add 'org-attach-attach :around #'org-tag-beautify--org-attach--auto-tags))
-    (advice-remove 'org-attach-attach #'org-tag-beautify--org-attach--auto-tags)))
-
 ;;==================================== `org-tag-alist' ===================================
 (defun org-tag-beautify-append-tags--with-hardcode-icons ()
   "Append hardcoded `org-tag-beautify-tag-icons-alist' tags to `org-tag-alist'.
