@@ -1415,8 +1415,6 @@ For `org-set-tags-command' completion."
   (org-tag-beautify-append-tags--with-nerd-icons)
   ;; refresh Org headline tags on first loading.
   (org-tag-beautify-display-icon-refresh-all-headlines) ; initial run on mode enabled.
-  ;; auto add tags on `org-attach'
-  (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (add-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline)
   ;; refresh Org buffer local tags on `org-tag-beautify-mode' initialize.
@@ -1428,7 +1426,6 @@ For `org-set-tags-command' completion."
   ;; revert `org-tag-alist' value
   (setq org-tag-alist org-tag-beautify--org-tag-persistent-alist--original)
   (org-tag-beautify-delete-overlays)
-  (org-tag-beautify-toggle--auto-add-tag-after-org-attach)
   (remove-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
   (remove-hook 'org-after-tags-change-hook #'org-tag-beautify-display-icon-refresh-headline))
 
