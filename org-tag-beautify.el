@@ -720,7 +720,7 @@
                   ("debug" . ,(nerd-icons-codicon "nf-cod-debug_alt" :face 'nerd-icons-blue))
                   ("troubleshooting" . ,(nerd-icons-faicon "nf-fa-crosshairs" :face 'nerd-icons-blue-alt))
                   ("help" . ,(nerd-icons-mdicon "nf-md-help_circle_outline" :face 'nerd-icons-blue-alt))
-                  ("jupyter" . ,(nerd-icons-codicon "nf-cod-notebook" :face 'nerd-icons-orange))
+                  ("jupyter" . ,(nerd-icons-devicon "nf-dev-jupyter" :face 'nerd-icons-orange))
                   
                   ;; database
                   ("database" . ,(nerd-icons-devicon "nf-dev-database" :face 'nerd-icons-blue))
