@@ -875,12 +875,12 @@
                   ("Ionic" . ,(nerd-icons-sucicon "nf-seti-ionic" :face 'nerd-icons-blue))
                   ("Flutter" . ,(nerd-icons-devicon "nf-dev-flutter" :face 'nerd-icons-blue))
 
-		          ;; Development Libraries
-		          ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
-		          ("OpenGL" . ,(nerd-icons-devicon "nf-dev-opengl" :face 'nerd-icons-blue))
-		          ("OpenCL" . ,(nerd-icons-devicon "nf-dev-opencl" :face 'nerd-icons-blue))
-		          ("OpenAL" . ,(nerd-icons-devicon "nf-dev-openal" :face 'nerd-icons-orange))
-		          ("OpenAPI" . ,(nerd-icons-devicon "nf-dev-openapi" :face 'nerd-icons-blue-alt))
+		              ;; Development Libraries
+		              ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
+		              ("OpenGL" . ,(nerd-icons-devicon "nf-dev-opengl" :face 'nerd-icons-blue))
+		              ("OpenCL" . ,(nerd-icons-devicon "nf-dev-opencl" :face 'nerd-icons-blue))
+		              ("OpenAL" . ,(nerd-icons-devicon "nf-dev-openal" :face 'nerd-icons-orange))
+		              ("OpenAPI" . ,(nerd-icons-devicon "nf-dev-openapi" :face 'nerd-icons-blue))
 
                   ;; Adobe softwares
                   ("Adobe_Photoshop" . ,(nerd-icons-devicon "nf-dev-photoshop" :face 'nerd-icons-blue))
@@ -1079,7 +1079,7 @@
                   ("GitHub" . ,(nerd-icons-mdicon "nf-md-github" :face 'nerd-icons-dsilver))
                   ("GitLab" . ,(nerd-icons-mdicon "nf-md-gitlab" :face 'nerd-icons-orange))
                   ("Bitbucket" . ,(nerd-icons-mdicon "nf-md-bitbucket" :face 'nerd-icons-blue))
-		          ("Gitea" . ,(nerd-icons-flicon "nf-linux-gitea" :face 'nerd-icons-green))
+		              ("Gitea" . ,(nerd-icons-flicon "nf-linux-gitea" :face 'nerd-icons-green))
                   ("Codeberg" . ,(nerd-icons-flicon "nf-linux-codeberg" :face 'nerd-icons-blue))
                   ("Forgejo" . ,(nerd-icons-flicon "nf-linux-forgejo" :face 'nerd-icons-blue))
                   ("stack_exchange" . ,(nerd-icons-mdicon "nf-md-stack_exchange" :face 'nerd-icons-blue))
