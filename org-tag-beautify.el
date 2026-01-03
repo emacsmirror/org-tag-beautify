@@ -502,6 +502,7 @@
                   ("file_pdf" . ,(nerd-icons-faicon "nf-fa-file_pdf" :face 'nerd-icons-blue))
                   ("image" . ,(nerd-icons-mdicon "nf-md-image" :face 'nerd-icons-green))
                   ("file_image" . ,(nerd-icons-faicon "nf-fa-file_image" :face 'nerd-icons-green))
+                  ("file_gif" . ,(nerd-icons-mdicon "nf-md-file_gif_box" :face 'nerd-icons-orange))
                   ("file_video" . ,(nerd-icons-faicon "nf-fa-file_video" :face 'nerd-icons-blue))
                   ("file_audio" . ,(nerd-icons-faicon "nf-fa-file_audio" :face 'nerd-icons-blue))
                   ("file_waveform" . ,(nerd-icons-faicon "nf-fa-file_waveform" :face 'nerd-icons-green))
