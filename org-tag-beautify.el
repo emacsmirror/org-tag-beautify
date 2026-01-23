@@ -124,8 +124,10 @@
       ;; try to get tag associated icon from cache list at first to improve performance.
       (or (cdr (assoc tag org-tag-beautify-tag-icon-cache-alist))
           (let* (;; TODO: improve the tag name matching algorithm.
-                 (tag-regexp-matching-f (apply-partially 'string-match-p
-                                                         (regexp-opt (list (substring-no-properties (downcase tag))))))
+                 (tag-regexp-matching-f
+                  ;; fuzzy regular expression matching
+                  (apply-partially 'string-match-p
+                                   (regexp-opt (list (substring-no-properties (downcase tag))))))
                  ;; -> "archlinux"
                  (icon-name (seq-find
                              tag-regexp-matching-f
@@ -153,6 +155,9 @@
 ;; (org-tag-beautify--find-tag-icon "heart")
 ;; (org-tag-beautify--find-tag-icon "wikipedia")
 ;; (org-tag-beautify--find-tag-icon "LaTeX")
+;;
+;; Fuzzy finding tag icon
+;; (org-tag-beautify--find-tag-icon "dev")
 ;;
 ;; Testing no icon associated defined tag.
 ;; (org-tag-beautify--find-tag-icon "alpha_c_circle")
