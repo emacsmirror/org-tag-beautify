@@ -603,11 +603,13 @@
                   ("pause" . ,(nerd-icons-mdicon "nf-md-pause_circle_outline" :face 'nerd-icons-red))
                   ("record" . ,(nerd-icons-mdicon "nf-md-record_circle_outline" :face 'nerd-icons-red))
                   ("news" . ,(nerd-icons-mdicon "nf-md-newspaper_variant_outline" :face 'nerd-icons-silver))
-                  ("AI_generated" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-maroon))
+                  ("poet" . ,(nerd-icons-codicon "nf-cod-person" :face 'nerd-icons-orange))
+                  ("poem" . ,(nerd-icons-codicon "nf-cod-note" :face 'nerd-icons-orange))
+                  ("LLM" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-cyan))
                   ("Generative_AI" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-blue))
                   ("GenAI" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-blue))
+                  ("prompt_engineering" . ,(nerd-icons-mdicon "nf-md-chat_processing" :face 'nerd-icons-blue))
                   ("vibe_coding" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-pink))
-                  ("LLM" . ,(nerd-icons-faicon "nf-fa-connectdevelop" :face 'nerd-icons-cyan))
                   
                   ;; human body
                   ("eye" . ,(nerd-icons-codicon "nf-cod-eye" :face 'nerd-icons-blue))
