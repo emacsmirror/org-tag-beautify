@@ -946,7 +946,6 @@
                   ("shebang" . ,(nerd-icons-mdicon "nf-md-bash" :face 'nerd-icons-blue))
                   ("LISP" . ,(nerd-icons-sucicon "nf-custom-common_lisp"))
                   ("Common_Lisp" . ,(nerd-icons-sucicon "nf-custom-common_lisp"))
-                  ("Emacs_Lisp" . ,(nerd-icons-icon-for-mode 'emacs-lisp-mode))
                   ("Clojure" . ,(nerd-icons-devicon "nf-dev-clojure" :face 'nerd-icons-green)) ; ,(nerd-icons-sucicon "nf-seti-clojure" :face 'nerd-icons-green)
                   ("ClojureScript" . ,(nerd-icons-devicon "nf-dev-clojure_alt" :face 'nerd-icons-blue))
                   ("Scheme" . ,(nerd-icons-sucicon "nf-custom-scheme" :face 'nerd-icons-blue))
@@ -1028,6 +1027,7 @@
                   
                   ;; Development Tools
                   ("Emacs" . ,(nerd-icons-sucicon "nf-custom-emacs" :face 'nerd-icons-purple))
+                  ("Emacs_Lisp" . ,(nerd-icons-sucicon "nf-custom-emacs" :face 'nerd-icons-blue))
                   ("Org_mode" . ,(nerd-icons-sucicon "nf-custom-orgmode" :face 'nerd-icons-dgreen))
                   ("Vim" . ,(nerd-icons-devicon "nf-dev-vim" :face 'nerd-icons-green))
                   ("Vimscript" . ,(nerd-icons-sucicon "nf-custom-vim" :face 'nerd-icons-green))
