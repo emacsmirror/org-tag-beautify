@@ -817,8 +817,8 @@
                   ("SSH" . ,(nerd-icons-mdicon "nf-md-ssh" :face 'nerd-icons-green))
                   ("PowerShell" . ,(nerd-icons-mdicon "nf-md-powershell" :face 'nerd-icons-blue))
                   ("systemd" . ,(nerd-icons-flicon "nf-linux-tux" :face 'nerd-icons-blue))
-		              ;; ("VirtualBox" . ,(nerd-icons-devicon "" :face 'nerd-icons-blue))
-		              ("VMWare" . ,(nerd-icons-devicon "nf-dev-vsphere" :face 'nerd-icons-blue))
+                  ;; ("VirtualBox" . ,(nerd-icons-devicon "" :face 'nerd-icons-blue))
+                  ("VMWare" . ,(nerd-icons-devicon "nf-dev-vsphere" :face 'nerd-icons-blue))
                   ("Thunderbird" . ,(nerd-icons-flicon "nf-linux-thunderbird" :face 'nerd-icons-blue))
 
                   ;; Linux Desktop Envirnments
@@ -883,12 +883,12 @@
                   ("Ionic" . ,(nerd-icons-sucicon "nf-seti-ionic" :face 'nerd-icons-blue))
                   ("Flutter" . ,(nerd-icons-devicon "nf-dev-flutter" :face 'nerd-icons-blue))
 
-		              ;; Development Libraries
-		              ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
-		              ("OpenGL" . ,(nerd-icons-devicon "nf-dev-opengl" :face 'nerd-icons-blue))
-		              ("OpenCL" . ,(nerd-icons-devicon "nf-dev-opencl" :face 'nerd-icons-blue))
-		              ("OpenAL" . ,(nerd-icons-devicon "nf-dev-openal" :face 'nerd-icons-orange))
-		              ("OpenAPI" . ,(nerd-icons-devicon "nf-dev-openapi" :face 'nerd-icons-blue))
+                  ;; Development Libraries
+                  ("OpenCV" . ,(nerd-icons-devicon "nf-dev-opencv" :face 'nerd-icons-green))
+                  ("OpenGL" . ,(nerd-icons-devicon "nf-dev-opengl" :face 'nerd-icons-blue))
+                  ("OpenCL" . ,(nerd-icons-devicon "nf-dev-opencl" :face 'nerd-icons-blue))
+                  ("OpenAL" . ,(nerd-icons-devicon "nf-dev-openal" :face 'nerd-icons-orange))
+                  ("OpenAPI" . ,(nerd-icons-devicon "nf-dev-openapi" :face 'nerd-icons-blue))
 
                   ;; Adobe softwares
                   ("Adobe_Photoshop" . ,(nerd-icons-devicon "nf-dev-photoshop" :face 'nerd-icons-blue))
