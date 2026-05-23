@@ -73,8 +73,14 @@
   :safe #'numberp
   :group 'org-tag-beautify)
 
-(defcustom org-tag-beautify-auto-add-tags t
-  "Whether auto add tags to heading."
+(defcustom org-tag-beautify-append-nerd-icons-tags nil
+  "Whether auto append nerd-icons tags."
+  :type 'boolean
+  :safe #'booleanp
+  :group 'org-tag-beautify)
+
+(defcustom org-tag-beautify-append-hard-coded-tags nil
+  "Whether auto append hard coded tags."
   :type 'boolean
   :safe #'booleanp
   :group 'org-tag-beautify)
@@ -1418,9 +1424,10 @@ For `org-set-tags-command' completion."
   ;; store current value of `org-tag-alist'.
   (setq org-tag-beautify--org-tag-persistent-alist--original org-tag-alist)
   ;; add extra tags to `org-tag-alist'
-  ;; FIXME: caused [C-c C-q] can't complete Org buffer local tags.
-  (org-tag-beautify-append-tags--with-hardcode-icons)
-  (org-tag-beautify-append-tags--with-nerd-icons)
+  (when org-tag-beautify-append-hard-coded-tags
+    (org-tag-beautify-append-tags--with-hardcode-icons))
+  (when org-tag-beautify-append-nerd-icons-tags
+    (org-tag-beautify-append-tags--with-nerd-icons))
   ;; refresh Org headline tags on first loading.
   (org-tag-beautify-display-icon-refresh-all-headlines) ; initial run on mode enabled.
   (add-hook 'org-mode-hook #'org-tag-beautify-display-icon-refresh-all-headlines)
