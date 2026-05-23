@@ -91,7 +91,6 @@
   :safe #'listp
   :group 'org-tag-beautify)
 
-;;; ----------------------------------------------------------------------------
 ;;; find the available suitable icon for tag.
 
 ;; NOTE: This variable caused big memory usage.
@@ -155,7 +154,7 @@
      ;; (#("<icon>" ...))
      (list (completing-read "Tag: " org-tag-beautify--nerd-icons-icons-list)))))
 
-;;; TEST:
+;; TEST:
 ;; (org-tag-beautify--find-tag-icon "archlinux")
 ;; (org-tag-beautify--find-tag-icon "steam")
 ;; (org-tag-beautify--find-tag-icon "heart")
@@ -206,7 +205,7 @@
   (while org-tag-beautify-overlays
     (delete-overlay (pop org-tag-beautify-overlays))))
 
-;;; ----------------------------------------------------------------------------
+;;; Add hard coded tags to `org-tag-beautify-tag-icons-alist'.
 
 (defun org-tag-beautify--add-common-tag-icons ()
   "Display most common tag as icon."
@@ -252,7 +251,7 @@
                   ("notification" . ,(nerd-icons-mdicon "nf-md-bell_circle_outline" :face 'nerd-icons-yellow))
                   ("alarm" . ,(nerd-icons-mdicon "nf-md-alarm_light_outline" :face 'nerd-icons-yellow))
                   ("LOG" . ,(nerd-icons-octicon "nf-oct-log" :face 'nerd-icons-blue))
-		              ("log" . ,(nerd-icons-octicon "nf-oct-log" :face 'nerd-icons-blue))
+		          ("log" . ,(nerd-icons-octicon "nf-oct-log" :face 'nerd-icons-blue))
                   ("comment" . ,(nerd-icons-mdicon "nf-md-comment_text_outline" :face 'nerd-icons-orange))
                   ("today" . ,(nerd-icons-mdicon "nf-md-calendar_today_outline" :face 'nerd-icons-green))
                   ("event" . ,(nerd-icons-mdicon "nf-md-calendar_text_outline" :face 'nerd-icons-blue))
@@ -499,13 +498,13 @@
                   ("Excel" . ,(nerd-icons-mdicon "nf-md-microsoft_excel" :face 'nerd-icons-dgreen))
                   ("PowerPoint" . ,(nerd-icons-mdicon "nf-md-microsoft_powerpoint" :face 'nerd-icons-red))
                   ("Access" . ,(nerd-icons-mdicon "nf-md-microsoft_access" :face 'nerd-icons-red))
-		              ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreoffice" :face 'nerd-icons-green))
-		              ("libreoffice_base" . ,(nerd-icons-flicon "nf-linux-libreofficebase" :face 'nerd-icons-green))
-		              ("libreoffice_calc" . ,(nerd-icons-flicon "nf-linux-libreofficecalc" :face 'nerd-icons-green))
-		              ("libreoffice_draw" . ,(nerd-icons-flicon "nf-linux-libreofficedraw" :face 'nerd-icons-green))
-		              ("libreoffice_impress" . ,(nerd-icons-flicon "nf-linux-libreofficeimpress" :face 'nerd-icons-green))
-		              ("libreoffice_math" . ,(nerd-icons-flicon "nf-linux-libreofficemath" :face 'nerd-icons-green))
-		              ("libreoffice_writer" . ,(nerd-icons-flicon "nf-linux-libreofficewriter" :face 'nerd-icons-green))
+		          ("libreoffice" . ,(nerd-icons-flicon "nf-linux-libreoffice" :face 'nerd-icons-green))
+		          ("libreoffice_base" . ,(nerd-icons-flicon "nf-linux-libreofficebase" :face 'nerd-icons-green))
+		          ("libreoffice_calc" . ,(nerd-icons-flicon "nf-linux-libreofficecalc" :face 'nerd-icons-green))
+		          ("libreoffice_draw" . ,(nerd-icons-flicon "nf-linux-libreofficedraw" :face 'nerd-icons-green))
+		          ("libreoffice_impress" . ,(nerd-icons-flicon "nf-linux-libreofficeimpress" :face 'nerd-icons-green))
+		          ("libreoffice_math" . ,(nerd-icons-flicon "nf-linux-libreofficemath" :face 'nerd-icons-green))
+		          ("libreoffice_writer" . ,(nerd-icons-flicon "nf-linux-libreofficewriter" :face 'nerd-icons-green))
                   ("Azure" . ,(nerd-icons-mdicon "nf-md-microsoft_azure" :face 'nerd-icons-silver))
                   ("WordPress" . ,(nerd-icons-mdicon "nf-md-wordpress" :face 'nerd-icons-silver))
                   ;; ("WordPress" . ,(nerd-icons-faicon "nf-fa-wordpress" :face 'nerd-icons-silver))
@@ -776,7 +775,7 @@
                   ("NAS" . ,(nerd-icons-mdicon "nf-md-nas" :face 'nerd-icons-blue))
                   ("robot" . ,(nerd-icons-mdicon "nf-md-robot_outline" :face 'nerd-icons-blue))
                   ("chip" . ,(nerd-icons-faicon "nf-fae-chip" :face 'nerd-icons-silver))
-                  ("USB" . ,(nerd-icons-mdicon "nf-md-usb" :face 'nerd-icons-blue))
+                  ("USB" . ,(nerd-icons-mdicon "nf-md-usb" :face 'nerd-icons-blue)) ; "nf-md-usb_flash_drive"
                   ("WiFi" . ,(nerd-icons-mdicon "nf-md-wifi" :face 'nerd-icons-blue))
                   ("bluetooth" . ,(nerd-icons-mdicon "nf-md-bluetooth" :face 'nerd-icons-blue))
                   ("microphone" . ,(nerd-icons-mdicon "nf-md-microphone" :face 'nerd-icons-blue))
@@ -1093,7 +1092,7 @@
                   ("GitHub" . ,(nerd-icons-mdicon "nf-md-github" :face 'nerd-icons-dsilver))
                   ("GitLab" . ,(nerd-icons-mdicon "nf-md-gitlab" :face 'nerd-icons-orange))
                   ("Bitbucket" . ,(nerd-icons-mdicon "nf-md-bitbucket" :face 'nerd-icons-blue))
-		              ("Gitea" . ,(nerd-icons-flicon "nf-linux-gitea" :face 'nerd-icons-green))
+		          ("Gitea" . ,(nerd-icons-flicon "nf-linux-gitea" :face 'nerd-icons-green))
                   ("Codeberg" . ,(nerd-icons-flicon "nf-linux-codeberg" :face 'nerd-icons-blue))
                   ("Forgejo" . ,(nerd-icons-flicon "nf-linux-forgejo" :face 'nerd-icons-blue))
                   ("stack_exchange" . ,(nerd-icons-mdicon "nf-md-stack_exchange" :face 'nerd-icons-blue))
