@@ -591,6 +591,8 @@
                   ("picture" . ,(nerd-icons-faicon "nf-fa-picture_o" :face 'nerd-icons-green))
                   ("photo" . ,(nerd-icons-faicon "nf-fa-photo" :face 'nerd-icons-green))
                   ("music" . ,(nerd-icons-mdicon "nf-md-music_box_outline" :face 'nerd-icons-green))
+                  ("music_playlist" . ,(nerd-icons-mdicon "nf-md-playlist_music" :face 'nerd-icons-blue))
+                  ("MV" . ,(nerd-icons-mdicon "nf-md-video_image" :face 'nerd-icons-blue))
                   ("headphone" . ,(nerd-icons-mdicon "nf-md-headphones" :face 'nerd-icons-blue))
                   ("hearing" . ,(nerd-icons-mdicon "nf-md-ear_hearing" :face 'nerd-icons-blue))
                   ("film" . ,(nerd-icons-faicon "nf-fa-film" :face 'nerd-icons-blue))
